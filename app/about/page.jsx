@@ -1,8 +1,10 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { Target, Eye, Award, Users, BookOpen, Code } from "lucide-react"
-
-const values = [
+export default function AboutPage() {
+  return (
+    <main className="min-h-screen flex items-center justify-center">
+      <h1 className="text-2xl font-bold">About (skeleton)</h1>
+    </main>
+  )
+}
   {
     icon: Award,
     title: "Excellence",

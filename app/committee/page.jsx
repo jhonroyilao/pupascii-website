@@ -1,7 +1,10 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+export default function CommitteePage() {
+  return (
+    <main className="min-h-screen flex items-center justify-center">
+      <h1 className="text-2xl font-bold">Committee (skeleton)</h1>
+    </main>
+  )
+}
 
 const committeeMembers = [
   { name: "Cabrera, Chelsea Lauren B.", position: "President", department: "Executive" },

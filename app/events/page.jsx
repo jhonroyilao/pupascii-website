@@ -1,9 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { Card, CardContent } from "@/components/ui/card"
+export default function EventsPage() {
+  return (
+    <main className="min-h-screen flex items-center justify-center">
+      <h1 className="text-2xl font-bold">Events (skeleton)</h1>
+    </main>
+  )
+}
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, Clock } from "lucide-react"

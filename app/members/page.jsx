@@ -1,8 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+export default function MembersPage() {
+  return (
+    <main className="min-h-screen flex items-center justify-center">
+      <h1 className="text-2xl font-bold">Members (skeleton)</h1>
+    </main>
+  )
+}
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"

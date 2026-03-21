@@ -1,8 +1,10 @@
-"use client"
-
-import { useState } from "react"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+export default function ContactsPage() {
+  return (
+    <main className="min-h-screen flex items-center justify-center">
+      <h1 className="text-2xl font-bold">Contacts (skeleton)</h1>
+    </main>
+  )
+}
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
