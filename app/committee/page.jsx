@@ -1,53 +1,12 @@
+import Navbar from "@/components/custom/navbar"
+
 export default function CommitteePage() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-2xl font-bold">Committee (skeleton)</h1>
+    <main className="min-h-screen">
+      <Navbar />
     </main>
   )
 }
-
-const committeeMembers = [
-  { name: "Cabrera, Chelsea Lauren B.", position: "President", department: "Executive" },
-  { name: "Reolada, Gavinn M.", position: "Executive Vice President", department: "Executive" },
-  { name: "Biso, Erika P.", position: "Executive Secretary", department: "Executive" },
-  { name: "Narte, Ma. Victoria C.", position: "Executive Assistant Secretary", department: "Executive" },
-  { name: "Guioguio, Kenneth M.", position: "VP for Finance", department: "Executive" },
-  { name: "Lagat, Joemar R.", position: "VP for Audit", department: "Executive" },
-  { name: "Ilao, Jhon Roy", position: "VP for Creative Communications", department: "Department" },
-  { name: "Sia, Shaun Asher M.", position: "AVP for Creative Communications", department: "Department" },
-  { name: "Duron, Jarren Irvine F.", position: "VP for Documentation & Secretariat", department: "Department" },
-  { name: "Diaz, Lei Eizen P.", position: "AVP for Documentation & Secretariat", department: "Department" },
-  { name: "Gragas, Nethan Edry L.", position: "VP for Marketing", department: "Department" },
-  { name: "Valeza, Reinwald Marone", position: "AVP for Marketing", department: "Department" },
-  { name: "Nagera, Kristina Casandra C.", position: "VP for Programs", department: "Department" },
-  { name: "Federico, John Richard J.", position: "AVP for Programs", department: "Department" },
-  { name: "Gallaza, Romar M.", position: "VP for Research & Extensions", department: "Department" },
-  { name: "Castillejo, Paul Daniel C.", position: "AVP for Research & Extensions", department: "Department" },
-]
-
-export default function CommitteePage() {
-  const executives = committeeMembers.filter(m => m.department === "Executive")
-  const departmentHeads = committeeMembers.filter(m => m.department !== "Executive")
-
-  return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      
-      <main className="pt-24 pb-12">
-        {/* Hero Section */}
-        <section className="py-12">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Meet Our Committee
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The dedicated leaders who drive PUP-ASCII forward, working to create 
-              opportunities and foster growth for all members.
-            </p>
-          </div>
-        </section>
-
-        {/* Executive Officers */}
         <section className="py-12">
           <div className="container mx-auto px-4">
             <h2 className="text-xl font-bold text-foreground mb-6">Executive Officers</h2>
