@@ -1,13 +1,14 @@
 import Navbar from "@/components/custom/navbar"
 import HeroSection from "@/components/sections/hero-section"
 import { Safari } from "@/components/ui/safari"
+import { CinematicFooter } from "@/components/ui/motion-footer"
 
 export default function Home() {
   return (
     <main className="min-h-screen relative flex flex-col">
       <Navbar />
       <HeroSection />
-
+      <CinematicFooter />
     </main>
   )
 }
