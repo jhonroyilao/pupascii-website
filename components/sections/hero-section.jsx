@@ -1,5 +1,5 @@
 "use client"
-
+import About from "@/components/sections/about" 
 import { Safari } from "@/components/ui/safari"
 import PixelBlast from "@/components/ui/pixelblast"
 import HeroButton from "@/components/ui/herobutton"
@@ -88,9 +88,12 @@ export default function Hero() {
           <div style={{ width: "100%", maxWidth: "clamp(320px, 80vw, 900px)" }}>
             <Safari url="pupascii-2526.com" imageSrc="/group-photo.jpg" />
           </div>
+
+
         </div>
 
       </div>
+      
     </>
   )
 }
