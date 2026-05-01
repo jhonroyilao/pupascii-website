@@ -1,9 +1,15 @@
-import Navbar from "@/components/custom/navbar"
+import Navbar from "@/components/sections/Navbar"
+import Hero from "@/components/sections/Hero"
+import About from "@/components/sections/About"
 
-export default function EventsPage() {
+export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main>
       <Navbar />
+      <Hero />
+      <About />
+
+      
     </main>
   )
 }
