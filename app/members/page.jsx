@@ -1,53 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import Navbar from "@/components/custom/navbar"
+
 export default function MembersPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-2xl font-bold">Members (skeleton)</h1>
+    <main className="min-h-screen">
+      <Navbar />
     </main>
   )
 }
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Search, Users } from "lucide-react"
-
-const members = [
-  { name: "Andres Bonifacio", year: "4th Year", department: "Academics" },
-  { name: "Emilio Aguinaldo", year: "3rd Year", department: "Technical" },
-  { name: "Apolinario Mabini", year: "4th Year", department: "Events" },
-  { name: "Gregoria de Jesus", year: "2nd Year", department: "Creatives" },
-  { name: "Melchora Aquino", year: "3rd Year", department: "Documentation" },
-  { name: "Antonio Luna", year: "4th Year", department: "Technical" },
-  { name: "Juan Luna", year: "2nd Year", department: "Creatives" },
-  { name: "Jose Palma", year: "3rd Year", department: "Academics" },
-  { name: "Marcelo del Pilar", year: "4th Year", department: "Events" },
-  { name: "Graciano Lopez Jaena", year: "2nd Year", department: "Documentation" },
-  { name: "Tandang Sora", year: "3rd Year", department: "Logistics" },
-  { name: "Diego Silang", year: "4th Year", department: "Technical" },
-]
-
-const departments = ["All", "Academics", "Technical", "Events", "Creatives", "Documentation", "Logistics"]
-
-export default function MembersPage() {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [selectedDepartment, setSelectedDepartment] = useState("All")
-
-  const filteredMembers = members.filter(member => {
-    const matchesSearch = member.name.toLowerCase().includes(searchQuery.toLowerCase())
-    const matchesDepartment = selectedDepartment === "All" || member.department === selectedDepartment
-    return matchesSearch && matchesDepartment
-  })
-
-  return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      
-      <main className="pt-24 pb-12">
-        {/* Hero Section */}
-        <section className="py-12">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Our Members
