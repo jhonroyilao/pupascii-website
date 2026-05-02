@@ -1,5 +1,6 @@
 import Navbar from "@/components/custom/navbar"
 import HeroSection from "@/components/sections/hero-section"
+import FeaturesSectionDemo from "@/components/sections/features-preview"
 import About from "@/components/sections/about" 
 import { Safari } from "@/components/ui/safari"
 import { CinematicFooter } from "@/components/ui/motion-footer"
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <About/>
+      <FeaturesSectionDemo/>
       <CinematicFooter />
     </main>
   )

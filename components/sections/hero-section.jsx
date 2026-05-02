@@ -28,7 +28,7 @@ export default function Hero() {
 
         {/* BLUE SECTION */}
         <div
-          className="relative pt-24 pb-80"
+          className="relative pt-24 pb-90"
           style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
         >
           {/* Background boxes  <Boxes /> */}
@@ -42,9 +42,7 @@ export default function Hero() {
             />
           </div>*/}
 
-
           
-
           {/* Text content */}
           <div className="relative max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5" style={{ zIndex: 1 }}>
             <h1

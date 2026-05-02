@@ -10,19 +10,19 @@ import { Highlighter } from "@/components/ui/highlighter"
 
 const photos = [
   {
-    title: "Canada",
+    title: " ",
     image: "/pic1.jpg",
-    className: "absolute top-8 left-[15%] rotate-[4deg]",
+    className: "absolute top-5 left-[-5%] rotate-[4deg] border border-xl border-blue-500",
   },
   {
-    title: "New Zealand",
+    title: " ",
     image: "/pic2.jpg",
-    className: "absolute top-24 left-[35%] rotate-[-7deg]",
+    className: "absolute top-5 left-[15%] rotate-[-10deg] border border-xl border-blue-500",
   },
   {
-    title: "The Narrator",
+    title: " ",
     image: "/pic3.jpg",
-    className: "absolute top-4 left-[52%] rotate-[6deg]",
+    className: "absolute top-4 left-[49%] rotate-[6deg] border border-xl border-blue-500 ",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function About() {
     <section className="bg-white">
 
       {/* ── OUR IDENTITY ── */}
-      <div className="max-w-7xl mx-auto px-6 py-24">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left */}
@@ -85,14 +85,14 @@ export default function About() {
           </div>
 
           {/* Right — Draggable polaroid cards */}
-          <div className="relative h-[420px] w-full">
+          <div className="relative h-[420px] w-full rounded-2xl" style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}>
             <DraggableCardContainer className="relative w-full h-full [perspective:1200px]">
               {photos.map((item) => (
                 <DraggableCardBody key={item.title} className={item.className}>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="pointer-events-none w-48 h-56 object-cover rounded-sm"
+                    className="pointer-events-none w-100 h-80 object-cover rounded-sm"
                   />
                   <p
                     className="mt-3 text-center text-sm font-medium text-neutral-700"
