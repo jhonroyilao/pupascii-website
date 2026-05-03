@@ -10,17 +10,14 @@ import { Highlighter } from "@/components/ui/highlighter"
 
 const photos = [
   {
-    title: " ",
     image: "/pic1.jpg",
     className: "absolute top-5 left-[-5%] rotate-[4deg] border border-xl border-blue-500",
   },
   {
-    title: " ",
     image: "/pic2.jpg",
     className: "absolute top-5 left-[15%] rotate-[-10deg] border border-xl border-blue-500",
   },
   {
-    title: " ",
     image: "/pic3.jpg",
     className: "absolute top-4 left-[49%] rotate-[6deg] border border-xl border-blue-500 ",
   },
@@ -87,8 +84,8 @@ export default function About() {
           {/* Right — Draggable polaroid cards */}
           <div className="relative h-[420px] w-full rounded-2xl" style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}>
             <DraggableCardContainer className="relative w-full h-full [perspective:1200px]">
-              {photos.map((item) => (
-                <DraggableCardBody key={item.title} className={item.className}>
+              {photos.map((item,index) => (
+                <DraggableCardBody key={index} className={item.className}>
                   <img
                     src={item.image}
                     alt={item.title}
