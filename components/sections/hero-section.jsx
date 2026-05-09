@@ -1,11 +1,10 @@
 "use client"
 import { Safari } from "@/components/ui/safari"
-import { TextScramble } from "@/components/ui/text-scramble"
 import HeroButton from "@/components/ui/herobutton"
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
-import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
-
-
+import RotatingText from "@/components/ui/rotating-text"
+import SafariMarquee from "@/components/ui/safari-marquee"
+import Text3DFlip from "@/components/ui/text-3d-flip"
+import { MorphingText } from "@/components/ui/morphing-text"
 
 export default function Hero() {
   return (
@@ -15,77 +14,79 @@ export default function Hero() {
           from { opacity: 0; transform: translateY(24px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .hero-animate-1 { animation: fadeUp 0.6s ease 0.0s both; }
-        .hero-animate-2 { animation: fadeUp 0.6s ease 0.1s both; }
         .hero-animate-3 { animation: fadeUp 0.6s ease 0.2s both; }
         .hero-animate-4 { animation: fadeUp 0.6s ease 0.3s both; }
         .safari-float   { animation: fadeUp 0.8s ease 0.4s both; }
-
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to   { transform: rotate(360deg); }
-        }
-        @keyframes spin-slow-reverse {
-          from { transform: rotate(0deg); }
-          to   { transform: rotate(-360deg); }
-        }
-        .spin-cw  { animation: spin-slow 60s linear infinite; }
-        .spin-ccw { animation: spin-slow-reverse 60s linear infinite; }
       `}</style>
 
-      <div className="relative">
-
-        {/* BLUE SECTION */}
+      {/* BLUE SECTION */}
+      <div
+        className="relative overflow-hidden"
+        style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
+      >
+        {/* Text content */}
         <div
-          className="relative pt-24 pb-90 overflow-hidden"
-          style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
+          className="relative pt-30 pb-12 max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5"
+          style={{ zIndex: 20 }}
         >
+          <span
+  className="inline-flex items-center justify-center gap-0 font-bold tracking-tighter text-white text-8xl md:text-8xl"
+  style={{ fontFamily: "Inter, sans-serif" }}
+>
 
-          {/* Text content */}
-          <div className="relative max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5" style={{ zIndex: 20 }}>
-            <h1
-              className="hero-animate-2 font-bold text-white leading-tight tracking-tighter"
-              style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(2.8rem, 6vw, 5rem)" }}
-            >
+  <span className="inline-flex items-center justify-center min-w-[5ch]">
+    <MorphingText className="font-bricolage" texts={["Built to Lead", "Built to Inspire", "Built to Exalt"]} />
+  </span>
+</span>
+           {/*} 
+            Built to
+            <span className="inline-block min-w-[0px]">
+              <RotatingText
+                texts={["Lead", "Inspire", "Exalt"]}
+                splitBy="characters"
+                staggerFrom="last"
+                staggerDuration={0.04}
+                rotationInterval={2600}
+                auto
+                loop
+                animatePresenceMode="wait"
+                mainClassName="tracking-tighter"
+              />
+            </span>
+          </span>
+            */}
+          <p
+            className="hero-animate-3 text-white/80 text-[15px] tracking-tight max-w-xl"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
+            Hi there! We are PUP ASCII. The official academic organization of the Department of Computer Science
+            at the Polytechnic University of the Philippines.
+          </p>
 
-            <TextGenerateEffect words="LEAD. INSPIRE. EXALT." />
-                     </h1>
-
-            <p
-              className="hero-animate-3 text-white/80 text-[15px] tracking-tight max-w-xl"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Hi there! We are PUP ASCII. The official academic organization of the Department of Computer Science
-              at the Polytechnic University of the Philippines.
-            </p>
-
-            <div className="hero-animate-4">
-              <HeroButton href="/about" label="LEARN MORE ABOUT US" />
-            </div>
+          <div className="hero-animate-4">
+            <HeroButton href="/about" label="LEARN MORE ABOUT US" />
           </div>
         </div>
 
-        {/* WHITE SECTION */}
-        <div className="bg-white w-full" style={{ paddingTop: "clamp(200px, 35vw, 520px)" }} />
-
-        {/* SAFARI — overlapping seam */}
+        {/* Safari card 
         <div
-          className="safari-float"
+          className="safari-float relative mx-auto pb-2"
           style={{
-            position: "absolute",
-            bottom: "20%",
-            left: 0,
-            right: 0,
-            display: "flex",
-            justifyContent: "center",
+            maxWidth: 900,
             paddingLeft: "clamp(16px, 4vw, 48px)",
             paddingRight: "clamp(16px, 4vw, 48px)",
             zIndex: 10,
           }}
         >
-          <div style={{ width: "100%", maxWidth: "clamp(320px, 80vw, 900px)" }}>
+          <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
             <Safari url="pupascii-2526.com" imageSrc="/group-photo.jpg" />
           </div>
+        </div>
+        */}
+
+        {/* Marquee — full-bleed, below safari, above gradient */}
+        <div className="relative w-full py-0" style={{ zIndex: 0 }}>
+          <SafariMarquee />
         </div>
 
       </div>

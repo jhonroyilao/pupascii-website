@@ -10,7 +10,7 @@ import { Highlighter } from "@/components/ui/highlighter"
 
 const photos = [
   {
-    image: "/pic1.jpg",
+    image: "/pic3.jpg",
     className: "absolute top-5 left-[-5%] rotate-[4deg] border border-xl border-blue-500",
   },
   {
@@ -18,7 +18,7 @@ const photos = [
     className: "absolute top-5 left-[15%] rotate-[-10deg] border border-xl border-blue-500",
   },
   {
-    image: "/pic3.jpg",
+    image: "/pic1.jpg",
     className: "absolute top-4 left-[49%] rotate-[6deg] border border-xl border-blue-500 ",
   },
 ];
@@ -151,9 +151,10 @@ export default function About() {
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               Led by{" "}
-              <HighlightOnScroll color="#93C5FD" action="higlight">
+
+              <HighlightOnScroll color="#93C5FD" action="highlight">
                 student leaders from different year levels
-              </HighlightOnScroll>
+              </HighlightOnScroll>{" "}
               , PUP ASCII exists to assist students in their academic journey,{" "}
               inspire growth through collaboration and learning
 
