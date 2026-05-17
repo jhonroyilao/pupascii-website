@@ -26,7 +26,7 @@ export default function Hero() {
       >
         {/* Text content */}
         <div
-          className="relative pt-30 pb-12 max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5"
+          className="relative pt-30 pb-2 max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5"
           style={{ zIndex: 20 }}
         >
           <span
@@ -84,11 +84,13 @@ export default function Hero() {
         </div>
         */}
 
-        {/* Marquee — full-bleed, below safari, above gradient */}
-        <div className="relative w-full py-0" style={{ zIndex: 0 }}>
+       {/* Marquee — slightly pushed down so it gets clipped by the parent */}
+        <div
+          className="relative w-full py-0 translate-y-6 md:translate-y-20"
+          style={{ zIndex: 0 }}
+        >
           <SafariMarquee />
         </div>
-
       </div>
     </>
   )
