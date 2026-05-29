@@ -26,13 +26,13 @@ node --version
 Open your terminal and run:
 
 ```bash
-git clone https://github.com/jhonroyilao/pup-ascii-website-prototype.git
+git clone https://github.com/jhonroyilao/pupascii-website.git
 ```
 
 ### Step 2: Navigate to the Project Folder
 
 ```bash
-cd pup-ascii-website-prototype
+cd pupascii-website
 ```
 
 ### Step 3: Install Dependencies
@@ -128,7 +128,7 @@ pup-ascii-website-prototype/
 
 - **Framework**: Next.js 15 (App Router)
 - **Styling**: Tailwind CSS 4
-- **UI Components**: shadcn/ui
+- **UI Components**: shadcn/ui, magic ui, etc.
 - **Icons**: Lucide React
 - **Font**: San Francisco (System Font)
 
