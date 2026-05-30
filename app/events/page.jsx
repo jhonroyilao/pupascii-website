@@ -6,7 +6,7 @@ import Navbar from "@/components/custom/navbar";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { Bricolage_Grotesque } from 'next/font/google';
 
-// Shadcn UI Dialog Imports
+// UI Components
 import {
   Dialog,
   DialogContent,
@@ -17,10 +17,11 @@ import {
 
 const bricolage = Bricolage_Grotesque({ subsets: ['latin'] });
 
+// Constants
 const TABS = ["Ongoing", "Past", "Upcoming"];
 const CAROUSEL_SLIDES = [1, 2, 3]; 
 
-// Real event data extracted from Lovable
+// Mock Data: Events
 const EVENTS = [
   {
     title: "IQ League: Vanguard",
@@ -110,7 +111,7 @@ const EVENTS = [
   },
 ];
 
-// Reusable image placeholder component
+// Utility Components
 function ImagePlaceholder({ className = "", hideIcon = false, darkBorder = false }) {
   const borderClass = darkBorder ? "border-2 border-neutral-700" : "border border-neutral-400/60";
   return (
@@ -133,7 +134,7 @@ export default function Events() {
   const nextSlide = () => setCurrentSlide((prev) => (prev === CAROUSEL_SLIDES.length - 1 ? 0 : prev + 1));
   const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? CAROUSEL_SLIDES.length - 1 : prev - 1));
 
-  // Filter events based on active tab and search query
+  // Event Data Filtering
   const filteredEvents = EVENTS.filter((event) => {
     const matchesTab = event.category === activeTab;
     const q = query.trim().toLowerCase();
@@ -148,7 +149,7 @@ export default function Events() {
     <main className="min-h-screen bg-white">
       <Navbar />
       
-      {/* 1. HERO SECTION & CAROUSEL */}
+      {/* Hero Section & Carousel */}
       <section
         className="relative px-4 pt-24 pb-16 sm:pt-32 sm:pb-24 overflow-hidden flex flex-col items-center"
         style={{
@@ -159,7 +160,6 @@ export default function Events() {
           PUP-ASCII Events
         </h1>
 
-        {/* Carousel Container */}
         <div className="relative w-full max-w-[1440px] mt-10 sm:mt-16 flex items-center justify-center group">
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 hidden sm:block h-[150px] sm:h-[280px]">
              <ImagePlaceholder className="w-full h-full rounded-none" hideIcon={true} darkBorder={true} />
@@ -198,7 +198,7 @@ export default function Events() {
           </div>
         </div>
 
-        {/* 2. LOVABLE SEARCH BAR INTEGRATION */}
+        {/* Global Event Search */}
         <div className="relative z-20 mx-auto mt-12 flex w-full max-w-3xl items-center gap-2 rounded-full bg-white p-1.5 shadow-xl">
           <input
             type="text"
@@ -217,7 +217,7 @@ export default function Events() {
         </div>
       </section>
 
-      {/* 3. TABS & EVENT CARDS */}
+      {/* Categories & Event Feed */}
       <section className="mx-auto max-w-5xl px-4 py-16">
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
           {TABS.map((tab) => {
@@ -280,7 +280,7 @@ export default function Events() {
         </div>
       </section>
 
-      {/* 4. JOIN ASCII CTA CARD */}
+      {/* Call to Action (CTA) Section */}
       <section className="relative w-full mt-4">
         <div className="absolute inset-0 z-0 flex flex-col">
           <div className="h-1/2 w-full bg-white"></div>
@@ -289,57 +289,61 @@ export default function Events() {
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 rounded-[32px] bg-white p-8 sm:p-12 shadow-2xl border-2 border-[#0062E4]">
-            <div className="flex-1 space-y-4">
-              <h2 className={`text-3xl sm:text-4xl font-bold text-neutral-900 ${bricolage.className}`}>
+            
+            <div className="flex-1">
+              <h2 className={`text-3xl sm:text-4xl font-bold text-neutral-900 mb-3 ${bricolage.className}`}>
                 Join ASCII, Contact Us
               </h2>
-              <p className="text-neutral-600 leading-relaxed max-w-md text-sm sm:text-base">
+              <p className="text-neutral-600 leading-relaxed max-w-xl text-sm sm:text-base mb-6">
                 Be part of PUP ASCII and connect with students who build, learn, and grow together. Take part in events, develop your skills, and find your place in a community that keeps moving forward.
               </p>
               
-              <div className="mt-6 flex w-full max-w-md items-center gap-2 rounded-full bg-[#E6EFFC] p-2">
+              <div className="flex w-full max-w-md items-center gap-2 rounded-full bg-[#E6EFFC] p-1.5 sm:p-2">
                 <input 
                   type="email" 
                   placeholder="Enter your email" 
                   className="flex-1 bg-transparent px-4 py-2 text-sm outline-none text-[#063A80] placeholder:text-[#063A80]/60" 
                 />
-                <button className="rounded-full bg-white px-8 py-3 text-sm font-bold text-[#0062E4] shadow-sm transition-colors hover:bg-neutral-50">
+                <button className="rounded-full bg-white px-8 py-2.5 text-sm font-bold text-[#0062E4] shadow-sm transition-colors hover:bg-neutral-50">
                   Submit
                 </button>
               </div>
             </div>
             
             <div className="w-full max-w-[280px] shrink-0">
-              <ImagePlaceholder className="aspect-square w-full rounded-2xl bg-neutral-100 border-none" />
+              <img 
+                src="/folder-4.png" 
+                alt="folder-4" 
+                className="aspect-square w-full rounded-2xl object-cover shadow-md" 
+              />
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* 5. SHADCN DIALOG MODAL (IMAGE 2 DESIGN) */}
+      {/* Event Details Modal */}
       <Dialog 
         open={!!selectedEvent} 
         onOpenChange={(isOpen) => {
           if (!isOpen) setSelectedEvent(null);
         }}
       >
-        {/* Added overflow-hidden and rounded-2xl to match Image 2 container edges */}
         <DialogContent className="max-w-xl p-0 gap-0 border-none overflow-hidden sm:rounded-[24px] bg-white shadow-2xl">
           {selectedEvent && (
             <div className="flex flex-col w-full relative max-h-[90vh] overflow-y-auto">
               
-              {/* Image Container - Flush to the top with matching gradient */}
+              {/* Modal Header Image */}
               <div
                 className="w-full"
                 style={{
                   backgroundImage: "linear-gradient(135deg, #063A80 0%, #0062E4 55%, #3DCBFF 100%)",
                 }}
               >
-                {/* Image has no extra padding, blending perfectly with the rounded modal corners */}
                 <ImagePlaceholder className="aspect-[16/7] w-full border-b border-white/20" />
               </div>
               
-              {/* Text Content Area */}
+              {/* Modal Content */}
               <div className="px-6 py-6 sm:px-8 sm:py-8">
                 <DialogHeader className="text-left">
                   <div className="flex flex-wrap items-center gap-2">
@@ -377,7 +381,7 @@ export default function Events() {
                   </div>
                 )}
                 
-                {/* Close Button matching the blue theme */}
+                {/* Modal Actions */}
                 <div className="mt-8 flex justify-end">
                   <button
                     type="button"
