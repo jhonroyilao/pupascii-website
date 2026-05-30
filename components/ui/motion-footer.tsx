@@ -14,7 +14,7 @@ const STYLES = `
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
 .cinematic-footer-wrapper {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   
   --pill-bg-1: rgba(255,255,255,0.18);
@@ -282,7 +282,7 @@ export function CinematicFooter() {
 
           {/* Marquee */}
           <div
-            className="absolute top-18 left-0 w-full overflow-hidden py-4 z-10 -rotate-0 scale-110 shadow-2xl backdrop-blur-md border-y"
+            className="absolute top-18 left-0 w-full overflow-hidden py-4 z-10 -rotate-0 scale-110 backdrop-blur-md border-y"
             style={{
               background: "rgba(255,255,255,0.92)",
               borderColor: "rgba(255,255,255,0.60)",

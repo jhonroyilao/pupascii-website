@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-, "components/ui/button.jsx"  ],
+, "components/ui/button.jsx", "components/ui/tech-rings.jsx"  ],
   "exclude": [
     "node_modules"
   ]
