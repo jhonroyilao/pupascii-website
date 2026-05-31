@@ -8,12 +8,12 @@ export default function CommitteePage() {
   return (
     <main className="min-h-screen">
           
-        {/* navbar and cinematic footer */}
+        {/* navbar */}
         <Navbar />
        
     
         {/* meet the leaders section -tim*/}
-          <LandingAccordionItem />
+        <LandingAccordionItem />
 
         {/* exec section */}
         <div>
