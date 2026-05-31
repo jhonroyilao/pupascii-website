@@ -21,7 +21,7 @@ const bricolage = Bricolage_Grotesque({ subsets: ['latin'] });
 const TABS = ["Ongoing", "Past", "Upcoming"];
 const CAROUSEL_SLIDES = [1, 2, 3]; 
 
-// Mock Data: Events
+// Events
 const EVENTS = [
   {
     title: "IQ League: Vanguard",
@@ -280,7 +280,7 @@ export default function Events() {
         </div>
       </section>
 
-      {/* Call to Action (CTA) Section */}
+      {/* Contact Us Section */}
       <section className="relative w-full mt-4">
         <div className="absolute inset-0 z-0 flex flex-col">
           <div className="h-1/2 w-full bg-white"></div>
