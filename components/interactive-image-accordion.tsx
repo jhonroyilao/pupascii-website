@@ -1,125 +1,75 @@
 "use client";
 import React, { useState } from 'react';
+import { ArrowUpRight } from "lucide-react";
 
-// --- Data for the image accordion ---
 const accordionItems = [
-  {
-    id: 1,
-    title: 'EXECUTIVES',
-    imageUrl: 'https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=1974&auto=format&fit=crop',
-  },
-  {
-    id: 2,
-    title: 'CREATIVES',
-    imageUrl: 'https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    id: 3,
-    title: 'PROGRAMS',
-    imageUrl: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop',
-  },
-  {
-    id: 4,
-    title: 'MARKETING',
-    imageUrl: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2090&auto=format&fit=crop',
-  },
-  {
-    id: 5,
-    title: 'RESEARCH & EXTENSIONS',
-    imageUrl: 'https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    id: 6,
-    title: 'DOCUMENTATION & SECRETARIAT',
-    imageUrl: 'https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=2070&auto=format&fit=crop',
-  },
+  { id: 1, title: 'EXECUTIVES', imageUrl: '/executives.jpg' },
+  { id: 2, title: 'CREATIVES', imageUrl: '/creatives.jpg' },
+  { id: 3, title: 'PROGRAMS', imageUrl: '/prog.jpg' },
+  { id: 4, title: 'MARKETING', imageUrl: '/marketing.jpg' },
+  { id: 5, title: 'RESEARCH & EXTENSIONS', imageUrl: '/rne.jpg' },
+  { id: 6, title: 'DOCUMENTATION & SECRETARIAT', imageUrl: '/docs.jpg' },
 ];
 
-// --- Accordion Item Component ---
-const AccordionItem = ({ item, isActive, onMouseEnter }) => {
-  return (
-    <div
-      className={`
-        relative h-[450px] rounded-2xl overflow-hidden cursor-pointer
-        transition-all duration-700 ease-in-out
-        ${isActive ? 'w-[400px] bg-transparent' : 'w-[60px] bg-white'}
-      `}
-      onMouseEnter={onMouseEnter}
+const AccordionItem = ({ item, isActive, onMouseEnter }) => (
+  <div
+    className={`relative h-[500px] rounded-[30px] overflow-hidden cursor-pointer transition-all duration-500 ease-out border-[3px]
+      ${isActive 
+        ? 'flex-[4] border-transparent' 
+        : 'flex-[0.5] bg-white border-[#0062E4] hover:bg-gray-50'}`}
+    onMouseEnter={onMouseEnter}
+  >
+    {isActive && (
+      <>
+        <img src={item.imageUrl} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/90" />
+      </>
+    )}
+    
+    <span className={`absolute font-bold transition-all duration-500 z-10 
+      ${isActive 
+        ? 'bottom-8 left-0 right-0 text-center text-[#0062E4] text-2xl md:text-3xl px-4' 
+        : 'inset-0 flex items-center justify-center rotate-90 text-[#0062E4] text-lg whitespace-nowrap'}`}
     >
-      {/* Background Image */}
-      <img
-        src={item.imageUrl}
-        alt={item.title}
-        className="absolute inset-0 w-full h-full object-cover"
-        onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x450/2d3748/ffffff?text=Image+Error'; }}
-      />
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-white bg-opacity-40"></div>
+      {item.title}
+    </span>
+  </div>
+);
 
-      {/* Caption Text */}
-      <span
-        className={`
-          absolute text-blue-800 text-lg font-bold whitespace-nowrap
-          transition-all duration-300 ease-in-out
-          ${
-            isActive
-              ? 'bottom-6 left-1/2 -translate-x-1/2 rotate-0'
-              : 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90'
-          }
-        `}
-      >
-        {item.title}
-      </span>
-    </div>
-  );
-};
-
-
-// --- Main App Component ---
 export function LandingAccordionItem() {
-  const [activeIndex, setActiveIndex] = useState(4);
-
-  const handleItemHover = (index) => {
-    setActiveIndex(index);
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div  className="relative pt-20 pb-0 rounded-b-[5rem] overflow-hidden"
-          style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}>
-      <section className="container mx-auto px-4 py-12 md:py-24">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+    <div className="relative pt-20 pb-10 bg-gradient-to-b from-[#3DCBFF] via-[#0062E4] to-[#063A80]">
+      <section className="container mx-auto px-6 py-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
           
-          {/* Left Side: Text Content */}
-          <div className="w-full md:w-1/2 text-center md:text-left pl-0 md:pl-34">
-            <h1 className="text-4xl md:text-9xl font-bold text-white leading-tight tracking-tighter">
-              Meet the Leaders
-            </h1>
-            <p className="mt-6 text-lg text-white max-w-xl mx-auto md:mx-0">
-              The driving force behind ASCII, leading the team with creativity, collaboration, and a shared vision to build meaningful experiences for the community.
+          <div className="w-full lg:w-1/2 text-white">
+            <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tighter">Meet the Leaders</h1>
+            <p className="mt-6 text-lg text-blue-50 opacity-90 max-w-md">
+              The driving force behind ASCII, leading the team with creativity, collaboration, and a shared vision.
             </p>
-            <div className="mt-8">
-              <a
-                href="#contact"
-                className="inline-block bg-white text-blue font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-800 transition-colors duration-300" 
-              >
+            
+            {/* The Dual Button Layout */}
+            <div className="mt-8 flex items-center gap-3">
+              <a href="/about" className="bg-white text-[#0062E4] font-bold px-8 py-4 rounded-full transition-transform hover:scale-[1.02] flex items-center justify-center">
                 LEARN MORE ABOUT US
+              </a>
+              <a href="/about" className="bg-transparent border border-white/30 text-white p-4 rounded-2xl transition-all hover:bg-white/10 flex items-center justify-center">
+                <ArrowUpRight size={24} />
               </a>
             </div>
           </div>
 
-          {/* Right Side: Image Accordion */}
-          <div className="w-full md:w-1/2">
-            {/* Changed flex-col to flex-row to keep the layout consistent */}
-            <div className="flex flex-row items-center justify-center gap-4 overflow-x-auto p-4">
-              {accordionItems.map((item, index) => (
-                <AccordionItem
-                  key={item.id}
-                  item={item}
-                  isActive={index === activeIndex}
-                  onMouseEnter={() => handleItemHover(index)}
-                />
-              ))}
-            </div>
+          <div className="w-full lg:w-1/2 flex gap-3 h-[500px]">
+            {accordionItems.map((item, index) => (
+              <AccordionItem
+                key={item.id}
+                item={item}
+                isActive={index === activeIndex}
+                onMouseEnter={() => setActiveIndex(index)}
+              />
+            ))}
           </div>
         </div>
       </section>
