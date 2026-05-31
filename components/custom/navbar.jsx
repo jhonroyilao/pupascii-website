@@ -9,7 +9,7 @@ import { LimelightNav } from "@/components/ui/limelight-nav"
 const navItems = [
   { id: "home",        label: "Home",        href: "/" },
   { id: "about",       label: "About Us",    href: "/about" },
-  { id: "committees",  label: "Committees",  href: "/committees" },
+  { id: "committee",  label: "Committee",  href: "/committee" },
   { id: "events",      label: "Events",      href: "/events" },
   { id: "merch",       label: "Merch",       href: "/merch" },
 ]
