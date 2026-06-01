@@ -146,7 +146,7 @@ export default function FAQSection() {
 
             {/* Mascot */}
             <Image
-              src="/hopper.png"
+              src="/hopper1.png"
               alt="Mascot"
               width={240}
               height={240}
