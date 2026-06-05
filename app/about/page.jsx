@@ -13,6 +13,24 @@ import { Highlighter } from "@/components/ui/highlighter"
 import { CometCard } from "@/components/ui/comet-card"
 import Button from "@/components/ui/button"
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card"
+import {Carousel, CarouselContent, CarouselItem,} from "@/components/ui/carousel"
+import { TextScramble } from "@/components/ui/text-scramble"
+import CircularGallery from "@/components/ui/circulargallery"
+
+
+function ScrollTextScramble({ text }) {
+  const ref = useRef(null)
+  const inView = useInView(ref, {
+    once: true,
+    margin: "-10% 0px",
+  })
+
+  return (
+    <span ref={ref}>
+      {inView ? <TextScramble text={text} /> : <span>{text}</span>}
+    </span>
+  )
+}
 
 const hopper = [
    {
@@ -60,12 +78,247 @@ export default function AboutPage() {
       <Navbar />
 
       <div
-        className="relative pt-24 pb-80"
-        style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
-      >
+        className="relative w-full pb-80 overflow-hidden mb-20"
+        style={{
+          background:
+            'linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)',
+        }}>
+
+        {/*Gallery*/}
+        <div className="relative mt-20 h-[700px] w-full overflow-hidden">
+          <CircularGallery
+            items={[
+              { image: "/aboutpic2.png", text: "" },
+              { image: "/aboutpic3.png", text: "" },
+              { image: "/mission.png", text: "" },
+              { image: "/vision.png", text: "" },
+              { image: "/pic1.jpg", text: "" },
+              { image: "/pic2.jpg", text: "" },
+              { image: "/pic3.jpg", text: "" }
+            ]}
+            bend={2.5}
+            textColor="#ffffff"
+            borderRadius={0.06}
+            scrollSpeed={1.5}
+            scrollEase={0.08}
+          />
+        </div>
+
+        {/*Who is ASCII*/}    
+        <div className="relative w-full">
+            <TextAnimate
+                animation="blurInUp"
+                by="word"
+                className="font-bold text-center text-white"
+                style={{
+                  fontFamily: "Instrument Sans, sans-serif",
+                  fontSize: "clamp(3rem, 7vw, 6rem)",
+                }}
+              >
+                Who is ASCII?
+              </TextAnimate>
+            
+            <p className="text-center text-white text-[20px]" style={{fontFamily: "Inter, sans-serif"}}>
+              Founded in 2011, the PUP Association of Students for Computer Intelligence Integration (PUP
+               <br />
+               ASCII) was established as the official academic organization of the Department of Computer 
+               <br />
+               Science to promote technological excellence while integrating culture and the arts.</p>
+            <p></p>
+        </div >
+      </div>
+    
+    {/*Folder Images*/}   
+    <div className="relative min-h-[420px] w-full sm:min-h-[100px] md:min-h-[300px] lg:min-h-[400px]">
+      {/* Left folder */}
+      <div className="absolute left-[-90px] top-[-90px] z-10 sm:left-[-70px] sm:top-[-120px] md:left-[-40px] md:top-[-160px] lg:left-[-10px] lg:top-[-200px]">
+        <img
+          src="/left.png"
+          alt="Left Folder"
+          className="w-[55vw] max-w-[300px] object-contain sm:max-w-[360px] md:w-[42vw] md:max-w-[430px] lg:w-[38vw] lg:max-w-[500px]"
+        />
       </div>
 
-      <About/>
+      {/* Right folder */}
+      <div className="absolute right-[-90px] top-[-90px] z-10 sm:right-[-70px] sm:top-[-120px] md:right-[-40px] md:top-[-160px] lg:right-[-10px] lg:top-[-200px]">
+        <img
+          src="/right.png"
+          alt="Right Folder"
+          className="w-[55vw] max-w-[300px] object-contain sm:max-w-[360px] md:w-[42vw] md:max-w-[430px] lg:w-[38vw] lg:max-w-[500px]"
+        />
+      </div>
+
+      {/* Middle folder/card */}
+      <div className="absolute left-1/2 top-[-150px] z-20 -translate-x-1/2 sm:top-[-200px] md:top-[-260px] lg:top-[-320px]">
+        <img
+          src="/middle.png"
+          alt="Middle Folder"
+          className="w-[88vw] max-w-[520px] object-contain sm:max-w-[650px] md:w-[70vw] md:max-w-[850px] lg:w-[58vw] lg:max-w-[1200px]"
+        />
+      </div>
+    </div>
+    
+    {/*Statistics*/}   
+    <div className="mt-8 mx-auto grid w-[90%] max-w-[820px] grid-cols-1 gap-16 md:grid-cols-3">
+      <div className="flex h-[110px] flex-col items-center justify-center rounded-[10px] border-4 border-[#0062E4] bg-white md:h-[135px]">
+        <h3 className="text-[36px] font-bold leading-none text-[#0062E4] md:text-[60px]">
+          <ScrollTextScramble text="4.8K+" />
+        </h3>
+        <p className="mt-2 text-center text-[12px] font-medium text-gray-600 md:text-[14px]">
+          Social Media Followers
+        </p>
+      </div>
+
+      <div className="flex h-[110px] flex-col items-center justify-center rounded-[10px] border-4 border-[#0062E4] bg-white md:h-[135px]">
+        <h3 className="text-[36px] font-bold leading-none text-[#0062E4] md:text-[60px]">
+          <ScrollTextScramble text="100+" />
+        </h3>
+        <p className="mt-2 text-center text-[12px] font-medium text-gray-600 md:text-[14px]">
+          Active Members
+        </p>
+      </div>
+
+      <div className="flex h-[110px] flex-col items-center justify-center rounded-[10px] border-4 border-[#0062E4] bg-white md:h-[135px]">
+        <h3 className="text-[36px] font-bold leading-none text-[#0062E4] md:text-[60px]">
+          <ScrollTextScramble text="70+" />
+        </h3>
+        <p className="mt-2 text-center text-[12px] font-medium text-gray-600 md:text-[14px]">
+          Events Hosted
+        </p>
+      </div>
+    </div>
+
+    {/*Mission and Vision*/}   
+    <div className="w-full mt-24 mb-20">
+      <TextAnimate
+                animation="slideUp"
+                by="line"
+                className="font-bold text-center"
+                style={{
+                  fontFamily: "Instrument Sans, sans-serif",
+                  fontSize: "clamp(3rem, 7vw, 6rem)",
+                }}
+              >
+                mission & vision
+      </TextAnimate>
+      <h2 className="text-center text-gray-500 text-2xl" style={{fontFamily: "Inter, sans-serif"}}>The core ideals that shape PUP ASCII’s direction and community.</h2>
+    </div>
+    
+    {/*Vision*/}   
+    <div className="max-w-7xl mx-auto px-6 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Left — group photo */}
+          <div
+            className="relative rounded-2xl overflow-hidden aspect-[4/3]"
+          >
+            <Image
+              src="/mission.png"
+              alt="PUP ASCII members"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Right — tagline + text */}
+          <div className="space-y-6">
+            <div
+              className="font-bold leading-tight"
+              style={{
+                fontFamily: "Instrument Sans, sans-serif",
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+              }}
+            >
+              <p className="text-sm tracking-widest text-[20px] mb-[-10px] text-blue-500" style={{ fontFamily: "Inter, sans-serif" }}>
+                /what we do
+              </p>
+              <TextAnimate animation="blurInUp" by="word" className="inline text-black">
+                our mission
+              </TextAnimate>
+            </div>
+
+            <p
+              className="text-gray-600 text-[15px] leading-relaxed text-justify"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              To give <strong>computer science</strong> newfound respect and
+              recognition: disseminate significant and useful information that
+              contributes to Computer Science; develop learning and a deeper
+              understanding of Computer Science; expand the current knowledge base of
+              every student and promote academic excellence; appreciate culture and
+              arts through various ways of indoctrination of computer-related studies
+              and subjects.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      {/*Vision*/}   
+      <div className="max-w-7xl mx-auto px-6 pb-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Left — tagline + text */}
+        <div className="space-y-6">
+            <div
+              className="font-bold leading-tight"
+              style={{
+                fontFamily: "Instrument Sans, sans-serif",
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+              }}
+            >
+              <p
+                className="text-sm tracking-widest text-[20px] mb-[-10px] text-blue-500"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                /what we aspire to be
+              </p>
+
+              <TextAnimate animation="blurInUp" by="word" className="inline text-black">
+                our vision
+              </TextAnimate>
+            </div>
+
+            <p
+              className="text-gray-600 text-[15px] leading-relaxed text-justify"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              An organization focusing on the general interest of computer education and excellence while promoting Computer Science as a frontier for creativity and innovation.
+            </p>
+
+             <button className="flex flex-row justify-center items-center w-[215px] px-[37px] py-[10px] gap-[5px] bg-white rounded-[10px] border border-[#3DCBFF] shadow-[0px_0px_69.6px_rgba(0,0,0,0.09)] transition-transform hover:-translate-y-1">
+                <span
+                  className="font-medium text-[18px] leading-[28px] whitespace-nowrap"
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    background: "radial-gradient(136.74% 156.21% at 17.55% 30.27%, #3DCBFF 0%, #0062E4 50%, #063A80 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    color: "transparent" 
+                }}
+                >
+                  get to know us
+                </span>
+               <Image 
+                  src="/svg/asciiarrow.svg" 
+                  alt="Arrow Right" 
+                  width={20} 
+                  height={20} 
+                  className="object-contain"
+                />
+              </button>
+          </div>
+
+          {/* Right — group photo */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+            <Image
+              src="/vision.png"
+              alt="PUP ASCII members"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </div>
 
       {/* ── MEET HOPPER ── */}
       <div className="w-full py-20 px-6 mt-10"
