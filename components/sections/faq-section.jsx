@@ -52,26 +52,18 @@ export default function FAQSection() {
     /faqs
   </p>
 
-   <h4 className="mx-auto max-w-5xl font-bold tracking-tight text-black">
-  <TextAnimate
-    animation="blurInUp"
-    by="word"
-    className="text-4xl md:text-6xl lg:text-7xl leading-tight"
-    style={{ fontFamily: "Instrument Sans, sans-serif" }}
-  >
-  frequently
-  </TextAnimate>
+   <h4 className="font-bricolage font-bold tracking-tight leading-none">
+  <div className="text-4xl md:text-6xl lg:text-7xl text-black">
+    <TextAnimate animation="blurInUp" by="word">
+      frequently
+    </TextAnimate>
+  </div>
 
-  {" "}
-
-  <TextAnimate
-    animation="blurInUp"
-    by="word"
-    className="text-4xl md:text-6xl lg:text-7xl leading-tight text-[#0062e4]"
-    style={{ fontFamily: "Instrument Sans, sans-serif" }}
-  >
-  asked questions!
-  </TextAnimate>
+  <div className="text-4xl md:text-6xl lg:text-7xl text-[#0062e4]">
+    <TextAnimate animation="blurInUp" by="word">
+      asked questions!
+    </TextAnimate>
+  </div>
 </h4>
 
   <p

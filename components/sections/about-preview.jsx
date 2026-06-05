@@ -41,7 +41,7 @@ export default function About() {
   return (
     <section className="relative bg-white">
 
-      {/* 🔵 FLOATING SAFARI CARD (overlaps Hero + About) 
+      {/*  FLOATING SAFARI CARD (overlaps Hero + About) 
       <div className="absolute -top-[200px] left-1/2 -translate-x-1/2 z-50 w-full max-w-[900px] px-6">
         <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
           <Safari url="pupascii-2526.com" imageSrc="/group-photo.jpg" />
@@ -64,9 +64,9 @@ export default function About() {
             <TextAnimate
               animation="blurInUp"
               by="word"
-              className="font-bold text-black leading-tight"
+              className="font-bold text-black leading-tighter"
               style={{
-                fontFamily: "Instrument Sans, sans-serif",
+                fontFamily: "Bricolage Grotesque, sans-serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
               }}
             >
@@ -128,23 +128,17 @@ export default function About() {
 
           {/* Right */}
           <div className="space-y-6">
-            <div
-              className="font-bold leading-tight"
+            <TextAnimate
+              animation="blurInUp"
+              by="word"
+              className="font-bold text-black leading-tighter tracking-tight"
               style={{
-                fontFamily: "Instrument Sans, sans-serif",
+                fontFamily: "Bricolage Grotesque, sans-serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
               }}
             >
-              <TextAnimate animation="blurInUp" by="word" className="inline text-black">
-                driven
-              </TextAnimate>{" "}
-              <TextAnimate animation="blurInUp" by="word" className="inline text-black">
-                by
-              </TextAnimate>{" "}
-              <TextAnimate animation="blurInUp" by="word" className="inline text-[#0062e4]">
-                passion
-              </TextAnimate>
-            </div>
+              driven by passion
+            </TextAnimate>
 
             <p
               className="text-gray-600 text-[15px] leading-relaxed"

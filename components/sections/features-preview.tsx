@@ -53,8 +53,8 @@ export default function FeaturesSectionDemo() {
           <TextAnimate
             animation="blurInUp"
             by="word"
-            className="text-4xl md:text-6xl lg:text-7xl leading-tight"
-            style={{ fontFamily: "Instrument Sans, sans-serif" }}
+            className="text-4xl font-bricolage md:text-6xl lg:text-7xl leading-tight "
+          
           >
             the things we made happen
           </TextAnimate>
@@ -97,8 +97,8 @@ const FeatureCard = ({ children, className }: { children?: React.ReactNode; clas
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
     <h3 
-      className="text-left text-2xl md:text-4xl lg:text-5xl leading-tight font-bold text-black"
-      style={{ fontFamily: "Instrument Sans, sans-serif" }}
+      className="text-left text-2xl md:text-4xl lg:text-4xl leading-tighter font-semibold text-black"
+      style={{ fontFamily: "Inter, sans-serif" }}
     >
       {children}
     </h3>
