@@ -1,5 +1,5 @@
 "use client"
-import About from "@/components/sections/about"
+import About from "@/components/sections/about-preview"
 import Navbar from "@/components/custom/navbar"
 import HeroSection from "@/components/sections/hero-section"
 import { CinematicFooter } from "@/components/ui/motion-footer"
