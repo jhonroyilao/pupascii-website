@@ -52,3 +52,69 @@
     font-family: var(--font-inter), sans-serif;
   }
 }
+
+@layer utilities {
+  .font-bricolage {
+    font-family: var(--font-bricolage), sans-serif;
+  }
+
+  .font-inter {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .font-instrument {
+    font-family: var(--font-instrument-sans), sans-serif;
+  }
+
+  .page-title,
+  .heading-1 {
+    @apply text-6xl md:text-8xl font-bricolage font-bold leading-tight;
+  }
+
+  .section-title,
+  .heading-2 {
+    @apply font-bold text-black font-bricolage;
+    line-height: 0.95;
+  }
+
+  .heading-3 {
+    @apply text-4xl md:text-6xl font-bold leading-tight;
+    font-family: var(--font-bricolage), sans-serif;
+  }
+
+  .heading-4 {
+    @apply text-3xl md:text-5xl font-bold leading-tight;
+    font-family: var(--font-instrument-sans), sans-serif;
+  }
+
+  .heading-5 {
+    @apply text-2xl font-semibold leading-tight;
+    font-family: var(--font-instrument-sans), sans-serif;
+  }
+
+  .heading-6 {
+    @apply text-xl font-medium leading-tight;
+    font-family: var(--font-instrument-sans), sans-serif;
+  }
+
+  .page-description {
+    @apply text-[18px] tracking-tight;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .section-label {
+    @apply text-sm font-medium text-[#0062e4] tracking-widest uppercase;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .paragraph,
+  .body-copy {
+    @apply text-[15px] leading-relaxed;
+    font-family: var(--font-inter), sans-serif;
+    max-width: 36rem;
+  }
+
+  .bg-ascii-gradient {
+    background: linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%);
+  }
+}
