@@ -186,7 +186,7 @@ export const SkeletonThree = () => {
       <div className="relative flex h-full w-full flex-1 flex-col">
         <IconBrandYoutubeFilled className="absolute inset-0 z-10 m-auto h-16 w-16 text-red-500 transition-transform duration-300 group-hover/image:scale-110" />
         <img
-          src="group-photo.jpg"
+          src="asciicastthum.png"
           alt="Podcast"
           className="aspect-video h-full w-full rounded-xl object-cover object-center transition-all duration-300 group-hover/image:blur-sm shadow-md"
         />
