@@ -1,15 +1,12 @@
 "use client"
-import About from "@/components/sections/about" 
 import { Safari } from "@/components/ui/safari"
-import PixelBlast from "@/components/ui/pixelblast"
 import HeroButton from "@/components/ui/herobutton"
-import { TextScramble } from "@/components/ui/text-scramble"
-import { Boxes } from "@/components/ui/background-boxes"
-import { useScreenSize } from "@/hooks/use-screen-size"
+import RotatingText from "@/components/ui/rotating-text"
+import SafariMarquee from "@/components/ui/safari-marquee"
+import Text3DFlip from "@/components/ui/text-3d-flip"
+import { MorphingText } from "@/components/ui/morphing-text"
 
 export default function Hero() {
-  const screenSize = useScreenSize()
-
   return (
     <>
       <style>{`
@@ -17,81 +14,83 @@ export default function Hero() {
           from { opacity: 0; transform: translateY(24px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .hero-animate-1 { animation: fadeUp 0.6s ease 0.0s both; }
-        .hero-animate-2 { animation: fadeUp 0.6s ease 0.1s both; }
         .hero-animate-3 { animation: fadeUp 0.6s ease 0.2s both; }
         .hero-animate-4 { animation: fadeUp 0.6s ease 0.3s both; }
         .safari-float   { animation: fadeUp 0.8s ease 0.4s both; }
       `}</style>
 
-      <div className="relative">
-
-        {/* BLUE SECTION */}
+      {/* BLUE SECTION */}
+      <div
+        className="relative overflow-hidden"
+        style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
+      >
+        {/* Text content */}
         <div
-          className="relative pt-24 pb-90"
-          style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
+          className="relative pt-30 pb-2 max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5"
+          style={{ zIndex: 20 }}
         >
-          {/* Background boxes  <Boxes /> */}
-         {/*} <div style={{ position: "absolute", top: 5, left: 0, width: "100%", height: "100%", zIndex: 0, pointerEvents: "none" }}>
-            <PixelBlast
-              variant="circle" pixelSize={6} color="#ffffff"
-              patternScale={7.5} patternDensity={0.1} pixelSizeJitter={0.6}
-              enableRipples={false} liquid liquidStrength={0.12}
-              liquidRadius={1.2} liquidWobbleSpeed={5} speed={0.6}
-              edgeFade={0.25} transparent
-            />
-          </div>*/}
+          <span
+  className="inline-flex items-center justify-center gap-0 font-bold tracking-tighter text-white text-6xl md:text-8xl"
+  Heading
+>
 
-          
-          {/* Text content */}
-          <div className="relative max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5" style={{ zIndex: 1 }}>
-            <h1
-              className="hero-animate-2 font-normal text-white leading-tight tracking-tighter"
-              style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(2.8rem, 6vw, 5rem)" }}
-            >
-              Hello there! We are<br />
-              <TextScramble text="PUP ASCII" className="font-bold" />
-            </h1>
+  <span className="inline-flex items-center justify-center min-w-[5ch]">
+    <MorphingText className="font-bricolage" texts={["Built to Lead", "Built to Inspire", "Built to Exalt"]} />
+  </span>
+</span>
+           {/*} 
+            Built to
+            <span className="inline-block min-w-[0px]">
+              <RotatingText
+                texts={["Lead", "Inspire", "Exalt"]}
+                splitBy="characters"
+                staggerFrom="last"
+                staggerDuration={0.04}
+                rotationInterval={2600}
+                auto
+                loop
+                animatePresenceMode="wait"
+                mainClassName="tracking-tighter"
+              />
+            </span>
+          </span>
+            */}
+          <p
+            className="hero-animate-3 text-white/80 font-inter text-[18px] tracking-tight max-w-xl"
+          >
+            Hi there! We are PUP ASCII. The official academic organization of the Department of Computer Science
+            at the Polytechnic University of the Philippines.
+          </p>
 
-            <p className="hero-animate-3 text-white/80 text-[15px] tracking-tight max-w-md"
-              style={{ fontFamily: "Inter, sans-serif" }}>
-              The official academic organization of the Department of Computer Science
-              at the Polytechnic University of the Philippines.
-            </p>
-
-            <div className="hero-animate-4">
-              <HeroButton href="/about" label="LEARN MORE ABOUT US" />
-            </div>
+          <div className="hero-animate-4">
+            <HeroButton href="/about" label="LEARN MORE ABOUT US" />
           </div>
         </div>
 
-        {/* WHITE SECTION */}
-        <div className="bg-white w-full" style={{ paddingTop: "clamp(200px, 35vw, 520px)" }} />
-
-        {/* SAFARI — overlapping seam */}
+        {/* Safari card 
         <div
-          className="safari-float"
+          className="safari-float relative mx-auto pb-2"
           style={{
-            position: "absolute",
-            bottom: "20%",
-            left: 0,
-            right: 0,
-            display: "flex",
-            justifyContent: "center",
+            maxWidth: 900,
             paddingLeft: "clamp(16px, 4vw, 48px)",
             paddingRight: "clamp(16px, 4vw, 48px)",
             zIndex: 10,
           }}
         >
-          <div style={{ width: "100%", maxWidth: "clamp(320px, 80vw, 900px)" }}>
+          <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
             <Safari url="pupascii-2526.com" imageSrc="/group-photo.jpg" />
           </div>
-
-
         </div>
+        */}
 
+       {/* Marquee — slightly pushed down so it gets clipped by the parent */}
+        <div
+          className="relative w-full py-0 translate-y-6 md:translate-y-20"
+          style={{ zIndex: 0 }}
+        >
+          <SafariMarquee />
+        </div>
       </div>
-      
     </>
   )
 }

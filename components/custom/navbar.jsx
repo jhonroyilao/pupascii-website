@@ -9,7 +9,7 @@ import { LimelightNav } from "@/components/ui/limelight-nav"
 const navItems = [
   { id: "home",        label: "Home",        href: "/" },
   { id: "about",       label: "About Us",    href: "/about" },
-  { id: "committees",  label: "Committees",  href: "/committees" },
+  { id: "committee",  label: "Committee",  href: "/committee" },
   { id: "events",      label: "Events",      href: "/events" },
   { id: "merch",       label: "Merch",       href: "/merch" },
 ]
@@ -31,10 +31,9 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? "linear-gradient(135deg, rgba(0, 98, 228, 0.4), rgba(61, 203, 255, 1))": "transparent",
-        backdropFilter: scrolled ? "blur(50px)" : "none",
+        background: scrolled ? "#0062E4": "transparent",
+        backdropFilter: scrolled ? "blur(100px)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.1)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
@@ -42,10 +41,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/asciilogo.png"
+            src="/ascii_logo_w.png"
             alt="PUP ASCII Logo"
-            width={32}
-            height={32}
+            width={20}
+            height={20}
             className="object-contain"
           />
           <span
@@ -59,13 +58,6 @@ export default function Navbar() {
         {/* Nav links with limelight — glassmorphism pill */}
         <div
           className="hidden md:flex items-center rounded-full overflow-visible"
-          style={{
-            background: "rgba(255, 255, 255, 0.1)",
-            backdropFilter: "blur(16px)",
-            WebkitBackdropFilter: "blur(16px)",
-            border: "1px solid rgba(255, 255, 255, 0.25)",
-            boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-          }}
         >
           <LimelightNav
             items={navItems}

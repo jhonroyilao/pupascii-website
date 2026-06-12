@@ -52,26 +52,18 @@ export default function FAQSection() {
     /faqs
   </p>
 
-   <h4 className="mx-auto max-w-5xl font-bold tracking-tight text-black">
-  <TextAnimate
-    animation="blurInUp"
-    by="word"
-    className="text-4xl md:text-6xl lg:text-7xl leading-tight"
-    style={{ fontFamily: "Instrument Sans, sans-serif" }}
-  >
-  frequently
-  </TextAnimate>
+  <h4 className="font-bricolage font-bold leading-tight">
+  <div className="text-4xl md:text-6xl lg:text-7xl text-black">
+    <TextAnimate animation="blurInUp" by="word">
+      frequently
+    </TextAnimate>
+  </div>
 
-  {" "}
-
-  <TextAnimate
-    animation="blurInUp"
-    by="word"
-    className="text-4xl md:text-6xl lg:text-7xl leading-tight text-[#0062e4]"
-    style={{ fontFamily: "Instrument Sans, sans-serif" }}
-  >
-  asked questions!
-  </TextAnimate>
+  <div className="text-4xl md:text-6xl lg:text-7xl text-[#0062e4]">
+    <TextAnimate animation="blurInUp" by="word">
+      asked questions
+    </TextAnimate>
+  </div>
 </h4>
 
   <p
@@ -88,8 +80,8 @@ export default function FAQSection() {
             {/* Content */}
             <div className="space-y-2 relative z-10 pr-20">
               <h3
-                className="text-gray-900 font-semibold text-[25px] tracking-normal"
-                style={{ fontFamily: "Instrument Sans, sans-serif" }}
+                className="text-gray-900 font-semibold text-[25px] tracking-tight"
+                style={{ fontFamily: "Inter, sans-serif" }}
               >
                 Still have questions?
               </h3>
@@ -116,10 +108,6 @@ export default function FAQSection() {
                     />
                   </svg>
                 </span>
-
-
-
-
 
                 {/* Instagram   <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M25.0284 9.29663H25.0427M10.0107 2.86047H24.3132C28.2628 2.86047 31.4645 6.06221 31.4645 10.0118V24.3143C31.4645 28.2639 28.2628 31.4656 24.3132 31.4656H10.0107C6.06111 31.4656 2.85938 28.2639 2.85938 24.3143V10.0118C2.85938 6.06221 6.06111 2.86047 10.0107 2.86047ZM22.883 16.262C23.0595 17.4523 22.8562 18.668 22.3019 19.7361C21.7477 20.8042 20.8708 21.6704 19.7959 22.2114C18.7211 22.7524 17.503 22.9407 16.3149 22.7495C15.1269 22.5584 14.0293 21.9974 13.1784 21.1465C12.3276 20.2956 11.7666 19.1981 11.5755 18.0101C11.3843 16.822 11.5726 15.6039 12.1136 14.529C12.6546 13.4542 13.5208 12.5773 14.5889 12.023C15.657 11.4688 16.8727 11.2655 18.063 11.442C19.2772 11.6221 20.4013 12.1878 21.2692 13.0558C22.1371 13.9237 22.7029 15.0478 22.883 16.262Z" stroke="#676E76" stroke-width="3.00354" stroke-linecap="round" stroke-linejoin="round"/>
@@ -154,7 +142,7 @@ export default function FAQSection() {
 
             {/* Mascot */}
             <Image
-              src="/hopper.png"
+              src="/hopper1.png"
               alt="Mascot"
               width={240}
               height={240}
