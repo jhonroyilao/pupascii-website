@@ -75,7 +75,7 @@ export function SirMon({}) {
             </div>
 
             <div className="space-y-6 text-[#0062E4]">
-              <p className="text-sm tracking-widest opacity-90 text-[30px] mb-[-10px] text-[#0062E4]" style={{ fontFamily: "Inter, sans-serif" }}>
+              <p className="text-sm tracking-widest opacity-90 text-[30px] mb-[-10px] text-[#0062E4] pb-3" style={{ fontFamily: "Inter, sans-serif" }}>
                 / ASCII's Organization Advisor
               </p>
 
@@ -95,9 +95,10 @@ export function SirMon({}) {
                 className="text-[15px] leading-relaxed text-justify opacity-90"
                 style={{ fontFamily: "Inter, sans-serif"}}
               >
-                <strong>Sir Montaigne</strong> the Chairperson of the Department of Computer Science and the Organization Advisor of ASCII, ...
+                <strong>Sir Montaigne</strong>, the Chairperson of the Department of Computer Science in CCIS and the Organization Advisor of ASCII.
                 <br /><br />
-                insert text
+                He graduated Bachelor of Science in Computer Science (BSCS) at Adamson University, and Master of Science in Information Technology (MSIT) at Polytechnic University of the Philippines-Open University. 
+                His research interests include Software Development, Web Application, Android Development, Big Data, Data Science, Human- Computer Interaction (HCI), and Internet of Things (IOT).
               </p>
             </div>
           </div>
