@@ -14,14 +14,14 @@ const committeeMembers = [
 
 export function CommitteePreview() {
   return (
-    <section className="py-20 md:py-24 bg-background">
+    <section className="py-20 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             Leadership & Organization
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Meet the dedicated officers and department heads steering ASCII towards excellence.
           </p>
         </div>
@@ -32,23 +32,23 @@ export function CommitteePreview() {
             <img
               src="/placeholder.jpg"
               alt="ASCII leadership team"
-              className="w-full h-72 md:h-96 object-cover rounded-xl border border-border shadow-lg"
+              className="w-full h-72 md:h-96 object-cover rounded-xl border border-gray-200 shadow-lg"
             />
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-foreground mb-4">
+            <h3 className="text-2xl font-semibold text-black mb-4">
               One Team. One Vision.
             </h3>
-            <p className="text-base text-muted-foreground mb-4">
+            <p className="text-base text-gray-600 mb-4">
               Our leadership team and department heads are united in building a strong, supportive,
               and innovative organization. Through collaborative planning and proactive action,
               we deliver impactful programs for all members.
             </p>
-            <ul className="space-y-2 text-muted-foreground">
+            <ul className="space-y-2 text-gray-600">
               {committeeMembers.slice(0, 6).map((member) => (
                 <li key={member.name} className="flex justify-between">
                   <span>{member.name}</span>
-                  <span className="font-medium text-foreground">{member.position}</span>
+                  <span className="font-medium text-black">{member.position}</span>
                 </li>
               ))}
             </ul>

@@ -1,5 +1,9 @@
 "use client";
 
+export default function EventsPage() {
+  return (
+    <main className="min-h-screen bg-white">
+      <Navbar />
 import { useState } from "react";
 import { Search, ImageIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/custom/navbar";
