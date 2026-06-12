@@ -16,7 +16,9 @@ import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card"
 import {Carousel, CarouselContent, CarouselItem,} from "@/components/ui/carousel"
 import { TextScramble } from "@/components/ui/text-scramble"
 import CircularGallery from "@/components/ui/circulargallery"
-
+import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack"
+import { ShinyButton } from "@/components/ui/shiny-button"
+import { ArrowRight } from "lucide-react"
 
 function ScrollTextScramble({ text }) {
   const ref = useRef(null)
@@ -85,7 +87,7 @@ export default function AboutPage() {
         }}>
 
         {/*Gallery*/}
-        <div className="relative mt-20 h-[700px] w-full overflow-hidden">
+        <div className="relative  h-[700px] w-full overflow-hidden">
           <CircularGallery
             items={[
               { image: "/aboutpic2.png", text: "" },
@@ -99,35 +101,86 @@ export default function AboutPage() {
             bend={2.5}
             textColor="#ffffff"
             borderRadius={0.06}
-            scrollSpeed={1.5}
+            scrollSpeed={1.0}
             scrollEase={0.08}
           />
         </div>
 
         {/*Who is ASCII*/}    
-        <div className="relative w-full">
+        <div className="relative pt-2 pb-2 max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5">
             <TextAnimate
                 animation="blurInUp"
                 by="word"
-                className="font-bold text-center text-white"
-                style={{
-                  fontFamily: "Instrument Sans, sans-serif",
-                  fontSize: "clamp(3rem, 7vw, 6rem)",
-                }}
-              >
+                className="nline-flex items-center justify-center min-w-[5ch] font-bold tracking-tighter text-white heading-1">
                 Who is ASCII?
               </TextAnimate>
             
-            <p className="text-center text-white text-[20px]" style={{fontFamily: "Inter, sans-serif"}}>
-              Founded in 2011, the PUP Association of Students for Computer Intelligence Integration (PUP
-               <br />
-               ASCII) was established as the official academic organization of the Department of Computer 
-               <br />
+            <p className="hero-animate-3 text-white/80 page-description">
+              Founded in 2011, the PUP Association of Students for Computer Intelligence Integration (PUP ASCII) was established as the official academic organization of the Department of Computer 
                Science to promote technological excellence while integrating culture and the arts.</p>
             <p></p>
         </div >
       </div>
-    
+
+      <div className="max-w-7xl mx-auto px-6 pb-16">
+        <div className="rounded-[3rem] bg-gradient-to-br from-[#3dcbff] via-[#0062e4] to-[#063a80] p-6 md:p-10 shadow-[0_40px_120px_rgba(0,0,0,0.25)] overflow-hidden">
+          <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),transparent_55%)]" />
+          <div className="relative max-w-4xl mx-auto text-center text-white mb-10">
+            <p className="text-sm uppercase tracking-[0.35em] text-[#cfe8ff] mb-4">
+              /beyond the classroom
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+              beyond the classroom
+            </h2>
+          </div>
+
+          <div className="relative h-[75vh] rounded-[40px] bg-white/10 border border-white/10 p-4 md:p-8 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+            <ScrollStack
+              className="h-full"
+              itemDistance={28}
+              itemScale={0.02}
+              itemStackDistance={48}
+              baseScale={0.92}
+              blurAmount={4}
+            >
+              <ScrollStackItem itemClassName="bg-gradient-to-br from-[#0b4bb3] via-[#1d7bef] to-[#044f96] text-white">
+                <div className="flex h-full flex-col justify-between">
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.35em] text-[#bde4ff] mb-4">
+                      2015–2019
+                    </p>
+                    <h3 className="text-4xl font-bold tracking-tight">
+                      beyond the classroom
+                    </h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-slate-100 max-w-2xl">
+                    ASCII began expanding its reach through major seminars, bootcamps, and student-driven tech initiatives. These programs connected students with real-world innovation while strengthening community and leadership.
+                  </p>
+                </div>
+              </ScrollStackItem>
+
+              <ScrollStackItem itemClassName="bg-white">
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-black">Card 2</h3>
+                  <p className="text-gray-600">
+                    This is the second card in the stack.
+                  </p>
+                </div>
+              </ScrollStackItem>
+
+              <ScrollStackItem itemClassName="bg-white">
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-black">Card 3</h3>
+                  <p className="text-gray-600">
+                    This is the third card in the stack.
+                  </p>
+                </div>
+              </ScrollStackItem>
+            </ScrollStack>
+          </div>
+        </div>
+      </div>
+
     {/*Folder Images*/}   
     <div className="relative min-h-[420px] w-full sm:min-h-[100px] md:min-h-[300px] lg:min-h-[400px]">
       {/* Left folder */}
@@ -149,13 +202,6 @@ export default function AboutPage() {
       </div>
 
       {/* Middle folder/card */}
-      <div className="absolute left-1/2 top-[-150px] z-20 -translate-x-1/2 sm:top-[-200px] md:top-[-260px] lg:top-[-320px]">
-        <img
-          src="/middle.png"
-          alt="Middle Folder"
-          className="w-[88vw] max-w-[520px] object-contain sm:max-w-[650px] md:w-[70vw] md:max-w-[850px] lg:w-[58vw] lg:max-w-[1200px]"
-        />
-      </div>
     </div>
     
     {/*Statistics*/}   
@@ -189,19 +235,20 @@ export default function AboutPage() {
     </div>
 
     {/*Mission and Vision*/}   
-    <div className="w-full mt-24 mb-20">
+    <div className=" text-center w-full mt-24 mb-20">
+      
       <TextAnimate
                 animation="slideUp"
                 by="line"
-                className="font-bold text-center"
+                className="section-title"
                 style={{
-                  fontFamily: "Instrument Sans, sans-serif",
-                  fontSize: "clamp(3rem, 7vw, 6rem)",
+                    fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 }}
               >
                 mission & vision
       </TextAnimate>
-      <h2 className="text-center text-gray-500 text-2xl" style={{fontFamily: "Inter, sans-serif"}}>The core ideals that shape PUP ASCII’s direction and community.</h2>
+      
+      <div className="text-gray-600 pt-2">The core ideals that shape PUP ASCII’s direction and community.</div>
     </div>
     
     {/*Vision*/}   
@@ -229,7 +276,7 @@ export default function AboutPage() {
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
               }}
             >
-              <p className="text-sm tracking-widest text-[20px] mb-[-10px] text-blue-500" style={{ fontFamily: "Inter, sans-serif" }}>
+              <p className="section-label">
                 /what we do
               </p>
               <TextAnimate animation="blurInUp" by="word" className="inline text-black">
@@ -238,8 +285,7 @@ export default function AboutPage() {
             </div>
 
             <p
-              className="text-gray-600 text-[15px] leading-relaxed text-justify"
-              style={{ fontFamily: "Inter, sans-serif" }}
+              className="paragraph text-gray-600 text-justify"
             >
               To give <strong>computer science</strong> newfound respect and
               recognition: disseminate significant and useful information that
@@ -266,8 +312,7 @@ export default function AboutPage() {
               }}
             >
               <p
-                className="text-sm tracking-widest text-[20px] mb-[-10px] text-blue-500"
-                style={{ fontFamily: "Inter, sans-serif" }}
+                className="section-label"
               >
                 /what we aspire to be
               </p>
@@ -278,34 +323,14 @@ export default function AboutPage() {
             </div>
 
             <p
-              className="text-gray-600 text-[15px] leading-relaxed text-justify"
-              style={{ fontFamily: "Inter, sans-serif" }}
+              className="paragraph text-gray-600 text-justify"
             >
               An organization focusing on the general interest of computer education and excellence while promoting Computer Science as a frontier for creativity and innovation.
             </p>
 
-             <button className="flex flex-row justify-center items-center w-[215px] px-[37px] py-[10px] gap-[5px] bg-white rounded-[10px] border border-[#3DCBFF] shadow-[0px_0px_69.6px_rgba(0,0,0,0.09)] transition-transform hover:-translate-y-1">
-                <span
-                  className="font-medium text-[18px] leading-[28px] whitespace-nowrap"
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    background: "radial-gradient(136.74% 156.21% at 17.55% 30.27%, #3DCBFF 0%, #0062E4 50%, #063A80 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    color: "transparent" 
-                }}
-                >
-                  get to know us
-                </span>
-               <Image 
-                  src="/svg/asciiarrow.svg" 
-                  alt="Arrow Right" 
-                  width={20} 
-                  height={20} 
-                  className="object-contain"
-                />
-              </button>
+            <ShinyButton href="/committee" icon={<ArrowRight size={18} />}>
+            get to know us
+          </ShinyButton>
           </div>
 
           {/* Right — group photo */}
@@ -328,7 +353,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
               
             {/*Main Hopper Image*/}
-            <div className="w-full mx-auto lg:mx-0 relative">
+            <div className="w-md mx-auto lg:mx-0 relative">
                <CometCard className="w-full">
                  <div className="relative w-full aspect-[592/639] rounded-[20px] border-[5px] border-white overflow-hidden bg-white shadow-xl">
                     <Image
@@ -453,6 +478,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+
       
       <CinematicFooter/>
     </main>
