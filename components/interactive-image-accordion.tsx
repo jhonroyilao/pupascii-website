@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { ArrowUpRight } from "lucide-react";
 
 const accordionItems = [
-  { id: 1, title: 'EXECUTIVES', imageUrl: '/executives.jpg' },
-  { id: 2, title: 'CREATIVES', imageUrl: '/creatives.jpg' },
+  { id: 1, title: 'EXECUTIVES', imageUrl: '/execcomm.jpg' },
+  { id: 2, title: 'CREATIVES', imageUrl: '/ccc.png' },
   { id: 3, title: 'PROGRAMS', imageUrl: '/prog.jpg' },
   { id: 4, title: 'MARKETING', imageUrl: '/marketing.jpg' },
   { id: 5, title: 'RESEARCH & EXTENSIONS', imageUrl: '/rne.jpg' },
@@ -40,21 +40,22 @@ export function LandingAccordionItem() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative pt-20 pb-10 bg-gradient-to-b from-[#3DCBFF] via-[#0062E4] to-[#063A80]">
+    <div className="relative pt-20 pb-10 bg-gradient-to-b from-[#3DCBFF] via-[#0062E4] to-[#063A80] rounded-b-[50px]">
       <section className="container mx-auto px-6 py-12">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           
-          <div className="w-full lg:w-1/2 text-white">
-            <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tighter">Meet the Leaders</h1>
-            <p className="mt-6 text-lg text-blue-50 opacity-90 max-w-md">
-              The driving force behind ASCII, leading the team with creativity, collaboration, and a shared vision.
+          <div className="w-full lg:w-1/2 text-white pl-30">
+            <h1 className="text-6xl md:text-9xl font-bold leading-tight tracking-tighter">Meet the Leaders</h1>
+            <p className="mt-6 text-lg text-blue-50 opacity-90 max-w-x1">
+              The driving force behind ASCII, leading the team with creativity, collaboration, and a shared vision to build meaningful experiences for the community.
             </p>
             
             {/* The Dual Button Layout */}
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-8 flex items-center justify-start lg:justify-end gap-3">
               <a href="/about" className="bg-white text-[#0062E4] font-bold px-8 py-4 rounded-full transition-transform hover:scale-[1.02] flex items-center justify-center">
                 LEARN MORE ABOUT US
               </a>
+
               <a href="/about" className="bg-transparent border border-white/30 text-white p-4 rounded-2xl transition-all hover:bg-white/10 flex items-center justify-center">
                 <ArrowUpRight size={24} />
               </a>
