@@ -4,6 +4,7 @@ import {
   Inter,
   Bricolage_Grotesque,
 } from "next/font/google";
+import { SmoothCursor } from "@/components/ui/smooth-cursor"
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
         className={`${instrumentSans.variable} ${inter.variable} ${bricolage.variable}`}
       >
         {children}
+        <SmoothCursor />
       </body>
     </html>
   );
