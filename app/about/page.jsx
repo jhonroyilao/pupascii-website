@@ -80,15 +80,33 @@ export default function AboutPage() {
       <Navbar />
 
       <div
-        className="relative w-full pb-80 overflow-hidden mb-20"
-        style={{
+          className="relative w-full overflow-hidden mb-10 rounded-b-3xl"
+          style={{
           background:
             'linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)',
         }}>
 
-        {/*Gallery*/}
-        <div className="relative  h-[700px] w-full overflow-hidden">
-          <CircularGallery
+        
+
+      {/* Content wrapper */}
+        <div className="relative z-30 max-w-5xl mx-auto px-6 pt-24 text-center flex flex-col items-center gap-2">
+          
+          {/* Who is ASCII */}
+          <TextAnimate
+            animation="blurInUp"
+            by="word"
+            className="inline-flex items-center justify-center font-bold tracking-tighter text-white heading-1"
+          >
+            Who is ASCII?
+          </TextAnimate>
+
+          <p className="text-white/80 page-description">
+            Founded in 2011, the PUP Association of Students for Computer Intelligence Integration (PUP ASCII) was established as the official academic organization of the Department of Computer Science to promote technological excellence while integrating culture and the arts.
+          </p>
+        </div>
+
+<div className="w-full h-[700px] relative z-10 circular-gallery -mt-20">
+            <CircularGallery
             items={[
               { image: "/aboutpic2.png", text: "" },
               { image: "/aboutpic3.png", text: "" },
@@ -96,113 +114,32 @@ export default function AboutPage() {
               { image: "/vision.png", text: "" },
               { image: "/pic1.jpg", text: "" },
               { image: "/pic2.jpg", text: "" },
-              { image: "/pic3.jpg", text: "" }
+              { image: "/pic3.jpg", text: "" },
             ]}
-            bend={2.5}
+            bend={0.5}
             textColor="#ffffff"
             borderRadius={0.06}
-            scrollSpeed={1.0}
+            scrollSpeed={0.5}
             scrollEase={0.08}
           />
         </div>
 
-        {/*Who is ASCII*/}    
-        <div className="relative pt-2 pb-2 max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5">
-            <TextAnimate
-                animation="blurInUp"
-                by="word"
-                className="nline-flex items-center justify-center min-w-[5ch] font-bold tracking-tighter text-white heading-1">
-                Who is ASCII?
-              </TextAnimate>
-            
-            <p className="hero-animate-3 text-white/80 page-description">
-              Founded in 2011, the PUP Association of Students for Computer Intelligence Integration (PUP ASCII) was established as the official academic organization of the Department of Computer 
-               Science to promote technological excellence while integrating culture and the arts.</p>
-            <p></p>
-        </div >
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 pb-16">
-        <div className="rounded-[3rem] bg-gradient-to-br from-[#3dcbff] via-[#0062e4] to-[#063a80] p-6 md:p-10 shadow-[0_40px_120px_rgba(0,0,0,0.25)] overflow-hidden">
-          <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),transparent_55%)]" />
-          <div className="relative max-w-4xl mx-auto text-center text-white mb-10">
-            <p className="text-sm uppercase tracking-[0.35em] text-[#cfe8ff] mb-4">
-              /beyond the classroom
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-              beyond the classroom
-            </h2>
-          </div>
-
-          <div className="relative h-[75vh] rounded-[40px] bg-white/10 border border-white/10 p-4 md:p-8 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
-            <ScrollStack
-              className="h-full"
-              itemDistance={28}
-              itemScale={0.02}
-              itemStackDistance={48}
-              baseScale={0.92}
-              blurAmount={4}
-            >
-              <ScrollStackItem itemClassName="bg-gradient-to-br from-[#0b4bb3] via-[#1d7bef] to-[#044f96] text-white">
-                <div className="flex h-full flex-col justify-between">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.35em] text-[#bde4ff] mb-4">
-                      2015–2019
-                    </p>
-                    <h3 className="text-4xl font-bold tracking-tight">
-                      beyond the classroom
-                    </h3>
-                  </div>
-                  <p className="text-sm leading-relaxed text-slate-100 max-w-2xl">
-                    ASCII began expanding its reach through major seminars, bootcamps, and student-driven tech initiatives. These programs connected students with real-world innovation while strengthening community and leadership.
-                  </p>
-                </div>
-              </ScrollStackItem>
-
-              <ScrollStackItem itemClassName="bg-white">
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-black">Card 2</h3>
-                  <p className="text-gray-600">
-                    This is the second card in the stack.
-                  </p>
-                </div>
-              </ScrollStackItem>
-
-              <ScrollStackItem itemClassName="bg-white">
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-black">Card 3</h3>
-                  <p className="text-gray-600">
-                    This is the third card in the stack.
-                  </p>
-                </div>
-              </ScrollStackItem>
-            </ScrollStack>
-          </div>
-        </div>
-      </div>
-
-    {/*Folder Images*/}   
-    <div className="relative min-h-[420px] w-full sm:min-h-[100px] md:min-h-[300px] lg:min-h-[400px]">
-      {/* Left folder */}
-      <div className="absolute left-[-90px] top-[-90px] z-10 sm:left-[-70px] sm:top-[-120px] md:left-[-40px] md:top-[-160px] lg:left-[-10px] lg:top-[-200px]">
+        {/* Decorative images (still absolute but adjusted safely) */}
         <img
-          src="/left.png"
+          src="/svg/left.svg"
           alt="Left Folder"
-          className="w-[55vw] max-w-[300px] object-contain sm:max-w-[360px] md:w-[42vw] md:max-w-[430px] lg:w-[38vw] lg:max-w-[500px]"
+          className="absolute left-[-6rem] bottom-[-6rem] w-[32rem] z-20 pointer-events-none select-none"
         />
-      </div>
 
-      {/* Right folder */}
-      <div className="absolute right-[-90px] top-[-90px] z-10 sm:right-[-70px] sm:top-[-120px] md:right-[-40px] md:top-[-160px] lg:right-[-10px] lg:top-[-200px]">
         <img
-          src="/right.png"
+          src="/svg/right.svg"
           alt="Right Folder"
-          className="w-[55vw] max-w-[300px] object-contain sm:max-w-[360px] md:w-[42vw] md:max-w-[430px] lg:w-[38vw] lg:max-w-[500px]"
+          className="absolute right-[-6rem] bottom-[-6rem] w-[32rem] z-20 pointer-events-none select-none"
         />
-      </div>
 
-      {/* Middle folder/card */}
-    </div>
+        </div>
+      
+     
     
     {/*Statistics*/}   
     <div className="mt-8 mx-auto grid w-[90%] max-w-[820px] grid-cols-1 gap-16 md:grid-cols-3">
