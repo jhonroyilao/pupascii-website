@@ -21,8 +21,9 @@ export default function Hero() {
 
       {/* BLUE SECTION */}
       <div
-        className="relative overflow-hidden"
-        style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
+        className="relative overflow-hidden "
+        style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)",borderBottomLeftRadius: "3rem",
+    borderBottomRightRadius: "3rem", }}
       >
         {/* Text content */}
         <div
