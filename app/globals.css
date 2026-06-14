@@ -3,6 +3,25 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+* {
+  cursor: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  *,
+  *::before,
+  *::after,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role="button"] {
+    cursor: none !important;
+  }
+}
 @theme inline {
   --font-inter: var(--font-inter);
   --font-bricolage: var(--font-bricolage);

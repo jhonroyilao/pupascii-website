@@ -32,9 +32,7 @@ export default function Hero() {
         >
           <span
   className="inline-flex items-center justify-center gap-0 font-bold tracking-tighter text-white text-6xl md:text-8xl"
-  Heading
 >
-
   <span className="inline-flex items-center justify-center min-w-[5ch]">
     <MorphingText className="font-bricolage" texts={["Built to Lead", "Built to Inspire", "Built to Exalt"]} />
   </span>
