@@ -19,6 +19,12 @@ import CircularGallery from "@/components/ui/circulargallery"
 import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack"
 import { ShinyButton } from "@/components/ui/shiny-button"
 import { ArrowRight } from "lucide-react"
+import { Ripple } from "@/components/ui/ripple"
+import { SmoothCursor } from "@/components/ui/smooth-cursor"
+import { Timeline } from "@/components/ui/timeline";
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
+
+
 
 function ScrollTextScramble({ text }) {
   const ref = useRef(null)
@@ -61,6 +67,68 @@ const hopper = [
   },
 ]
 
+const timelineData = [
+  {
+    title: "2010–2014",
+    content: (
+      <div className="space-y-4">
+        <p className="heading-4 ">where it all began</p>
+        <p className="paragraph text-gray-600 text-justify">
+          The roots of PUP ASCII were built through student-driven learning, collaboration, and community involvement. From peer-to-peer programming tutorials to mock exams and campus initiatives, the organization established a culture grounded in growth and shared passion for technology.
+        </p>
+        <div className="grid grid-cols-2 gap-3 mt-4">
+          <img src="/pic1.jpg" alt="Early ASCII days" className="h-32 w-full rounded-xl object-cover md:h-44 lg:h-56" />
+          <img src="/pic2.jpg" alt="Early ASCII community" className="h-32 w-full rounded-xl object-cover md:h-44 lg:h-56" />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "2015–2019",
+    content: (
+      <div className="space-y-4">
+        <p className="heading-4">beyond the classroom</p>
+        <p className="paragraph text-gray-600 text-justify">
+          ASCII began expanding its reach through major seminars, bootcamps, and technology-centered initiatives that connected students with real-world innovation. At the same time, the organization strengthened its humanitarian efforts, proving that technical excellence and social responsibility could go hand in hand.
+        </p>
+        <div className="grid grid-cols-2 gap-3 mt-4">
+          <img src="/ccisweek1.png" alt="ASCII seminars and bootcamps" className="h-32 w-full rounded-xl object-cover md:h-44 lg:h-56" />
+          <img src="/pic3.jpg" alt="ASCII community outreach" className="h-32 w-full rounded-xl object-cover md:h-44 lg:h-56" />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "2020–2021",
+    content: (
+      <div className="space-y-4">
+        <p className="heading-4">connected from a distance</p>
+        <p className="paragraph text-gray-600 text-justify">
+          When the pandemic reshaped student life, ASCII transformed its digital platforms into spaces for support, accessibility, and connection. Through online initiatives and relief campaigns, the organization remained active despite the challenges of remote learning.
+        </p>
+        <div className="grid grid-cols-1 gap-3 mt-4">
+          <img src="/aboutpic2.png" alt="ASCII online initiatives" className="h-40 w-full rounded-xl object-cover md:h-52 lg:h-64" />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "2022–present",
+    content: (
+      <div className="space-y-4">
+        <p className="heading-4">redefining student tech culture</p>
+        <p className="paragraph text-gray-600 text-justify">
+          ASCII evolved into a modern and highly organized tech collective that reimagined academic engagement through competitive events, creative initiatives, and immersive student experiences. The organization continues to push beyond traditional formats while fostering innovation, leadership, and community.
+        </p>
+        <div className="grid grid-cols-2 gap-3 mt-4">
+          <img src="/aboutpic3.png" alt="ASCII modern events" className="h-32 w-full rounded-xl object-cover md:h-44 lg:h-56" />
+          <img src="/mission.png" alt="ASCII leadership" className="h-32 w-full rounded-xl object-cover md:h-44 lg:h-56" />
+        </div>
+      </div>
+    ),
+  },
+]
+
 function HighlightOnScroll({ children, color, action = "highlight" }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-10% 0px" })
@@ -85,8 +153,9 @@ export default function AboutPage() {
           background:
             'linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)',
         }}>
+          
 
-        
+        <SmoothCursor/>
 
       {/* Content wrapper */}
         <div className="relative z-30 max-w-5xl mx-auto px-6 pt-24 text-center flex flex-col items-center gap-2">
@@ -138,45 +207,90 @@ export default function AboutPage() {
         />
 
         </div>
-      
-     
-    
-    {/*Statistics*/}   
-    <div className="mt-8 mx-auto grid w-[90%] max-w-[820px] grid-cols-1 gap-16 md:grid-cols-3">
-      <div className="flex h-[110px] flex-col items-center justify-center rounded-[10px] border-4 border-[#0062E4] bg-white md:h-[135px]">
-        <h3 className="text-[36px] font-bold leading-none text-[#0062E4] md:text-[60px]">
-          <ScrollTextScramble text="4.8K+" />
-        </h3>
-        <p className="mt-2 text-center text-[12px] font-medium text-gray-600 md:text-[14px]">
-          Social Media Followers
-        </p>
-      </div>
 
-      <div className="flex h-[110px] flex-col items-center justify-center rounded-[10px] border-4 border-[#0062E4] bg-white md:h-[135px]">
-        <h3 className="text-[36px] font-bold leading-none text-[#0062E4] md:text-[60px]">
-          <ScrollTextScramble text="100+" />
-        </h3>
-        <p className="mt-2 text-center text-[12px] font-medium text-gray-600 md:text-[14px]">
-          Active Members
-        </p>
-      </div>
+{/*
+<div className="relative w-full overflow-hidden bg-gradient-to-b from-white to-blue-50">
+  <Ripple />
 
-      <div className="flex h-[110px] flex-col items-center justify-center rounded-[10px] border-4 border-[#0062E4] bg-white md:h-[135px]">
-        <h3 className="text-[36px] font-bold leading-none text-[#0062E4] md:text-[60px]">
-          <ScrollTextScramble text="70+" />
-        </h3>
-        <p className="mt-2 text-center text-[12px] font-medium text-gray-600 md:text-[14px]">
-          Events Hosted
-        </p>
-      </div>
+ {/* Title — sticky so it stays visible while scrolling through cards 
+<div className="text-center pt-20 pb-4 relative z-20 sticky top-8">
+  <TextAnimate
+    animation="slideUp"
+    by="line"
+    className="section-title"
+    style={{
+      fontSize: "clamp(2.5rem, 5vw, 4rem)",
+    }}
+  >
+    how we started
+  </TextAnimate>
+  <div className="text-gray-600 pt-2">
+    The core ideals that shape PUP ASCII's direction and community.
+  </div>
+</div>
+
+  
+  {/* Statistics 
+  <div className="mt-8 pb-24 mx-auto grid w-[90%] max-w-[820px] grid-cols-1 gap-16 md:grid-cols-3">
+    <div className="flex h-[110px] flex-col items-center justify-center rounded-[10px] border-4 border-[#0062E4] bg-white md:h-[135px]">
+      <h3 className="text-[36px] font-bold leading-none text-[#0062E4] md:text-[60px]">
+        <ScrollTextScramble text="4.8K+" />
+      </h3>
+      <p className="mt-2 text-center text-[12px] font-medium text-gray-600 md:text-[14px]">
+        Social Media Followers
+      </p>
     </div>
+
+    <div className="flex h-[110px] flex-col items-center justify-center rounded-[10px] border-4 border-[#0062E4] bg-white md:h-[135px]">
+      <h3 className="text-[36px] font-bold leading-none text-[#0062E4] md:text-[60px]">
+        <ScrollTextScramble text="100+" />
+      </h3>
+      <p className="mt-2 text-center text-[12px] font-medium text-gray-600 md:text-[14px]">
+        Active Members
+      </p>
+    </div>
+
+    <div className="flex h-[110px] flex-col items-center justify-center rounded-[10px] border-4 border-[#0062E4] bg-white md:h-[135px]">
+      <h3 className="text-[36px] font-bold leading-none text-[#0062E4] md:text-[60px]">
+        <ScrollTextScramble text="70+" />
+      </h3>
+      <p className="mt-2 text-center text-[12px] font-medium text-gray-600 md:text-[14px]">
+        Events Hosted
+      </p>
+    </div>
+  </div>
+</div> */}
+
+            
+   
+
+<section className="w-full bg-white pt-20 pb-24">
+
+
+  <div className="text-center mb-4 px-6">
+    <p className="section-label">/our story</p>
+    <TextAnimate
+      animation="blurInUp"
+      by="word"
+      className="section-title"
+      style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+    >
+      where we started
+    </TextAnimate>
+    <p className="text-gray-600 mx-auto mt-4 max-w-2xl text-sm md:text-base">
+      A short visual history of how ASCII grew, what we built, and where we are headed.
+    </p>
+  </div>
+
+  <Timeline data={timelineData} />
+</section>
 
     {/*Mission and Vision*/}   
     <div className=" text-center w-full mt-24 mb-20">
       
       <TextAnimate
-                animation="slideUp"
-                by="line"
+                animation="blurInUp"
+                by="word"
                 className="section-title"
                 style={{
                     fontSize: "clamp(2.5rem, 5vw, 4rem)",
