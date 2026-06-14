@@ -117,4 +117,10 @@
   .bg-ascii-gradient {
     background: linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%);
   }
+
+.circular-gallery img {
+  border: 3px solid white;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
 }
