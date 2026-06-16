@@ -43,6 +43,7 @@ const EVENTS = [
       "A podcast series organized by PUP ASCII that highlights real-life experiences of CCIS students as Iskolars ng Bayan. Through open and meaningful conversation, the series explores topics such as academic transitions, culture shock, and student life, creating a safe space for shared stories and connection within the community.",
     variant: "solid",
     category: "Ongoing",
+    image: "/public/UTS-EP1.jpg"
   },
   {
     title: "Street Tech Fighter (STF)",
@@ -126,23 +127,79 @@ function ImagePlaceholder({ className = "", hideIcon = false, darkBorder = false
 
 export default function Events() {
   const [activeTab, setActiveTab] = useState("Ongoing");
+  const [rawQuery, setRawQuery] = useState("");
   const [query, setQuery] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const prefersReducedMotion = useRef(false);
+  const autoplayRef = useRef(null);
+  const [isCarouselHovered, setIsCarouselHovered] = useState(false);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev === CAROUSEL_SLIDES.length - 1 ? 0 : prev + 1));
   const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? CAROUSEL_SLIDES.length - 1 : prev - 1));
 
-  // Event Data Filtering
-  const filteredEvents = EVENTS.filter((event) => {
-    const matchesTab = event.category === activeTab;
-    const q = query.trim().toLowerCase();
-    const matchesQuery =
-      !q ||
-      event.title.toLowerCase().includes(q) ||
-      event.description.toLowerCase().includes(q);
-    return matchesTab && matchesQuery;
-  });
+  // Debounce search input and memoize filtered results for performance
+  const DEBOUNCE_MS = 250;
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      prefersReducedMotion.current = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+  }, []);
+
+  useEffect(() => {
+    const id = setTimeout(() => setQuery(rawQuery.trim()), DEBOUNCE_MS);
+    return () => clearTimeout(id);
+  }, [rawQuery]);
+
+  const filteredEvents = useMemo(() => {
+    const q = (query || "").toLowerCase();
+    return EVENTS.filter((event) => {
+      const matchesTab = event.category === activeTab;
+      const matchesQuery = !q || event.title.toLowerCase().includes(q) || event.description.toLowerCase().includes(q);
+      return matchesTab && matchesQuery;
+    });
+  }, [activeTab, query]);
+
+  // Normalize public paths like "/public/UTS-EP1.jpg" -> "/UTS-EP1.jpg"
+  const normalizePublicPath = (src) => {
+    if (!src) return src;
+    return src.startsWith("/public/") ? src.slice(7) : src;
+  };
+
+    // Small wrapper to centralize Next Image usage with fallback
+    function ImageWrapper({ src, alt, width, height, sizes, className, priority = false }) {
+      const normalized = normalizePublicPath(src);
+      if (!normalized) return <ImagePlaceholder className={className} />;
+      return (
+        <Image
+          src={normalized}
+          alt={alt}
+          width={width}
+          height={height}
+          sizes={sizes}
+          className={className}
+          priority={priority}
+        />
+      );
+    }
+
+  // Close modal on Escape and auto-play carousel when appropriate
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") setSelectedEvent(null);
+    };
+    if (selectedEvent) document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [selectedEvent]);
+
+  useEffect(() => {
+    if (prefersReducedMotion.current) return;
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+    if (!isCarouselHovered) {
+      autoplayRef.current = setInterval(() => nextSlide(), 5000);
+    }
+    return () => clearInterval(autoplayRef.current);
+  }, [isCarouselHovered, currentSlide]);
 
   return (
     <main className="min-h-screen bg-white">
@@ -159,15 +216,32 @@ export default function Events() {
           PUP-ASCII Events
         </h1>
 
-        <div className="relative w-full max-w-[1440px] mt-10 sm:mt-16 flex items-center justify-center group">
+        <div
+          className="relative w-full max-w-[1440px] mt-10 sm:mt-16 flex items-center justify-center group"
+          onMouseEnter={() => setIsCarouselHovered(true)}
+          onMouseLeave={() => setIsCarouselHovered(false)}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowLeft") prevSlide();
+            if (e.key === "ArrowRight") nextSlide();
+          }}
+        >
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 hidden sm:block h-[150px] sm:h-[280px]">
              <ImagePlaceholder className="w-full h-full rounded-none" hideIcon={true} darkBorder={true} />
           </div>
 
-          <div className="relative z-10 w-11/12 max-w-4xl aspect-[16/9] overflow-hidden shadow-2xl bg-white border-4 border-neutral-700">
-            <div 
-              className="flex h-full w-full transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          <div
+            className="relative z-10 w-11/12 max-w-4xl aspect-[16/9] overflow-hidden shadow-2xl bg-white border-4 border-neutral-700"
+            tabIndex={0}
+            role="group"
+            aria-roledescription="carousel"
+            aria-label="Events image carousel"
+          >
+            <div
+              className="flex h-full w-full"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+                transition: prefersReducedMotion.current ? "none" : "transform 500ms ease-in-out",
+              }}
             >
               {CAROUSEL_SLIDES.map((_, index) => (
                 <div key={index} className="w-full h-full shrink-0">
@@ -176,21 +250,30 @@ export default function Events() {
               ))}
             </div>
 
-            <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/70 hover:bg-white text-[#063A80] transition-all opacity-0 group-hover:opacity-100 shadow-md z-30">
+            <button
+              onClick={prevSlide}
+              aria-label="Previous slide"
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/70 hover:bg-white text-[#063A80] transition-all opacity-0 group-hover:opacity-100 shadow-md z-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0062E4]"
+            >
               <ChevronLeft className="w-6 h-6" />
             </button>
-            <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/70 hover:bg-white text-[#063A80] transition-all opacity-0 group-hover:opacity-100 shadow-md z-30">
+            <button
+              onClick={nextSlide}
+              aria-label="Next slide"
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/70 hover:bg-white text-[#063A80] transition-all opacity-0 group-hover:opacity-100 shadow-md z-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0062E4]"
+            >
               <ChevronRight className="w-6 h-6" />
             </button>
-            
+
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30">
               {CAROUSEL_SLIDES.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
                   className={`w-2.5 h-2.5 rounded-full transition-all ${
                     currentSlide === index ? "bg-white w-6" : "bg-white/50"
-                  }`}
+                  } focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0062E4]`}
                 />
               ))}
             </div>
@@ -201,80 +284,111 @@ export default function Events() {
         <div className="relative z-20 mx-auto mt-12 flex w-full max-w-3xl items-center gap-2 rounded-full bg-white p-1.5 shadow-xl">
           <input
             type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            value={rawQuery}
+            onChange={(e) => setRawQuery(e.target.value)}
             placeholder="Look for ASCII On-going Events"
+            aria-label="Search events"
             className="flex-1 bg-transparent px-4 py-2 text-sm sm:text-base text-neutral-700 outline-none placeholder:text-neutral-400"
           />
           <button
             type="button"
-            className="flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-[#0062E4] transition-colors hover:bg-[#e6eefc]"
+            aria-label="Search events"
+            className="flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-[#0062E4] transition-colors hover:bg-[#e6eefc] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0062E4]"
           >
             <span className="hidden sm:inline">Search Event</span>
             <Search className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
+          <div className="sr-only" aria-live="polite">{filteredEvents.length} events</div>
         </div>
       </section>
 
       {/* Categories & Event Feed */}
       <section className="mx-auto max-w-5xl px-4 py-16">
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          {TABS.map((tab) => {
-            const active = tab === activeTab;
-            return (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`rounded-full border px-8 py-2.5 text-sm font-bold transition-all ${
-                  active
-                    ? "border-[#0062E4] bg-[#0062E4] text-white shadow-md"
-                    : "border-[#0062E4] bg-white text-[#0062E4] hover:bg-[#E6EFFC]"
-                }`}
-              >
-                {tab}
-              </button>
-            );
-          })}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+            {TABS.map((tab) => {
+              const active = tab === activeTab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`rounded-full border px-8 py-2.5 text-sm font-bold transition-all ${
+                    active
+                      ? "border-[#0062E4] bg-[#0062E4] text-white shadow-md"
+                      : "border-[#0062E4] bg-white text-[#0062E4] hover:bg-[#E6EFFC]"
+                  }`}
+                >
+                  {tab}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="flex items-center justify-center sm:justify-end">
+            <span className="text-sm text-neutral-600" aria-live="polite">
+              {filteredEvents.length} {filteredEvents.length === 1 ? "event" : "events"}
+            </span>
+          </div>
         </div>
 
-        <div className="mt-10 space-y-8">
+        <div className="mt-10">
           {filteredEvents.length === 0 ? (
             <p className="text-center text-sm text-neutral-500">
               No events found for &ldquo;{activeTab}&rdquo;{query.trim() ? ` matching "${query.trim()}"` : ""}.
             </p>
           ) : (
-            filteredEvents.map((event, i) => {
-              const isSolid = event.variant === "solid";
-              return (
-                <article
-                  key={i}
-                  onClick={() => setSelectedEvent(event)}
-                  className={`flex cursor-pointer flex-col gap-4 rounded-[20px] p-6 sm:flex-row sm:gap-8 shadow-md border transition-transform hover:-translate-y-1 hover:shadow-lg ${
-                    isSolid ? "bg-[#0062E4] text-white border-[#0062E4]" : "bg-[#E6EFFC] text-[#063A80] border-[#d4e2f7]"
-                  }`}
-                >
-                  <ImagePlaceholder className="aspect-[4/3] w-full shrink-0 sm:w-64 rounded-xl" darkBorder={true} />
-                  <div className={`flex-1 border-l-4 pl-6 py-3 ${isSolid ? "border-white/50" : "border-[#0062E4]"}`}>
-                    <div className="flex flex-wrap items-center gap-4">
-                      <h3 className={`text-2xl font-bold ${isSolid ? "text-white" : "text-[#0062E4]"}`}>
-                        {event.title}
-                      </h3>
-                      {event.tag && (
-                        <span className="rounded-full bg-[#0062E4] px-4 py-1 text-xs font-bold text-white uppercase tracking-wider border border-blue-600">
-                          {event.tag}
-                        </span>
+            <ul className="space-y-8" aria-live="polite">
+              {filteredEvents.map((event) => {
+                const isSolid = event.variant === "solid";
+                return (
+                  <li key={event.title}>
+                    <article
+                      onClick={() => setSelectedEvent(event)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") setSelectedEvent(event);
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Open ${event.title} event details`}
+                      className={`flex cursor-pointer flex-col gap-4 rounded-[20px] p-6 sm:flex-row sm:gap-8 shadow-md border transition-transform hover:-translate-y-1 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0062E4] ${
+                        isSolid ? "bg-[#0062E4] text-white border-[#0062E4]" : "bg-[#E6EFFC] text-[#063A80] border-[#d4e2f7]"
+                      }`}
+                    >
+                      {event.image ? (
+                        <ImageWrapper
+                          src={event.image}
+                          alt={event.title}
+                          width={384}
+                          height={288}
+                          sizes="(max-width: 640px) 100vw, 256px"
+                          className="aspect-[4/3] w-full shrink-0 sm:w-64 rounded-xl object-cover"
+                        />
+                      ) : (
+                        <ImagePlaceholder className="aspect-[4/3] w-full shrink-0 sm:w-64 rounded-xl" darkBorder={true} />
                       )}
-                    </div>
-                    <p className={`mt-1 text-sm font-bold ${isSolid ? "text-white/90" : "text-[#063A80]"}`}>
-                      {event.date}
-                    </p>
-                    <p className={`mt-4 text-sm leading-relaxed line-clamp-3 ${isSolid ? "text-white/90" : "text-neutral-700"}`}>
-                      {event.description}
-                    </p>
-                  </div>
-                </article>
-              );
-            })
+                      <div className={`flex-1 border-l-4 pl-6 py-3 ${isSolid ? "border-white/50" : "border-[#0062E4]"}`}>
+                        <div className="flex flex-wrap items-center gap-4">
+                          <h3 className={`text-2xl font-bold ${isSolid ? "text-white" : "text-[#0062E4]"}`}>
+                            {event.title}
+                          </h3>
+                          {event.tag && (
+                            <span className="rounded-full bg-[#0062E4] px-4 py-1 text-xs font-bold text-white uppercase tracking-wider border border-blue-600">
+                              {event.tag}
+                            </span>
+                          )}
+                        </div>
+                        <p className={`mt-1 text-sm font-bold ${isSolid ? "text-white/90" : "text-[#063A80]"}`}>
+                          {event.date}
+                        </p>
+                        <p className={`mt-4 text-sm leading-relaxed line-clamp-3 ${isSolid ? "text-white/90" : "text-neutral-700"}`}>
+                          {event.description}
+                        </p>
+                      </div>
+                    </article>
+                  </li>
+                );
+              })}
+            </ul>
           )}
         </div>
       </section>
@@ -339,7 +453,19 @@ export default function Events() {
                   backgroundImage: "linear-gradient(135deg, #063A80 0%, #0062E4 55%, #3DCBFF 100%)",
                 }}
               >
-                <ImagePlaceholder className="aspect-[16/7] w-full border-b border-white/20" />
+                {selectedEvent.image ? (
+                  <ImageWrapper
+                    src={selectedEvent.image}
+                    alt={selectedEvent.title}
+                    width={1600}
+                    height={700}
+                    sizes="100vw"
+                    className="aspect-[16/7] w-full border-b border-white/20 object-cover"
+                    priority={true}
+                  />
+                ) : (
+                  <ImagePlaceholder className="aspect-[16/7] w-full border-b border-white/20" />
+                )}
               </div>
               
               {/* Modal Content */}
