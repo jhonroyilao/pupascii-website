@@ -9,7 +9,7 @@ import { LimelightNav } from "@/components/ui/limelight-nav"
 const navItems = [
   { id: "home",        label: "Home",        href: "/" },
   { id: "about",       label: "About Us",    href: "/about" },
-  { id: "committees",  label: "Committees",  href: "/committees" },
+  { id: "committee",  label: "Committee",  href: "/committee" },
   { id: "events",      label: "Events",      href: "/events" },
   { id: "merch",       label: "Merch",       href: "/merch" },
 ]
@@ -31,7 +31,7 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? "rgb(38, 125, 255)": "transparent",
+        background: scrolled ? "#0062E4": "transparent",
         backdropFilter: scrolled ? "blur(100px)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
       }}

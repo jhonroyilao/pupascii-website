@@ -21,8 +21,9 @@ export default function Hero() {
 
       {/* BLUE SECTION */}
       <div
-        className="relative overflow-hidden"
-        style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
+        className="relative overflow-hidden "
+        style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)",borderBottomLeftRadius: "3rem",
+    borderBottomRightRadius: "3rem", }}
       >
         {/* Text content */}
         <div
@@ -30,10 +31,8 @@ export default function Hero() {
           style={{ zIndex: 20 }}
         >
           <span
-  className="inline-flex items-center justify-center gap-0 font-bold tracking-tighter text-white text-8xl md:text-8xl"
-  style={{ fontFamily: "Inter, sans-serif" }}
+  className="inline-flex items-center justify-center gap-0 font-bold tracking-tighter text-white text-6xl md:text-8xl"
 >
-
   <span className="inline-flex items-center justify-center min-w-[5ch]">
     <MorphingText className="font-bricolage" texts={["Built to Lead", "Built to Inspire", "Built to Exalt"]} />
   </span>
@@ -56,8 +55,7 @@ export default function Hero() {
           </span>
             */}
           <p
-            className="hero-animate-3 text-white/80 text-[15px] tracking-tight max-w-xl"
-            style={{ fontFamily: "Inter, sans-serif" }}
+            className="hero-animate-3 text-white/80 font-inter text-[18px] tracking-tight max-w-xl"
           >
             Hi there! We are PUP ASCII. The official academic organization of the Department of Computer Science
             at the Polytechnic University of the Philippines.

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Search, ImageIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/custom/navbar";
