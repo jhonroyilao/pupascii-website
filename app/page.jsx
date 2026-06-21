@@ -5,6 +5,7 @@ import About from "@/components/sections/about-preview"
 import FAQSection from "@/components/sections/faq-section" 
 import { Safari } from "@/components/ui/safari"
 import { CinematicFooter } from "@/components/ui/motion-footer"
+import CommunityCTA from "@/components/sections/cta.jsx"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <About/>
       <FeaturesSectionDemo/>
       <FAQSection/>
+      <CommunityCTA/>
       <CinematicFooter />
     </main>
   )
