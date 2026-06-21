@@ -5,12 +5,34 @@ import {
   motion,
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
-import { TextAnimate } from "@/components/ui/text-animate";
+import Image from "next/image"; // Make sure to import Next.js Image component
 
 interface TimelineEntry {
   title: string;
   content: React.ReactNode;
 }
+
+// 1. Reusable Image component that handles the clean border and the zoom hover animation safely
+export const TimelineImage = ({ src, alt }: { src: string; alt: string }) => {
+  return (
+    <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border-2 border-gray-100 shadow-sm">
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+        className="w-full h-full relative"
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-w-768px) 100vw, 50vw"
+          className="object-cover object-center" 
+          priority
+        />
+      </motion.div>
+    </div>
+  );
+};
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -63,12 +85,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   style={{
                     background: "linear-gradient(325deg, #0044ff 0%, #2ccfff 55%, #0044ff 90%)",
                     backgroundSize: "280% auto",
-                    boxShadow: "0px 0px 20px rgba(71,184,255,0.5), 0px 5px 5px -1px rgba(58,125,233,0.25), inset 4px 4px 8px rgba(175,230,255,0.5), inset -4px -4px 8px rgba(19,95,216,0.35)",
                   }}
                 >
-                  
-                    {item.title}
-        
+                  {item.title}
                 </span>
               </div>
             </div>
@@ -82,7 +101,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   style={{
                     background: "linear-gradient(325deg, #0044ff 0%, #2ccfff 55%, #0044ff 90%)",
                     backgroundSize: "280% auto",
-                    boxShadow: "0px 0px 20px rgba(71,184,255,0.5), 0px 5px 5px -1px rgba(58,125,233,0.25), inset 4px 4px 8px rgba(175,230,255,0.5), inset -4px -4px 8px rgba(19,95,216,0.35)",
                   }}
                 >
                   {item.title}
@@ -99,16 +117,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           className="absolute left-[18px] md:left-[18px] top-0 overflow-hidden w-[4px] rounded-full bg-neutral-100"
         >
           <motion.div
-            style={{
-              height: heightTransform,
-              opacity: opacityTransform,
-            }}
             className="absolute inset-x-0 top-0 w-[4px] rounded-full"
             style={{
               height: heightTransform,
               opacity: opacityTransform,
               background: "linear-gradient(to bottom, #0044ff, #2ccfff, #0044ff)",
-              boxShadow: "0px 0px 12px rgba(44,207,255,0.6)",
             }}
           />
         </div>

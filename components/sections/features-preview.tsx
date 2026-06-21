@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import { TextAnimate } from "../ui/text-animate";
+import Grainient from "@/components/Grainient";
 
 export default function FeaturesSectionDemo() {
   const features = [
@@ -21,7 +22,7 @@ export default function FeaturesSectionDemo() {
       description:
         "a week-long college event featuring booths, a scavenger hunt, and a research colloquium that showcase creativity, collaboration, and academic excellence in the college.",
       skeleton: <SkeletonTwo />,
-      className: "md:col-span- md:border-b border-neutral-200",
+      className: "md:col-span-1 md:border-b border-neutral-200", // 👈 Fixed missing column value here
     },
     {
       title: "Usap Tayo, Sinta! Year 2",
@@ -40,12 +41,38 @@ export default function FeaturesSectionDemo() {
   ];
 
   return (
-    <div 
-      className="relative z-20 mx-auto w-full py-5 lg:py-24 px-4 md:px-8" 
-      style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
-    >
+    <div className="relative z-20 mx-auto w-full py-5 lg:py-24 px-4 md:px-8 overflow-hidden">
+      
+      {/* ── Background Interactive Fluid Grainient ── */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+        <Grainient
+          color1="#3B82F6"
+          color2="#0062E4"
+          color3="#3DCBFF"
+          timeSpeed={0.35}
+          colorBalance={0}
+          warpStrength={2.75}
+          warpFrequency={9.3}
+          warpSpeed={5.5}
+          warpAmplitude={50}
+          blendAngle={0}
+          blendSoftness={0.34}
+          rotationAmount={740}
+          noiseScale={0}
+          grainAmount={0}
+          grainScale={0.2}
+          grainAnimated={false}
+          contrast={1.5}
+          gamma={1}
+          saturation={1}
+          centerX={0}
+          centerY={0}
+          zoom={0.9}
+        />
+      </div>
+
       {/* --- HEADER SECTION --- */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 relative z-10">
         <p className="text-sm font-medium text-white/100 tracking-widest uppercase mb-4" style={{ fontFamily: "Inter, sans-serif" }}>
           /our previous events
         </p>
@@ -54,7 +81,6 @@ export default function FeaturesSectionDemo() {
             animation="blurInUp"
             by="word"
             className="text-4xl font-bricolage md:text-6xl lg:text-7xl leading-tight "
-          
           >
             the things we made happen
           </TextAnimate>
@@ -62,7 +88,8 @@ export default function FeaturesSectionDemo() {
       </div>
 
       {/* --- CONTENT BOX --- */}
-      <div className="mx-auto max-w-7xl bg-white rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl">
+      {/* Added relative z-10 below to bring back the white grid cards */}
+      <div className="mx-auto max-w-7xl bg-white rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {features.map((feature, idx) => (
             <FeatureCard key={feature.title + idx} className={feature.className}>
@@ -74,16 +101,16 @@ export default function FeaturesSectionDemo() {
         </div>
       </div>
 
-
-      <div className="hero-animate-4 flex flex-wrap justify-center py-10">
-              <HeroButton href="/events" label="CHECK MORE OF OUR EVENTS" />
+      {/* --- BOTTOM BUTTON --- */}
+      <div className="hero-animate-4 flex flex-wrap justify-center py-10 relative z-10">
+        <HeroButton href="/events" label="CHECK MORE OF OUR EVENTS" />
       </div>
     </div>
   );
 }
 
 /* -------------------------------------------------------------------------- */
-/*                              UI COMPONENTS                                 */
+/* UI COMPONENTS                                */
 /* -------------------------------------------------------------------------- */
 
 const FeatureCard = ({ children, className }: { children?: React.ReactNode; className?: string }) => {
@@ -117,7 +144,7 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
 };
 
 /* -------------------------------------------------------------------------- */
-/*                           SKELETONS & EFFECTS                              */
+/* SKELETONS & EFFECTS                             */
 /* -------------------------------------------------------------------------- */
 
 export const SkeletonOne = () => {
@@ -174,8 +201,6 @@ export const SkeletonTwo = () => {
       </div>
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
-
-      
     </div>
   );
 };
@@ -207,7 +232,6 @@ export const SkeletonFour = () => {
           />
         </div>
       </div>
-      {/* Matching the gradient fade-out effect from the first skeleton */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-20 w-full bg-gradient-to-t from-white via-white/50 to-transparent" />
     </div>
   );

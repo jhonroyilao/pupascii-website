@@ -22,8 +22,9 @@ import { Ripple } from "@/components/ui/ripple"
 import { SmoothCursor } from "@/components/ui/smooth-cursor"
 import { Timeline } from "@/components/ui/timeline";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
-
-
+import CommunityCTA from "@/components/sections/about-cta.jsx"
+import { useState, useEffect } from "react" 
+import Grainient from "@/components/Grainient" 
 
 function ScrollTextScramble({ text }) {
   const ref = useRef(null)
@@ -142,17 +143,58 @@ function HighlightOnScroll({ children, color, action = "highlight" }) {
 }
 
 export default function AboutPage() {
+
+  const [galleryBend, setGalleryBend] = useState(0.2)
+
+  useEffect(() => {
+    const handleResize = () => {
+      // If the window is larger than a standard tablet breakpoint (768px), increase the bend
+      if (window.innerWidth >= 768) {
+        setGalleryBend(0.5) // Desktop bend
+      } else {
+        setGalleryBend(0.15) // Mobile bend (flatter curves look better on narrow viewport screens)
+      }
+    }
+
+    // Call initially to catch the component mount dimension
+    handleResize()
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   return (
    <main className="min-h-screen">
       <Navbar />
 
       <div
-          className="relative w-full overflow-hidden mb-10 rounded-b-3xl"
-          style={{
-          background:
-            'linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)',
-        }}>
-          
+          className="relative w-full overflow-hidden mb-10 rounded-b-3xl">
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+    <Grainient
+      color1="#3B82F6"
+      color2="#0062E4"
+      color3="#3DCBFF"
+      timeSpeed={0.35}
+      colorBalance={0}
+      warpStrength={2.75}
+      warpFrequency={9.3}
+      warpSpeed={5.5}
+      warpAmplitude={50}
+      blendAngle={0}
+      blendSoftness={0.34}
+      rotationAmount={740}
+      noiseScale={0}
+      grainAmount={0}
+      grainScale={0.2}
+      grainAnimated={false}
+      contrast={1.5}
+      gamma={1}
+      saturation={1}
+      centerX={0}
+      centerY={0}
+      zoom={0.9}
+    />
+  </div>
 
         <SmoothCursor/>
 
@@ -184,7 +226,7 @@ export default function AboutPage() {
               { image: "/pic2.jpg", text: "" },
               { image: "/pic3.jpg", text: "" },
             ]}
-            bend={0.5}
+            bend={galleryBend}
             textColor="#ffffff"
             borderRadius={0.06}
             scrollSpeed={0.5}
@@ -193,17 +235,19 @@ export default function AboutPage() {
         </div>
 
         {/* Decorative images (still absolute but adjusted safely) */}
-        <img
-          src="/svg/left.svg"
-          alt="Left Folder"
-          className="absolute left-[-6rem] bottom-[-6rem] w-[32rem] z-20 pointer-events-none select-none"
-        />
+  {/* Left Decorative Folder */}
+<img
+  src="/svg/left.svg"
+  alt="Left Folder"
+  className="absolute left-[-3rem] bottom-[-3rem] w-[14rem] md:left-[-6rem] md:bottom-[-6rem] md:w-[32rem] z-20 pointer-events-none select-none"
+/>
 
-        <img
-          src="/svg/right.svg"
-          alt="Right Folder"
-          className="absolute right-[-6rem] bottom-[-6rem] w-[32rem] z-20 pointer-events-none select-none"
-        />
+{/* Right Decorative Folder */}
+<img
+  src="/svg/right.svg"
+  alt="Right Folder"
+  className="absolute right-[-3rem] bottom-[-3rem] w-[16rem] md:right-[-6rem] md:bottom-[-6rem] md:w-[32rem] z-20 pointer-events-none select-none"
+/>
 
         </div>
 
@@ -284,6 +328,7 @@ export default function AboutPage() {
   <Timeline data={timelineData} />
 </section>
 
+
     {/*Mission and Vision*/}   
     <div className=" text-center w-full mt-24 mb-20">
       
@@ -301,11 +346,11 @@ export default function AboutPage() {
       <div className="text-gray-600 pt-2">The core ideals that shape PUP ASCII’s direction and community.</div>
     </div>
     
-    {/*Vision*/}   
+    {/*Mission*/}   
     <div className="max-w-7xl mx-auto px-6 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left — group photo */}
+          {/* Left — group photo (On mobile this is top, on desktop it stays left) */}
           <div
             className="relative rounded-2xl overflow-hidden aspect-[4/3]"
           >
@@ -351,9 +396,11 @@ export default function AboutPage() {
       
       {/*Vision*/}   
       <div className="max-w-7xl mx-auto px-6 pb-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Left — tagline + text */}
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Side on Desktop, but sits BELOW the image on Mobile */}
+          {/* Added 'lg:order-first' so it flips cleanly to the left side on desktop */}
+          <div className="space-y-6 order-last lg:order-first">
             <div
               className="font-bold leading-tight"
               style={{
@@ -379,12 +426,13 @@ export default function AboutPage() {
             </p>
 
             <ShinyButton href="/committee" icon={<ArrowRight size={18} />}>
-            get to know us
-          </ShinyButton>
+              get to know us
+            </ShinyButton>
           </div>
 
-          {/* Right — group photo */}
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+          {/* Right Side on Desktop, but sits ON TOP on Mobile */}
+          {/* Added 'lg:order-last' to send the picture over to the right side on wide screens */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] order-first lg:order-last">
             <Image
               src="/vision.png"
               alt="PUP ASCII members"
@@ -395,11 +443,39 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* ── MEET HOPPER ── */}
-      <div className="w-full py-20 px-6 mt-10"
-      style={{ background: "radial-gradient(156.21% 136.74% at 17.55% 30.27%, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
-      >
-        <div className="max-w-7xl mx-auto">
+     {/* ── MEET HOPPER WITH GRAINIENT BACKGROUND ── */}
+      <section className="relative w-full py-20 px-6 mt-10 rounded-[50px] overflow-hidden">
+        
+        {/* Background Grainient Layer */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+          <Grainient
+            color1="#3B82F6"
+            color2="#0062E4"
+            color3="#3DCBFF"
+            timeSpeed={0.35}
+            colorBalance={0}
+            warpStrength={2.75}
+            warpFrequency={9.3}
+            warpSpeed={5.5}
+            warpAmplitude={50}
+            blendAngle={0}
+            blendSoftness={0.34}
+            rotationAmount={740}
+            noiseScale={0}
+            grainAmount={0}
+            grainScale={0.2}
+            grainAnimated={false}
+            contrast={1.5}
+            gamma={1}
+            saturation={1}
+            centerX={0}
+            centerY={0}
+            zoom={0.9}
+          />
+        </div>
+
+        {/* Foreground Content Container */}
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
               
             {/*Main Hopper Image*/}
@@ -416,9 +492,10 @@ export default function AboutPage() {
                </CometCard>
             </div>
 
-            <div className="space-y-6 text-white">
-              <p className="text-sm tracking-widest opacity-90 text-[30px] mb-[-10px]" style={{ fontFamily: "Inter, sans-serif" }}>
-                / official mascot
+            {/* Content Info */}
+            <div className="space-y-2 text-white">
+              <p className="text-sm font-medium text-white/90 font-inter tracking-widest uppercase">
+                / OFFICIAL MASCOT
               </p>
 
               <TextAnimate
@@ -434,7 +511,7 @@ export default function AboutPage() {
               </TextAnimate>
 
               <p
-                className="text-[15px] leading-relaxed text-justify opacity-90"
+                className="text-[15px] leading-relaxed text-justify opacity-95"
                 style={{ fontFamily: "Inter, sans-serif"}}
               >
                 <strong>Hopper</strong> is the lovable main mascot of the Department of Computer Science and ASCII, a curious little digital creature inspired by a mix of a ladybug and a computer mouse. They represent the playful side of tech: always curious, always exploring, and always a bit too invested in whatever is happening inside the system. Hopper brings energy and charm to the world of coding, turning something complex into something approachable and fun.
@@ -444,7 +521,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mt-12">
+          {/* Sticker Grid Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mt-12">
             {hopper.slice(2).map((sticker, index) => (
               <CardContainer 
                 key={index} 
@@ -465,9 +543,10 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </div>
+      </section>
+<CommunityCTA/>
 
-      {/*LET'S CREATE, CONNECT, AND BUILD*/}
+      {/*LET'S CREATE, CONNECT, AND BUILD
       <div className="w-full bg-white py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -528,7 +607,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-
+*/}
       
       <CinematicFooter/>
     </main>
