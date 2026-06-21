@@ -47,7 +47,7 @@ export default function CommunityCTA() {
               alt="Community illustration"
               width={320}
               height={320}
-              className="w-full h-auto drop-shadow-md md:drop-shadow-xl"
+              className="w-full h-auto"
               priority
             />
           </motion.div>
