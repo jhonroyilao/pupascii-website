@@ -242,12 +242,13 @@ export function GreySectionShell({ children, id, title, animation = "blurInUp", 
 
 // PROFILE CARDS & SAFARI COMPONENTS
 
-function MemberCard({ role, name, position, image }) {
+function MemberCard({ role, name, position, image, links={} }) {
+
+  const { email, facebook, github, linkedin } = links || {};
   return (
     <div
       className={`group box-border grid h-[444px] w-[306px] shrink-0 grid-rows-[278px_minmax(0,1fr)_auto] gap-2 overflow-hidden !rounded-[30px] !bg-white !px-[21px] !py-[23px] ${cardShadow} cursor-grab active:cursor-grabbing hover:z-50 transition-z`}
     >
-
       <div className="mx-auto flex h-[278px] w-[263px] items-start justify-center overflow-hidden rounded-[24px] bg-[#DAD8D9] transition-all duration-300 group-hover:bg-[#D9E7FB]">
          {image ? (
           <img
@@ -269,13 +270,44 @@ function MemberCard({ role, name, position, image }) {
       </div>
       <div className="flex w-full min-w-0 items-center justify-between gap-2">
         <div className="flex shrink-0 items-center gap-[5px]">
-          <a href="#" aria-label={`Email ${name}`} className="transition-opacity hover:opacity-70"><Mail className="h-[23px] w-[23px] text-[#676E76]" strokeWidth={2} /></a>
-          <a href="#" aria-label={`${name} on Facebook`} className="transition-opacity hover:opacity-70"><Facebook className="h-[21px] w-[21px] text-[#676E76]" strokeWidth={2} /></a>
-          <a href="#" aria-label={`${name} on GitHub`} className="transition-opacity hover:opacity-70"><Github className="h-[21px] w-[21px] text-[#676E76]" strokeWidth={2} /></a>
+        <a 
+            href={email ? `mailto:${email}` : "#"} 
+            onClick={(e) => !email && e.preventDefault()}
+            className="text-[#676E76] transition-opacity hover:opacity-70"
+          >
+            <Mail className="h-[23px] w-[23px]" strokeWidth={2} />
+          </a>
+          
+          <a 
+            href={facebook || "#"} 
+            target={facebook ? "_blank" : undefined}
+            rel={facebook ? "noopener noreferrer" : undefined}
+            onClick={(e) => !facebook && e.preventDefault()}
+            className="text-[#676E76] transition-opacity hover:opacity-70"
+          >
+            <Facebook className="h-[21px] w-[21px]" strokeWidth={2} />
+          </a>
+
+          <a 
+            href={github || "#"} 
+            target={github ? "_blank" : undefined}
+            rel={github ? "noopener noreferrer" : undefined}
+            onClick={(e) => !github && e.preventDefault()}
+            className="text-[#676E76] transition-opacity hover:opacity-70"
+          >
+            <Github className="h-[21px] w-[21px]" strokeWidth={2} />
+          </a>
         </div>
-        <button type="button" className="shrink-0 whitespace-nowrap rounded-[10px] bg-[#262425] px-[15px] py-[5px] text-[16px] font-semibold leading-[24px] text-[#E6EFFC] transition-opacity hover:opacity-90">
+
+        <a
+          href={linkedin || "#"}
+          target={linkedin ? "_blank" : undefined}
+          rel={linkedin ? "noopener noreferrer" : undefined}
+          onClick={(e) => !linkedin && e.preventDefault()}
+          className="shrink-0 whitespace-nowrap rounded-[10px] bg-[#262425] px-[15px] py-[5px] text-[16px] font-semibold leading-[24px] text-[#E6EFFC] transition-opacity hover:opacity-90"
+        >
           View Profile
-        </button>
+        </a>
       </div>
     </div>
   );
