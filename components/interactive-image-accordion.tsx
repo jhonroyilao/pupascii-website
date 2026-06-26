@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import { ArrowUpRight } from "lucide-react";
 import { TextAnimate } from "@/components/ui/text-animate";
 import Grainient from "@/components/Grainient";
+import HeroButton from "@/components/ui/herobutton"
 
 const accordionItems = [
-  { id: 1, title: 'EXECUTIVES', imageUrl: '/execcomm.jpg' },
+  { id: 1, title: 'EXECUTIVES', imageUrl: '/execcomm.png' },
   { id: 2, title: 'CREATIVES', imageUrl: '/ccc.png' },
   { id: 3, title: 'PROGRAMS', imageUrl: '/prog.jpg' },
   { id: 4, title: 'MARKETING', imageUrl: '/marketing.jpg' },
-  { id: 5, title: 'RESEARCH & EXTENSIONS', imageUrl: '/rne.jpg' },
+  { id: 5, title: 'RNE', imageUrl: '/rne.jpg' },
   { id: 6, title: 'DOCUSEC', imageUrl: '/docs.jpg' },
 ];
 
@@ -109,13 +110,7 @@ export function LandingAccordionItem() {
             </p>
             
             <div className="mt-8 flex items-center justify-start gap-3 w-full">
-              <a href="/about" className="bg-white text-[#0062E4] font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-lg flex items-center justify-center">
-                LEARN MORE ABOUT US
-              </a>
-
-              <a href="/about" className="bg-transparent border border-white/30 text-white p-4 rounded-2xl transition-all duration-300 hover:bg-white/10 flex items-center justify-center">
-                <ArrowUpRight size={24} />
-              </a>
+              <HeroButton href="/about" label="LEARN MORE ABOUT US" />
             </div>
           </div>
 

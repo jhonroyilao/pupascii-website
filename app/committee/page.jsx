@@ -18,43 +18,43 @@ import {
 import { SirMon } from "../../components/committee/committee-ui";
 
 const execcommMembers = [
-  { role: "EXEC", name: "Cabrera, Chelsea Lauren B.", position: "President", image: "/exec_chelsea.png" },
-  { role: "EXEC", name: "Reolada, Gavinn M.", position: "Executive Vice President", image: "/exec_gavinn.png" },
-  { role: "EXEC", name: "Biso, Erika P.", position: "Executive Secretary", image: "/exec_erika.png" },
-  { role: "EXEC", name: "Narte, Ma. Victoria C.", position: "Executive Assistant Secretary", image: "/exec_victoria.png" },
-  { role: "EXEC", name: "Guioguio, Kenneth M.", position: "VP for Finance", image: "exec_kenneth.png" },
-  { role: "EXEC", name: "Lagat, Joemar R.", position: "VP for Audit", image: "/exec_joemar.png" },
+  { role: "EXEC", name: "Cabrera, Chelsea Lauren B.", position: "President", image: "/exec_chelsea.png", links: {email: "chlaurencabrera@gmail.com",facebook: "https://www.facebook.com/chelsea.cabrera.99", github: "https://github.com/aesrch", linkedin: "https://www.linkedin.com/in/chelsealaurencabrera/"}},
+  { role: "EXEC", name: "Reolada, Gavinn M.", position: "Executive Vice President", image: "/exec_gavinn.png", links: {email: "gavinnreolada@gmail.com",facebook: "https://www.facebook.com/gavinn.reolada"}},
+  { role: "EXEC", name: "Biso, Erika P.", position: "Executive Secretary", image: "/exec_erika.png", links: {email: "erikapbiso@gmail.com",facebook: "https://www.facebook.com/erikabiso", github: "https://github.com/erikabiso", linkedin: "https://www.linkedin.com/in/erikabiso"}},
+  { role: "EXEC", name: "Narte, Ma. Victoria C.", position: "Executive Assistant Secretary", image: "/exec_victoria.png", links: {email: "nartevictoria@gmail.com",facebook: "https://www.facebook.com/narte.victoriaa.21", github: "https://github.com/coffeerii", linkedin: "https://www.linkedin.com/in/mavictorianarte"}},
+  { role: "EXEC", name: "Guioguio, Kenneth M.", position: "VP for Finance", image: "exec_kenneth.png", links: {email: "kenneth.guioguio.s06@gmail.com",facebook: "https://www.facebook.com/KennG.Mags", github: "https://github.com/k3nn-g", linkedin: "https://www.linkedin.com/in/kenneth-guioguio-99b054263/"}},
+  { role: "EXEC", name: "Lagat, Joemar R.", position: "VP for Audit", image: "/exec_joemar.png", links: {email: "joemarlagatr@gmail.com",facebook: "https://www.facebook.com/joemar.lagat.2025", github: "https://github.com/JMR-san", linkedin: "https://www.linkedin.com/in/jmrlagat"}},
 ];
 
 const cccMembers= [
-  { role: "CCC", name: "Ilao, Jhon Roy", position: "VP for Creative Communications", image: "/ccc_jhon.png" },
-  { role: "CCC", name: "Sia, Shaun Asher M.", position: "AVP for Creative Communications", image: "/ccc_shaun.png" }
+  { role: "CCC", name: "Ilao, Jhon Roy", position: "VP for Creative Communications", image: "/ccc_jhon.png", links: {email: "jhonroyilao@gmail.com",facebook: "https://web.facebook.com/jhnroyilao", github: "https://github.com/jhonroyilao", linkedin: "https://www.linkedin.com/in/jhon-roy-ilao-3992b9293/"}},
+  { role: "CCC", name: "Sia, Shaun Asher M.", position: "AVP for Creative Communications", image: "/ccc_shaun.png", links: {email: "siashaun4@gmail.com",facebook: "https://facebook.com/omaiow"}},
 ];
 
 const docusecMembers = [
-  { role: "DOCS", name: "Duron, Jarren Irvine F.", position: "VP for Documentation & Secretariat", image: "/docs_jarren.png" },
-  { role: "DOCS", name: "Diaz, Lei Eizen P.", position: "AVP for Documentation & Secretariat", image: "/docs_lei.png" }
+  { role: "DOCS", name: "Duron, Jarren Irvine F.", position: "VP for Documentation & Secretariat", image: "/docs_jarren.png", links: {email: "jarrenirvine.duron320401@gmail.com",facebook: "https://www.facebook.com/JarrenIrvineDuron"}},
+  { role: "DOCS", name: "Diaz, Lei Eizen P.", position: "AVP for Documentation & Secretariat", image: "/docs_lei.png", links: {email: "leidiaz0518@gmail.com",facebook: "https://www.facebook.com/leieizen.diaz.7"}},
 ];
 
 const marketingMembers = [
-  { role: "MKTG", name: "Gragas, Nethan Edry L.", position: "VP for Marketing", image: "/mktg_nethan.png" },
-  { role: "MKTG", name: "Valeza, Reinwald Marone", position: "AVP for Marketing", image: "/mktg_reinwald.png" }
+  { role: "MKTG", name: "Gragas, Nethan Edry L.", position: "VP for Marketing", image: "/mktg_nethan.png", links: {email: "nethanedrygragas@gmail.com",facebook: "https://www.facebook.com/nelgragas"}},
+  { role: "MKTG", name: "Valeza, Reinwald Marone", position: "AVP for Marketing", image: "/mktg_reinwald.png", links: {email: "reinwaldmaronevaleza101505@gmail.com",facebook: "https://www.facebook.com/marone.valeza"}},
 ];
 
 const programsMembers = [
-  { role: "PROG", name: "Nagera, Kristina Casandra C.", position: "VP for Programs", image: "/prog_kc.png" },
-  { role: "PROG", name: "Federico, John Richard J.", position: "AVP for Programs", image: "/prog_john.png" }
+  { role: "PROG", name: "Nagera, Kristina Casandra C.", position: "VP for Programs", image: "/prog_kc.png", links: {email: "nageracassie@gmail.com",facebook: "https://www.facebook.com/casandra.nagera.2025"}},
+  { role: "PROG", name: "Federico, John Richard J.", position: "AVP for Programs", image: "/prog_john.png", links: {email: "johnrichard.univ@gmail.com",facebook: "https://www.facebook.com/jjangmooo"}},
 ];
 
 const rneMembers = [
-  { role: "R&E", name: "Gallaza, Romar M.", position: "VP for Research & Extensions", image: "/rne_romar.png" },
-  { role: "R&E", name: "Castillejo, Paul Daniel C.", position: "AVP for Research & Extensions", image: "/rne_paul.png" }
+  { role: "R&E", name: "Gallaza, Romar M.", position: "VP for Research & Extensions", image: "/rne_romar.png", links: {email: "romargallaza610@gmail.com",facebook: "https://www.facebook.com/romar.gallaza.9", github: "https://github.com/Romar-jpg", linkedin: "https://www.linkedin.com/in/romar-gallaza-729b5a386/"}},
+  { role: "R&E", name: "Castillejo, Paul Daniel C.", position: "AVP for Research & Extensions", image: "/rne_paul.png", links: {email: "pauldaniel0925@gmail.com",facebook: "https://www.facebook.com/pauldaniel.castillejo"}},
 ];
 
 const websiteContributors = [
   { role: "R&E", name: "Morales, Timothy Gabriel", position: "Project Head & Dev Member", image: "ccc_tim.png" },
-  { role: "R&E", name: "Ilao, Jhon Roy", position: "Co-Head, UI/UX Head,& Dev Head ", image: "/ccc_jhon.png" },
-  { role: "R&E", name: "Federico, John Richard J.", position: "Project Co-Head & Dev Head", image: "/prog_john.png" },
+  { role: "R&E", name: "Ilao, Jhon Roy", position: "Co-Head, Dev & UI/UX Team Head ", image: "/ccc_jhon.png" },
+  { role: "R&E", name: "Federico, John Richard J.", position: "Co-Head & Dev Head", image: "/prog_john.png" },
   { role: "R&E", name: "Sia, Shaun Asher M.", position: "UI/UX Member", image: "/ccc_shaun.png" },
   { role: "R&E", name: "Inocentes, Mariel Sofia B.", position: "UI/UX Member", image: "/ccc_mariel.png" },
   { role: "R&E", name: "Monterey, Reine Arabelle L.", position: "UI/UX Member", image: "/ccc_reine.png" },
@@ -256,7 +256,7 @@ export default function CommitteePage() {
         <AnimatedDescription className="text-blue-50 opacity-50 text-center text-[18px] tracking-tight leading-snug max-w-[1000px] mx-auto">
           Visibility is key to growth, and the Marketing Committee makes sure the spotlight is on ASCII. Through strategic promotion, curated campaigns, and dynamic social media management, they expand our reach and attract new audiences. This committee brings our vision to the forefront, inspiring others to join our journey in computer intelligence integration.
         </AnimatedDescription>
-        <MemberCardGrid members={marketingMembers} safariUrl="marketing.pupascii.com" safariImageSrc="/marketing.jpg" />
+        <MemberCardGrid members={marketingMembers} safariUrl="marketing.pupascii.com" safariImageSrc="/marketing.png" />
 
         {/* see more members */}
         <CommModalButton
