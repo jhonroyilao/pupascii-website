@@ -53,7 +53,7 @@ const rneMembers = [
 
 const websiteContributors = [
   { role: "R&E", name: "Morales, Timothy Gabriel", position: "Project Head & Dev Member", image: "ccc_tim.png" },
-  { role: "R&E", name: "Ilao, Jhon Roy", position: "Project Co-Head & UI/UX Head", image: "/ccc_jhon.png" },
+  { role: "R&E", name: "Ilao, Jhon Roy", position: "Co-Head, UI/UX Head,& Dev Head ", image: "/ccc_jhon.png" },
   { role: "R&E", name: "Federico, John Richard J.", position: "Project Co-Head & Dev Head", image: "/prog_john.png" },
   { role: "R&E", name: "Sia, Shaun Asher M.", position: "UI/UX Member", image: "/ccc_shaun.png" },
   { role: "R&E", name: "Inocentes, Mariel Sofia B.", position: "UI/UX Member", image: "/ccc_mariel.png" },
@@ -63,6 +63,7 @@ const websiteContributors = [
   { role: "R&E", name: "Esquejo, Roxane K-Anne D.", position: "Dev Member", image: "/rne_roxane.png" },
   { role: "R&E", name: "Rio, Christine B.", position: "Dev Member", image: "/prog_rio.png" },
   { role: "R&E", name: "Cabrera, Chelsea Lauren B.", position: "Dev Member", image: "/exec_chelsea.png" },
+  { role: "R&E", name: "Matinong, Arwen Therese C.", position: "Dev Member", image: "/docs_arwen.png" },
   { role: "R&E", name: "Valeza, Reinewald Marone.", position: "CCC Team", image: "/mktg_reinwald.png" },
   { role: "R&E", name: "Castillejo, Paul Daniel C.", position: "R&E Team", image: "/rne_paul.png" },
   { role: "R&E", name: "Duron, Jarren Irvine F.", position: "DocuSec Team", image: "/docs_jarren.png" },
@@ -201,7 +202,7 @@ export default function CommitteePage() {
       <Navbar />
      
       {/* meet the leaders section -tim*/}
-      <div className="pb-12">
+      <div>
         <LandingAccordionItem />
       </div>
 
@@ -210,21 +211,19 @@ export default function CommitteePage() {
 
       {/* exec section -tim */}
       <LightSectionShell id="execcomm" title="Executive Committee" animation="blurInUp" by="character">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-[#0062E4] max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-center text-[18px] tracking-tight leading-snug text-grey-800 max-w-[950px] mx-auto mb-16">
           The individuals leading ASCII through direction, coordination, and decision-making, working together to ensure every initiative, event, and project runs smoothly while serving the community with dedication and purpose.
         </AnimatedDescription>
-        <MemberCardGrid members={execcommMembers} safariUrl="execcomm.pupascii.com" safariImageSrc="/execcomm.jpg" />
+        <MemberCardGrid members={execcommMembers} safariUrl="execcomm.pupascii.com" safariImageSrc="/execcomm.png" />
         {/* see more members modal */}
-        <CommModalButton
-          members={execmembers}
-        />
+       
       </LightSectionShell>
 
       
 
       {/* ccc section -tim */}
-      <DarkSectionShell id="ccc" title="Creative Communications Committee" animation="blurInUp" by="word">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-white max-w-[1059px] mx-auto mb-16">
+      <DarkSectionShell id="ccc" title="Creative Communications" animation="blurInUp" by="word">
+        <AnimatedDescription className="text-blue-50 opacity-50 text-center text-[18px] tracking-tight leading-snug  max-w-[1059px] mx-auto">
           The Creative Communications Committee transforms ideas into compelling visuals and narratives. By blending artistic expression with clear communication to produce captivating publication materials, they shape how ASCII is seen—crafting a brand identity that not only informs but also excites, connects, and encourages the community to engage more deeply.
         </AnimatedDescription>
         <MemberCardGrid members={cccMembers} safariUrl="ccc.pupascii.com" safariImageSrc="/ccc.png" />
@@ -240,7 +239,7 @@ export default function CommitteePage() {
 
       {/* 3. Documentation & Secretariat */}
       <LightSectionShell id="docusec" title="Documentation & Secretariat" animation="blurInUp" by="character">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-[#0062E4] max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-center text-[18px] tracking-tight leading-snug text-grey-500 max-w-[1020px] mx-auto mb-16">
           The Documentation and Secretariat Committee ensures the smooth flow of information within the organization. From recording key moments to maintaining internal records, it ensures our milestones and progress are accurately documented. Their work preserves our history, supporting continuity, transparency, and a strong foundation for future growth.
         </AnimatedDescription>
         <MemberCardGrid members={docusecMembers} safariUrl="docusec.pupascii.com" safariImageSrc="/docs.jpg" />
@@ -254,7 +253,7 @@ export default function CommitteePage() {
 
       {/* 4. Marketing Committee */}
       <DarkSectionShell id="marketing" title="Marketing Committee" animation="blurInUp" by="word">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-white max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-blue-50 opacity-50 text-center text-[18px] tracking-tight leading-snug max-w-[1000px] mx-auto">
           Visibility is key to growth, and the Marketing Committee makes sure the spotlight is on ASCII. Through strategic promotion, curated campaigns, and dynamic social media management, they expand our reach and attract new audiences. This committee brings our vision to the forefront, inspiring others to join our journey in computer intelligence integration.
         </AnimatedDescription>
         <MemberCardGrid members={marketingMembers} safariUrl="marketing.pupascii.com" safariImageSrc="/marketing.jpg" />
@@ -268,10 +267,10 @@ export default function CommitteePage() {
 
       {/* 5. Programs Committee */}
       <LightSectionShell id="programs" title="Programs Committee" animation="blurInUp" by="text">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-[#0062E4] max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-center text-[18px] tracking-tight leading-snug text-grey-500 max-w-[1020px] mx-auto mb-16">
           The Programs Committee leads the planning, coordination, and execution of ASCII’s events, ensuring that every initiative runs smoothly with purpose. They create opportunities for leadership, learning, and lasting connections, fostering responsibility, confidence, and teamwork to help members grow while creating events that strengthen the ASCII community.
         </AnimatedDescription>
-        <MemberCardGrid members={programsMembers} safariUrl="programs.pupascii.com" safariImageSrc="/prog.jpg" />
+        <MemberCardGrid members={programsMembers} safariUrl="programs.pupascii.com" safariImageSrc="prog.jpg" />
 
         {/* see more members */}
         <CommModalButton
@@ -282,7 +281,7 @@ export default function CommitteePage() {
 
       {/* 6. Research and Extensions  */}
       <DarkSectionShell id="rne" title="Research and Extensions" animation="blurInUp" by="character">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-white max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-blue-50 opacity-50 text-center text-[18px] tracking-tight leading-snug max-w-[1000px] mx-auto">
           Responsible for producing insightful articles and managing collaborations, the Research and Extensions Committee ensures every message reflects our identity and resonates with our audience. Beyond crafting captions, they bridge ASCII with new opportunities, innovations, and partnerships that benefit members and partners alike.
         </AnimatedDescription>
         <MemberCardGrid members={rneMembers} safariUrl="rne.pupascii.com" safariImageSrc="/rne.jpg" />
@@ -296,7 +295,7 @@ export default function CommitteePage() {
 
       {/* website contributors - tim*/}
       <GreySectionShell id="website" title="Website Contributors" animation="blurInUp" by="character">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-[#ffffff] max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-white/90 opacity-50 text-center text-[18px] tracking-tight leading-snug max-w-[1000px] mx-auto">
           Meet the team behind the scenes who brought the ASCII Website to life! From design to development, these talented individuals worked to create a seamless and engaging online experience for our community. Special thanks to the Executive Committee, Creative Communications Committee, Documentation & Secretariat Committee, Marketing Committee, Programs Committee, and Research & Extensions Committee for their invaluable contributions.
         </AnimatedDescription>
         <MemberCardGrid members={websiteContributors} safariUrl="webdev.pupascii.com" safariImageSrc="/webdev.jpg" />
