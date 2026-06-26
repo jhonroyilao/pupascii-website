@@ -5,11 +5,11 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import Grainient from "@/components/Grainient";
 
 const accordionItems = [
-  { id: 1, title: 'EXECUTIVES', imageUrl: '/execcomm.jpg' },
+  { id: 1, title: 'EXECUTIVES', imageUrl: '/execcomm.png' },
   { id: 2, title: 'CREATIVES', imageUrl: '/ccc.png' },
   { id: 3, title: 'PROGRAMS', imageUrl: '/prog.jpg' },
   { id: 4, title: 'MARKETING', imageUrl: '/marketing.jpg' },
-  { id: 5, title: 'RESEARCH & EXTENSIONS', imageUrl: '/rne.jpg' },
+  { id: 5, title: 'RNE', imageUrl: '/rne.jpg' },
   { id: 6, title: 'DOCUSEC', imageUrl: '/docs.jpg' },
 ];
 
