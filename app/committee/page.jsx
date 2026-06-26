@@ -53,8 +53,8 @@ const rneMembers = [
 
 const websiteContributors = [
   { role: "R&E", name: "Morales, Timothy Gabriel", position: "Project Head & Dev Member", image: "ccc_tim.png" },
-  { role: "R&E", name: "Ilao, Jhon Roy", position: "Co-Head, UI/UX Head,& Dev Head ", image: "/ccc_jhon.png" },
-  { role: "R&E", name: "Federico, John Richard J.", position: "Project Co-Head & Dev Head", image: "/prog_john.png" },
+  { role: "R&E", name: "Ilao, Jhon Roy", position: "Co-Head, Dev & UI/UX Team Head ", image: "/ccc_jhon.png" },
+  { role: "R&E", name: "Federico, John Richard J.", position: "Co-Head & Dev Head", image: "/prog_john.png" },
   { role: "R&E", name: "Sia, Shaun Asher M.", position: "UI/UX Member", image: "/ccc_shaun.png" },
   { role: "R&E", name: "Inocentes, Mariel Sofia B.", position: "UI/UX Member", image: "/ccc_mariel.png" },
   { role: "R&E", name: "Monterey, Reine Arabelle L.", position: "UI/UX Member", image: "/ccc_reine.png" },
