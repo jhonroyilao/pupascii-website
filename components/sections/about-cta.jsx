@@ -71,7 +71,7 @@ export default function CommunityCTA() {
 
             <div className="pt-2 sm:pt-4 w-full sm:w-auto flex justify-center md:justify-start">
               <ShinyButton
-                href="/contacts"
+                href="/contact"
                 icon={<ArrowRight size={18} />}
                 className="shadow-none"
 

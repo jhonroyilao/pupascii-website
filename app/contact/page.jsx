@@ -260,8 +260,8 @@ const [formState, setFormState] = useState({ name: "", email: "", message: "" })
             
             {/* Submit Button */}
             <div>
-              <ShinyButton icon={sent ? <Check size={16} /> : <ArrowRight size={16} />} type="submit">
-                {sent ? "message sent!" : "send message"}
+              <ShinyButton  icon={sent ? <Check size={16} /> : <ArrowRight size={16} />} type="submit" className="shadow-none">
+                {sent ? "message sent!" : "send message"} 
               </ShinyButton>
             </div>
           </form>
