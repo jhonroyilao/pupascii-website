@@ -86,7 +86,7 @@ export function SirMon({}) {
               </div>
             </div>
 
-            <div class="space-y-6">
+            <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">
               /ASCII ADVISER
             </p>

@@ -52,24 +52,22 @@ const rneMembers = [
 ];
 
 const websiteContributors = [
-  { role: "R&E", name: "Morales, Timothy Gabriel", position: "Project Head & Dev Member", image: "ccc_tim.png" },
-  { role: "R&E", name: "Ilao, Jhon Roy", position: "Co-Head, Dev & UI/UX Team Head ", image: "/ccc_jhon.png" },
-  { role: "R&E", name: "Federico, John Richard J.", position: "Co-Head & Dev Head", image: "/prog_john.png" },
-  { role: "R&E", name: "Sia, Shaun Asher M.", position: "UI/UX Member", image: "/ccc_shaun.png" },
+  { role: "R&E", name: "Morales, Timothy Gabriel", position: "Project Head & Dev Member", image: "/ccc_tim.png" },
+  { role: "R&E", name: "Ilao, Jhon Roy", position: "Co-Head, Dev Head, UI/UX Head", image: "/ccc_jhon.png", links: { email: "jhonroyilao@gmail.com", facebook: "https://web.facebook.com/jhnroyilao", github: "https://github.com/jhonroyilao", linkedin: "https://www.linkedin.com/in/jhon-roy-ilao-3992b9293/" } },
+  { role: "R&E", name: "Federico, John Richard J.", position: "Co-Head & Dev Head", image: "/prog_john.png", links: { email: "johnrichard.univ@gmail.com", facebook: "https://www.facebook.com/jjangmooo" } },
+  { role: "R&E", name: "Sia, Shaun Asher M.", position: "UI/UX Member", image: "/ccc_shaun.png", links: { email: "siashaun4@gmail.com", facebook: "https://facebook.com/omaiow" } },
   { role: "R&E", name: "Inocentes, Mariel Sofia B.", position: "UI/UX Member", image: "/ccc_mariel.png" },
   { role: "R&E", name: "Monterey, Reine Arabelle L.", position: "UI/UX Member", image: "/ccc_reine.png" },
-  { role: "R&E", name: "Lagat, Joemar R.", position: "UI/UX Member", image: "/exec_joemar.png" },
+  { role: "R&E", name: "Lagat, Joemar R.", position: "UI/UX Member", image: "/exec_joemar.png", links: { email: "joemarlagatr@gmail.com", facebook: "https://www.facebook.com/joemar.lagat.2025", github: "https://github.com/JMR-san", linkedin: "https://www.linkedin.com/in/jmrlagat" } },
   { role: "R&E", name: "Aviles, Joan Kathleen E.", position: "Dev Member", image: "/docs_joan.png" },
   { role: "R&E", name: "Esquejo, Roxane K-Anne D.", position: "Dev Member", image: "/rne_roxane.png" },
   { role: "R&E", name: "Rio, Christine B.", position: "Dev Member", image: "/prog_rio.png" },
-  { role: "R&E", name: "Cabrera, Chelsea Lauren B.", position: "Dev Member", image: "/exec_chelsea.png" },
+  { role: "R&E", name: "Cabrera, Chelsea Lauren B.", position: "Dev Member", image: "/exec_chelsea.png", links: { email: "chlaurencabrera@gmail.com", facebook: "https://www.facebook.com/chelsea.cabrera.99", github: "https://github.com/aesrch", linkedin: "https://www.linkedin.com/in/chelsealaurencabrera/" } },
   { role: "R&E", name: "Matinong, Arwen Therese C.", position: "Dev Member", image: "/docs_arwen.png" },
-  { role: "R&E", name: "Valeza, Reinewald Marone.", position: "CCC Team", image: "/mktg_reinwald.png" },
-  { role: "R&E", name: "Castillejo, Paul Daniel C.", position: "R&E Team", image: "/rne_paul.png" },
-  { role: "R&E", name: "Duron, Jarren Irvine F.", position: "DocuSec Team", image: "/docs_jarren.png" },
-
+  { role: "R&E", name: "Valeza, Reinwald Marone", position: "CCC Team", image: "/mktg_reinwald.png", links: { email: "reinwaldmaronevaleza101505@gmail.com", facebook: "https://www.facebook.com/marone.valeza" } },
+  { role: "R&E", name: "Castillejo, Paul Daniel C.", position: "R&E Team", image: "/rne_paul.png", links: { email: "pauldaniel0925@gmail.com", facebook: "https://www.facebook.com/pauldaniel.castillejo" } },
+  { role: "R&E", name: "Duron, Jarren Irvine F.", position: "DocuSec Team", image: "/docs_jarren.png", links: { email: "jarrenirvine.duron320401@gmail.com", facebook: "https://www.facebook.com/JarrenIrvineDuron" } },
 ];
-
 
 // MEMBER LIST FOR MODALS
 const execmembers = [
