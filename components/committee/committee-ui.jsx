@@ -17,11 +17,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import {
-  AnimatedSpan,
-  Terminal,
-  TypingAnimation,
-} from "@/components/ui/terminal"
 
 import { RetroGrid } from "@/components/ui/retro-grid"
 // DRAGGABLE CARD COMPONENTS
