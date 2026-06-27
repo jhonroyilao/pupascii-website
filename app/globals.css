@@ -3,7 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
 * {
   cursor: none !important;
 }
@@ -62,7 +61,20 @@
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
-}
+
+  --animate-shine: shine var(--duration) infinite linear
+;
+  @keyframes shine {
+  0% {
+    background-position: 0% 0%;
+    }
+  50% {
+    background-position: 100% 100%;
+    }
+  to {
+    background-position: 0% 0%;
+    }
+  }}
 
 @layer base {
   body {
@@ -70,8 +82,6 @@
     font-family: var(--font-inter), sans-serif;
   }
 }
-
-
 
 @layer utilities {
   .font-bricolage {

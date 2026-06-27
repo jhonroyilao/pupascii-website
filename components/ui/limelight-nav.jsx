@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useRef, useLayoutEffect } from "react"
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react"
 
 export function LimelightNav({
   items = [],
@@ -14,9 +14,22 @@ export function LimelightNav({
   const navItemRefs = useRef([])
   const limelightRef = useRef(null)
 
+  // sync internal state when route changes
+  useEffect(() => {
+    setActiveIndex(defaultActiveIndex)
+    setIsReady(false)
+  }, [defaultActiveIndex])
+
   useLayoutEffect(() => {
     if (items.length === 0) return
     const limelight = limelightRef.current
+
+    // hide when on contact page or no match
+    if (activeIndex < 0) {
+      if (limelight) limelight.style.left = "-999px"
+      return
+    }
+
     const activeItem = navItemRefs.current[activeIndex]
     if (limelight && activeItem) {
       const newLeft = activeItem.offsetLeft + activeItem.offsetWidth / 2 - limelight.offsetWidth / 2
@@ -34,21 +47,25 @@ export function LimelightNav({
   return (
     <nav className={`relative inline-flex items-center h-11 ${className}`}>
       {items.map(({ id, label, href, onClick }, index) => (
-        <a  // 👈 this was missing!
+        <span
           key={id}
-          ref={el => (navItemRefs.current[index] = el)}
-          href={href}
-          onClick={() => handleClick(index, onClick)}
-          className="relative z-20 flex h-full cursor-pointer items-center justify-center px-5 transition-all duration-200"
-          style={{
-            fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
-            fontWeight: activeIndex === index ? 500 : 400,
-            color: activeIndex === index ? "white" : "rgba(255,255,255,0.65)",
-          }}
+          ref={el => { navItemRefs.current[index] = el }}
+          className="relative z-20 flex h-full cursor-pointer items-center justify-center"
         >
-          {label}
-        </a>
+          <a
+            href={href}
+            onClick={() => handleClick(index, onClick)}
+            className="flex h-full items-center justify-center px-5 transition-all duration-200"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              fontWeight: activeIndex === index ? 500 : 400,
+              color: activeIndex === index ? "white" : "rgba(255,255,255,0.65)",
+            }}
+          >
+            {label}
+          </a>
+        </span>
       ))}
 
       {/* Limelight bar */}
@@ -62,7 +79,6 @@ export function LimelightNav({
           transition: isReady ? "left 0.35s ease-in-out" : "none",
         }}
       >
-        {/* Cone glow beneath */}
         <div
           className="absolute top-[3px] pointer-events-none"
           style={{
