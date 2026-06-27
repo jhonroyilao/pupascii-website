@@ -373,7 +373,7 @@ export function CinematicFooter() {
                 </MagneticButton>
                 <MagneticButton
                   as="a"
-                  href="/contacts"
+                  href="/contact"
                   className="footer-glass-pill px-6 py-3 rounded-full text-white/70 font-medium text-xs md:text-sm hover:text-white"
                 >
                   Contacts
