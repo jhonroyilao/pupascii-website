@@ -18,43 +18,43 @@ import {
 import { SirMon } from "../../components/committee/committee-ui";
 
 const execcommMembers = [
-  { role: "EXEC", name: "Cabrera, Chelsea Lauren B.", position: "President", image: "/exec_chelsea.png" },
-  { role: "EXEC", name: "Reolada, Gavinn M.", position: "Executive Vice President", image: "/exec_gavinn.png" },
-  { role: "EXEC", name: "Biso, Erika P.", position: "Executive Secretary", image: "/exec_erika.png" },
-  { role: "EXEC", name: "Narte, Ma. Victoria C.", position: "Executive Assistant Secretary", image: "/exec_victoria.png" },
-  { role: "EXEC", name: "Guioguio, Kenneth M.", position: "VP for Finance", image: "exec_kenneth.png" },
-  { role: "EXEC", name: "Lagat, Joemar R.", position: "VP for Audit", image: "/exec_joemar.png" },
+  { role: "EXEC", name: "Cabrera, Chelsea Lauren B.", position: "President", image: "/exec_chelsea.png", links: {email: "chlaurencabrera@gmail.com",facebook: "https://www.facebook.com/chelsea.cabrera.99", github: "https://github.com/aesrch", linkedin: "https://www.linkedin.com/in/chelsealaurencabrera/"}},
+  { role: "EXEC", name: "Reolada, Gavinn M.", position: "Executive Vice President", image: "/exec_gavinn.png", links: {email: "gavinnreolada@gmail.com",facebook: "https://www.facebook.com/gavinn.reolada"}},
+  { role: "EXEC", name: "Biso, Erika P.", position: "Executive Secretary", image: "/exec_erika.png", links: {email: "erikapbiso@gmail.com",facebook: "https://www.facebook.com/erikabiso", github: "https://github.com/erikabiso", linkedin: "https://www.linkedin.com/in/erikabiso"}},
+  { role: "EXEC", name: "Narte, Ma. Victoria C.", position: "Executive Assistant Secretary", image: "/exec_victoria.png", links: {email: "nartevictoria@gmail.com",facebook: "https://www.facebook.com/narte.victoriaa.21", github: "https://github.com/coffeerii", linkedin: "https://www.linkedin.com/in/mavictorianarte"}},
+  { role: "EXEC", name: "Guioguio, Kenneth M.", position: "VP for Finance", image: "exec_kenneth.png", links: {email: "kenneth.guioguio.s06@gmail.com",facebook: "https://www.facebook.com/KennG.Mags", github: "https://github.com/k3nn-g", linkedin: "https://www.linkedin.com/in/kenneth-guioguio-99b054263/"}},
+  { role: "EXEC", name: "Lagat, Joemar R.", position: "VP for Audit", image: "/exec_joemar.png", links: {email: "joemarlagatr@gmail.com",facebook: "https://www.facebook.com/joemar.lagat.2025", github: "https://github.com/JMR-san", linkedin: "https://www.linkedin.com/in/jmrlagat"}},
 ];
 
 const cccMembers= [
-  { role: "CCC", name: "Ilao, Jhon Roy", position: "VP for Creative Communications", image: "/ccc_jhon.png" },
-  { role: "CCC", name: "Sia, Shaun Asher M.", position: "AVP for Creative Communications", image: "/ccc_shaun.png" }
+  { role: "CCC", name: "Ilao, Jhon Roy", position: "VP for Creative Communications", image: "/ccc_jhon.png", links: {email: "jhonroyilao@gmail.com",facebook: "https://web.facebook.com/jhnroyilao", github: "https://github.com/jhonroyilao", linkedin: "https://www.linkedin.com/in/jhon-roy-ilao-3992b9293/"}},
+  { role: "CCC", name: "Sia, Shaun Asher M.", position: "AVP for Creative Communications", image: "/ccc_shaun.png", links: {email: "siashaun4@gmail.com",facebook: "https://facebook.com/omaiow"}},
 ];
 
 const docusecMembers = [
-  { role: "DOCS", name: "Duron, Jarren Irvine F.", position: "VP for Documentation & Secretariat", image: "/docs_jarren.png" },
-  { role: "DOCS", name: "Diaz, Lei Eizen P.", position: "AVP for Documentation & Secretariat", image: "/docs_lei.png" }
+  { role: "DOCS", name: "Duron, Jarren Irvine F.", position: "VP for Documentation & Secretariat", image: "/docs_jarren.png", links: {email: "jarrenirvine.duron320401@gmail.com",facebook: "https://www.facebook.com/JarrenIrvineDuron"}},
+  { role: "DOCS", name: "Diaz, Lei Eizen P.", position: "AVP for Documentation & Secretariat", image: "/docs_lei.png", links: {email: "leidiaz0518@gmail.com",facebook: "https://www.facebook.com/leieizen.diaz.7"}},
 ];
 
 const marketingMembers = [
-  { role: "MKTG", name: "Gragas, Nethan Edry L.", position: "VP for Marketing", image: "/mktg_nethan.png" },
-  { role: "MKTG", name: "Valeza, Reinwald Marone", position: "AVP for Marketing", image: "/mktg_reinwald.png" }
+  { role: "MKTG", name: "Gragas, Nethan Edry L.", position: "VP for Marketing", image: "/mktg_nethan.png", links: {email: "nethanedrygragas@gmail.com",facebook: "https://www.facebook.com/nelgragas"}},
+  { role: "MKTG", name: "Valeza, Reinwald Marone", position: "AVP for Marketing", image: "/mktg_reinwald.png", links: {email: "reinwaldmaronevaleza101505@gmail.com",facebook: "https://www.facebook.com/marone.valeza"}},
 ];
 
 const programsMembers = [
-  { role: "PROG", name: "Nagera, Kristina Casandra C.", position: "VP for Programs", image: "/prog_kc.png" },
-  { role: "PROG", name: "Federico, John Richard J.", position: "AVP for Programs", image: "/prog_john.png" }
+  { role: "PROG", name: "Nagera, Kristina Casandra C.", position: "VP for Programs", image: "/prog_kc.png", links: {email: "nageracassie@gmail.com",facebook: "https://www.facebook.com/casandra.nagera.2025"}},
+  { role: "PROG", name: "Federico, John Richard J.", position: "AVP for Programs", image: "/prog_john.png", links: {email: "johnrichard.univ@gmail.com",facebook: "https://www.facebook.com/jjangmooo"}},
 ];
 
 const rneMembers = [
-  { role: "R&E", name: "Gallaza, Romar M.", position: "VP for Research & Extensions", image: "/rne_romar.png" },
-  { role: "R&E", name: "Castillejo, Paul Daniel C.", position: "AVP for Research & Extensions", image: "/rne_paul.png" }
+  { role: "R&E", name: "Gallaza, Romar M.", position: "VP for Research & Extensions", image: "/rne_romar.png", links: {email: "romargallaza610@gmail.com",facebook: "https://www.facebook.com/romar.gallaza.9", github: "https://github.com/Romar-jpg", linkedin: "https://www.linkedin.com/in/romar-gallaza-729b5a386/"}},
+  { role: "R&E", name: "Castillejo, Paul Daniel C.", position: "AVP for Research & Extensions", image: "/rne_paul.png", links: {email: "pauldaniel0925@gmail.com",facebook: "https://www.facebook.com/pauldaniel.castillejo"}},
 ];
 
 const websiteContributors = [
   { role: "R&E", name: "Morales, Timothy Gabriel", position: "Project Head & Dev Member", image: "ccc_tim.png" },
-  { role: "R&E", name: "Ilao, Jhon Roy", position: "Project Co-Head & UI/UX Head", image: "/ccc_jhon.png" },
-  { role: "R&E", name: "Federico, John Richard J.", position: "Project Co-Head & Dev Head", image: "/prog_john.png" },
+  { role: "R&E", name: "Ilao, Jhon Roy", position: "Co-Head, Dev & UI/UX Team Head ", image: "/ccc_jhon.png" },
+  { role: "R&E", name: "Federico, John Richard J.", position: "Co-Head & Dev Head", image: "/prog_john.png" },
   { role: "R&E", name: "Sia, Shaun Asher M.", position: "UI/UX Member", image: "/ccc_shaun.png" },
   { role: "R&E", name: "Inocentes, Mariel Sofia B.", position: "UI/UX Member", image: "/ccc_mariel.png" },
   { role: "R&E", name: "Monterey, Reine Arabelle L.", position: "UI/UX Member", image: "/ccc_reine.png" },
@@ -63,6 +63,7 @@ const websiteContributors = [
   { role: "R&E", name: "Esquejo, Roxane K-Anne D.", position: "Dev Member", image: "/rne_roxane.png" },
   { role: "R&E", name: "Rio, Christine B.", position: "Dev Member", image: "/prog_rio.png" },
   { role: "R&E", name: "Cabrera, Chelsea Lauren B.", position: "Dev Member", image: "/exec_chelsea.png" },
+  { role: "R&E", name: "Matinong, Arwen Therese C.", position: "Dev Member", image: "/docs_arwen.png" },
   { role: "R&E", name: "Valeza, Reinewald Marone.", position: "CCC Team", image: "/mktg_reinwald.png" },
   { role: "R&E", name: "Castillejo, Paul Daniel C.", position: "R&E Team", image: "/rne_paul.png" },
   { role: "R&E", name: "Duron, Jarren Irvine F.", position: "DocuSec Team", image: "/docs_jarren.png" },
@@ -201,7 +202,7 @@ export default function CommitteePage() {
       <Navbar />
      
       {/* meet the leaders section -tim*/}
-      <div className="pb-12">
+      <div>
         <LandingAccordionItem />
       </div>
 
@@ -210,21 +211,19 @@ export default function CommitteePage() {
 
       {/* exec section -tim */}
       <LightSectionShell id="execcomm" title="Executive Committee" animation="blurInUp" by="character">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-[#0062E4] max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-center text-[18px] tracking-tight leading-snug text-grey-800 max-w-[950px] mx-auto mb-16">
           The individuals leading ASCII through direction, coordination, and decision-making, working together to ensure every initiative, event, and project runs smoothly while serving the community with dedication and purpose.
         </AnimatedDescription>
-        <MemberCardGrid members={execcommMembers} safariUrl="execcomm.pupascii.com" safariImageSrc="/execcomm.jpg" />
+        <MemberCardGrid members={execcommMembers} safariUrl="execcomm.pupascii.com" safariImageSrc="/execcomm.png" />
         {/* see more members modal */}
-        <CommModalButton
-          members={execmembers}
-        />
+       
       </LightSectionShell>
 
       
 
       {/* ccc section -tim */}
-      <DarkSectionShell id="ccc" title="Creative Communications Committee" animation="blurInUp" by="word">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-white max-w-[1059px] mx-auto mb-16">
+      <DarkSectionShell id="ccc" title="Creative Communications" animation="blurInUp" by="word">
+        <AnimatedDescription className="text-blue-50 opacity-50 text-center text-[18px] tracking-tight leading-snug  max-w-[1059px] mx-auto">
           The Creative Communications Committee transforms ideas into compelling visuals and narratives. By blending artistic expression with clear communication to produce captivating publication materials, they shape how ASCII is seen—crafting a brand identity that not only informs but also excites, connects, and encourages the community to engage more deeply.
         </AnimatedDescription>
         <MemberCardGrid members={cccMembers} safariUrl="ccc.pupascii.com" safariImageSrc="/ccc.png" />
@@ -240,7 +239,7 @@ export default function CommitteePage() {
 
       {/* 3. Documentation & Secretariat */}
       <LightSectionShell id="docusec" title="Documentation & Secretariat" animation="blurInUp" by="character">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-[#0062E4] max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-center text-[18px] tracking-tight leading-snug text-grey-500 max-w-[1020px] mx-auto mb-16">
           The Documentation and Secretariat Committee ensures the smooth flow of information within the organization. From recording key moments to maintaining internal records, it ensures our milestones and progress are accurately documented. Their work preserves our history, supporting continuity, transparency, and a strong foundation for future growth.
         </AnimatedDescription>
         <MemberCardGrid members={docusecMembers} safariUrl="docusec.pupascii.com" safariImageSrc="/docs.jpg" />
@@ -254,10 +253,10 @@ export default function CommitteePage() {
 
       {/* 4. Marketing Committee */}
       <DarkSectionShell id="marketing" title="Marketing Committee" animation="blurInUp" by="word">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-white max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-blue-50 opacity-50 text-center text-[18px] tracking-tight leading-snug max-w-[1000px] mx-auto">
           Visibility is key to growth, and the Marketing Committee makes sure the spotlight is on ASCII. Through strategic promotion, curated campaigns, and dynamic social media management, they expand our reach and attract new audiences. This committee brings our vision to the forefront, inspiring others to join our journey in computer intelligence integration.
         </AnimatedDescription>
-        <MemberCardGrid members={marketingMembers} safariUrl="marketing.pupascii.com" safariImageSrc="/marketing.jpg" />
+        <MemberCardGrid members={marketingMembers} safariUrl="marketing.pupascii.com" safariImageSrc="/marketing.png" />
 
         {/* see more members */}
         <CommModalButton
@@ -268,10 +267,10 @@ export default function CommitteePage() {
 
       {/* 5. Programs Committee */}
       <LightSectionShell id="programs" title="Programs Committee" animation="blurInUp" by="text">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-[#0062E4] max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-center text-[18px] tracking-tight leading-snug text-grey-500 max-w-[1020px] mx-auto mb-16">
           The Programs Committee leads the planning, coordination, and execution of ASCII’s events, ensuring that every initiative runs smoothly with purpose. They create opportunities for leadership, learning, and lasting connections, fostering responsibility, confidence, and teamwork to help members grow while creating events that strengthen the ASCII community.
         </AnimatedDescription>
-        <MemberCardGrid members={programsMembers} safariUrl="programs.pupascii.com" safariImageSrc="/prog.jpg" />
+        <MemberCardGrid members={programsMembers} safariUrl="programs.pupascii.com" safariImageSrc="prog.jpg" />
 
         {/* see more members */}
         <CommModalButton
@@ -282,7 +281,7 @@ export default function CommitteePage() {
 
       {/* 6. Research and Extensions  */}
       <DarkSectionShell id="rne" title="Research and Extensions" animation="blurInUp" by="character">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-white max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-blue-50 opacity-50 text-center text-[18px] tracking-tight leading-snug max-w-[1000px] mx-auto">
           Responsible for producing insightful articles and managing collaborations, the Research and Extensions Committee ensures every message reflects our identity and resonates with our audience. Beyond crafting captions, they bridge ASCII with new opportunities, innovations, and partnerships that benefit members and partners alike.
         </AnimatedDescription>
         <MemberCardGrid members={rneMembers} safariUrl="rne.pupascii.com" safariImageSrc="/rne.jpg" />
@@ -296,7 +295,7 @@ export default function CommitteePage() {
 
       {/* website contributors - tim*/}
       <GreySectionShell id="website" title="Website Contributors" animation="blurInUp" by="character">
-        <AnimatedDescription className="text-center text-[18px] leading-[28px] text-[#ffffff] max-w-[1059px] mx-auto mb-16">
+        <AnimatedDescription className="text-white/90 opacity-50 text-center text-[18px] tracking-tight leading-snug max-w-[1000px] mx-auto">
           Meet the team behind the scenes who brought the ASCII Website to life! From design to development, these talented individuals worked to create a seamless and engaging online experience for our community. Special thanks to the Executive Committee, Creative Communications Committee, Documentation & Secretariat Committee, Marketing Committee, Programs Committee, and Research & Extensions Committee for their invaluable contributions.
         </AnimatedDescription>
         <MemberCardGrid members={websiteContributors} safariUrl="webdev.pupascii.com" safariImageSrc="/webdev.jpg" />
