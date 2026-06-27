@@ -14,7 +14,7 @@ const STYLES = `
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
 .cinematic-footer-wrapper {
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   
   --pill-bg-1: rgba(255,255,255,0.18);
@@ -308,7 +308,7 @@ export function CinematicFooter() {
               <GradientText
                 colors={["#ffffff", "#a8d8ff", "#ffffff"]}
                 animationSpeed={10}
-                className="text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-12 text-center"
+                className="font-bricolage text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-12 text-center"
               >
                 lead. inspire. exalt.
               </GradientText>
