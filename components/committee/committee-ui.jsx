@@ -8,15 +8,14 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import Image from "next/image";
 import GradientText from "@/components/ui/gradienttext";
 import { ArrowRight, Sparkles } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+import { 
+  Dialog, 
+  DialogContent, 
+  DialogTrigger, 
+  DialogTitle, 
+  DialogDescription 
 } from "@/components/ui/dialog";
-
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 import { RetroGrid } from "@/components/ui/retro-grid"
 // DRAGGABLE CARD COMPONENTS
@@ -98,23 +97,28 @@ export function SirMon({}) {
           <br/> <br/>His research interests include Software Development, Web Application, Android Development, Big Data, Data Science, Human- Computer Interaction (HCI), and Internet of Things (IOT).
             </p>
             
-            <div className="flex items-center gap-4 pt-4 border-t border-blue-100">
-              <a 
-                href="mailto:example@pup.edu.ph" // Ilagay ang actual email dito
-                className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
-              >
-                <Mail className="h-5 w-5" />
-                <span className="font-medium underline underline-offset-4 text-[#676E76]">/mgmolejon@pup.edu.ph</span>
-              </a>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-4 border-t border-blue-100">
+            <a 
+              href="mailto:mgmolejon@pup.edu.ph"
+              className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors w-full sm:w-auto"
+            >
+              <Mail className="h-5 w-5 shrink-0" />
+              <span className="font-medium underline underline-offset-4 text-[#676E76] break-all">
+                /mgmolejon@pup.edu.ph
+              </span>
+            </a>
 
-              <a 
-                href="https://www.facebook.com/monmolejon" // Ilagay ang actual email dito
-                className="flex items-center gap-1 text-blue-600 hover:text-blue-800 transition-colors"
-              >
-                <Facebook className="h-5 w-5 " />
-                <span className="font-medium underline underline-offset-4 text-[#676E76]"> /monmolejon</span>
-              </a>
-            </div>
+            <a 
+              href="https://www.facebook.com/monmolejon"
+              className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors w-full sm:w-auto"
+            >
+              <Facebook className="h-5 w-5 shrink-0" />
+              <span className="font-medium underline underline-offset-4 text-[#676E76] break-all">
+                /monmolejon
+              </span>
+            </a>
+            
+          </div>
             
             </div>
             {/* 
@@ -310,19 +314,19 @@ function MemberCard({ role, name, position, image, links={} }) {
 
 export function MemberCardGrid({ members = [], safariUrl, safariImageSrc }) {
   return (
-    
     <motion.div className="w-full">
       {safariImageSrc && (
-        <div
+        <motion.div
           className="relative mx-auto mt-20 w-full max-w-[1100px] pb-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewportOnce}
           transition={fadeUpTransition}
         >
-          <Safari url={safariUrl} imageSrc={safariImageSrc} className="w-full" />
-        </div>
+      <Safari className="w-full" imageSrc={safariImageSrc} url={safariUrl} />
+        </motion.div>
       )}
+      
       {members.length > 0 && (
         <motion.div
           variants={gridContainerVariants}
@@ -332,20 +336,20 @@ export function MemberCardGrid({ members = [], safariUrl, safariImageSrc }) {
         >
           <motion.div className="flex flex-row flex-wrap items-center justify-center gap-[50px] px-4 [perspective:1200px]">
             {members.map((member, index) => (
-              <div key={`${member.role}-${member.position}-${index}`} variants={fadeUpItemVariants}>
-                
-                <MemberCard {...member} />
-
-              </div>
+              // GAWING MOTION.DIV ITO PARA GUMANA ANG VARIANTS
+              <motion.div 
+                key={`${member.role}-${member.position}-${index}`} 
+                variants={fadeUpItemVariants}
+              >
+                <MemberCard {...member}/>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>
       )}
-    
     </motion.div>
   );
 }
-
 export function MemberCardCarousel({ members = [], safariUrl, safariImageSrc }) {
 
   <div>
@@ -357,61 +361,37 @@ export function CommModalButton({ title = "Committee", members = [] }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        {/* Container ng dalawang buttons */}
-        <div className="mx-auto mt-8 flex w-full max-w-sm items-center justify-center gap-3 cursor-pointer">
-          
-         
-          {/* Main pill button */}
-<div
-  className="flex items-center gap-2 rounded-2xl px-7 py-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg border border-[#0062E4]"
-  style={{ background: "white" }}
->
-  <GradientText
-    colors={["#0062E4", "#063A80", "#3DCBFF"]}
-    animationSpeed={10}
-    className="text-sm font-medium tracking-normal uppercase"
-    style={{ fontFamily: "var(--font-inter)" }}
-  >
-    SEE ALL MEMBERS
-  </GradientText>
-</div>
+        <div className="mx-auto mt-8 flex w-full max-w-sm items-center justify-center gap-3 cursor-pointer overflow-hidden">
+          <div className="flex items-center gap-2 rounded-2xl px-7 py-3.5 transition-all hover:-translate-y-0.5 border-1 border-[#0062E4] bg-white">
+            <span className="text-sm font-medium uppercase text-[#0062E4]">SEE ALL MEMBERS</span>
+          </div>
 
-{/* Glass arrow button - Updated with Blue Border */}
-<div
-  className="w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-600/10"
-  style={{
-    background: "white",
-    backdropFilter: "blur(12px)",
-    WebkitBackdropFilter: "blur(12px)",
-    border: "1.5px solid #0062E4",
-  }}
->
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <path 
-      d="M3 13L13 3M13 3H6M13 3V10" 
-      stroke="#0062E4" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    />
-  </svg>
-</div>
+          <div className="w-12 h-12 rounded-2xl flex items-center justify-center transition-all hover:-translate-y-0.5 border-1 border-[#0062E4] bg-white">
+             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="#0062E4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </div>
         </div>
       </DialogTrigger>
 
-      <DialogContent
-        className="w-[98vw] max-w-[1350px] sm:max-w-[1350px] h-auto rounded-[32px] border border-white/10 bg-blue p-0 text-white shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
-      >
-        <div className="rounded-[32px] border border-white/10 bg-white/6 p-6">
-          <h4 className="text-lg font-semibold text-white">Member List</h4>
-          <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
+      <DialogContent className="rounded-[32px] bg-white p-0 text-black shadow-2xl border-none" style={{
+    maxWidth: '1200px', 
+    width: '95vw',      
+  }}>
+        <VisuallyHidden>
+          <DialogTitle>{title} Members</DialogTitle>
+          <DialogDescription>Complete list of committee members.</DialogDescription>
+        </VisuallyHidden>
+
+        <div className="p-8 max-h-[85vh] overflow-y-auto">
+          <h4 className="text-2xl font-bold mb-6 text-black">{title} Members</h4>
+          
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {members.map((member) => (
               <li
                 key={`${member.name}-${member.role}`}
-                className="rounded-2xl border border-white/10 bg-white/8 px-4 py-3 text-sm text-white/90"
+                className="rounded-2xl border border-gray-500 bg-gray-50 px-5 py-4 text-sm hover:bg-gray-100 transition-colors"
               >
-                <div className="font-semibold text-white">{member.name}</div>
-                <div className="text-xs text-white/70">{member.role}</div>
+                <div className="font-semibold text-gray-900">{member.name}</div>
+                <div className="text-xs text-gray-500 mt-1">{member.role}</div>
               </li>
             ))}
           </ul>
