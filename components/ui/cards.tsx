@@ -56,7 +56,7 @@ export const Cards = ({
       title: "2010–2014",
       description:
         "where it all began — the roots of PUP ASCII were built through student-driven learning, collaboration, and community involvement. From peer-to-peer programming tutorials to mock exams and campus initiatives, the organization established a culture grounded in growth and shared passion for technology.",
-      image: "/pic1.jpg",
+      image: "/history/2013.png",
       className: "bg-[#0062E4] [&_h2]:text-white",
       config: { y: -20, x: 0, rotate: -15, zIndex: 2 },
     },
@@ -64,23 +64,23 @@ export const Cards = ({
       title: "2015–2019",
       description:
         "beyond the classroom — ASCII began expanding its reach through major seminars, bootcamps, and technology-centered initiatives that connected students with real-world innovation, while strengthening humanitarian efforts alongside technical excellence.",
-      image: "/ccisweek1.png",
+      image: "/history/2016.png",
       className: "bg-neutral-800 [&_h2]:text-white",
       config: { y: 20, x: 180, rotate: 8, zIndex: 3 },
     },
     {
-      title: "2020–2021",
+      title: "2020–2023",
       description:
         "connected from a distance — when the pandemic reshaped student life, ASCII transformed its digital platforms into spaces for support, accessibility, and connection through online initiatives and relief campaigns.",
-      image: "/aboutpic2.png",
+      image: "/history/2023.jpg",
       className: "bg-[#0062E4] [&_h2]:text-white",
       config: { y: -50, x: 360, rotate: -5, zIndex: 4 },
     },
     {
-      title: "2022–present",
+      title: "2024–present",
       description:
         "redefining student tech culture — ASCII evolved into a modern, highly organized tech collective that reimagined academic engagement through competitive events, creative initiatives, and immersive student experiences.",
-      image: "/aboutpic3.png",
+      image: "/history/2025.jpg",
       className: "bg-neutral-800 [&_h2]:text-white",
       config: { y: 20, x: 540, rotate: 12, zIndex: 5 },
     },

@@ -22,7 +22,7 @@ export default function FeaturesSectionDemo() {
       description:
         "a week-long college event featuring booths, a scavenger hunt, and a research colloquium that showcase creativity, collaboration, and academic excellence in the college.",
       skeleton: <SkeletonTwo />,
-      className: "md:col-span-1 md:border-b border-neutral-200", // 👈 Fixed missing column value here
+      className: "md:col-span-1 md:border-b border-neutral-200", 
     },
     {
       title: "Usap Tayo, Sinta! Year 2",
@@ -43,7 +43,6 @@ export default function FeaturesSectionDemo() {
   return (
     <div className="relative z-20 mx-auto w-full py-5 lg:py-24 px-4 md:px-8 overflow-hidden">
       
-      {/* ── Background Interactive Fluid Grainient ── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
         <Grainient
           color1="#3B82F6"
@@ -88,7 +87,6 @@ export default function FeaturesSectionDemo() {
       </div>
 
       {/* --- CONTENT BOX --- */}
-      {/* Added relative z-10 below to bring back the white grid cards */}
       <div className="mx-auto max-w-7xl bg-white rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {features.map((feature, idx) => (
@@ -166,11 +164,11 @@ export const SkeletonOne = () => {
 
 export const SkeletonTwo = () => {
   const images = [
-    { src: "ccisweek1.png", angle: "-8deg" },
-    { src: "ccisweek2.png", angle: "2deg" },
-    { src: "ccisweek3.png", angle: "8deg" },
+    { src: "ccisweek/2.png", angle: "-8deg" },
+    { src: "ccisweek/col.jpg", angle: "2deg" },
+    { src: "ccisweek5.png", angle: "8deg" },
     { src: "ccisweek4.png", angle: "-5deg" },
-    { src: "ccisweek5.png", angle: "5deg" },
+    { src: "ccisweek/ccisweek3.png", angle: "5deg" },
   ];
 
   return (
