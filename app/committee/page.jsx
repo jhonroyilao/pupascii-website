@@ -127,7 +127,6 @@ const docusecmembers = [
   { role: "Documentation and Secretariat", name: "Samson, Lander D."},
   { role: "Documentation and Secretariat", name: "Torio, Sam Althea Nicole S."},
   { role: "Documentation and Secretariat", name: "Valderama, Gabriel V."},
-  { role: "Documentation and Secretariat", name: "Bhasa, Rein Cherztin G."},
 ]
 
 // marketing members
@@ -296,7 +295,7 @@ export default function CommitteePage() {
         <AnimatedDescription className="text-white/90 opacity-50 text-center text-[18px] tracking-tight leading-snug max-w-[1000px] mx-auto">
           Meet the team behind the scenes who brought the ASCII Website to life! From design to development, these talented individuals worked to create a seamless and engaging online experience for our community. Special thanks to the Executive Committee, Creative Communications Committee, Documentation & Secretariat Committee, Marketing Committee, Programs Committee, and Research & Extensions Committee for their invaluable contributions.
         </AnimatedDescription>
-        <MemberCardGrid members={websiteContributors} safariUrl="webdev.pupascii.com" safariImageSrc="/webdev.jpg" />
+        <MemberCardGrid members={websiteContributors} safariUrl="webdev.pupascii.com" safariImageSrc="/webdevteam.jpg" />
       </GreySectionShell>
 
       {/* footer */}
