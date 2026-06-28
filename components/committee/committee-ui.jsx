@@ -15,7 +15,6 @@ import {
   DialogTitle, 
   DialogDescription 
 } from "@/components/ui/dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 import { RetroGrid } from "@/components/ui/retro-grid"
 // DRAGGABLE CARD COMPONENTS
@@ -376,10 +375,9 @@ export function CommModalButton({ title = "Committee", members = [] }) {
     maxWidth: '1200px', 
     width: '95vw',      
   }}>
-        <VisuallyHidden>
-          <DialogTitle>{title} Members</DialogTitle>
-          <DialogDescription>Complete list of committee members.</DialogDescription>
-        </VisuallyHidden>
+        
+          <DialogTitle className="sr-only">{title} Members</DialogTitle>
+    
 
         <div className="p-8 max-h-[85vh] overflow-y-auto">
           <h4 className="text-2xl font-bold mb-6 text-black">{title} Members</h4>
