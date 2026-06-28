@@ -159,15 +159,15 @@ export default function AboutPage() {
         </div>
 
 <div className="w-full h-[700px] relative z-10 circular-gallery -mt-20">
-            <CircularGallery
+            <CircularGallery 
             items={[
-              { image: "/aboutpic2.png", text: "" },
-              { image: "/aboutpic3.png", text: "" },
-              { image: "/mission.png", text: "" },
-              { image: "/vision.png", text: "" },
-              { image: "/pic1.jpg", text: "" },
-              { image: "/pic2.jpg", text: "" },
-              { image: "/pic3.jpg", text: "" },
+              { image: "/gallery/3.png", text: "" },
+              { image: "/gallery/4.png", text: "" },
+              { image: "/gallery/1.png", text: "" },
+              { image: "/gallery/2.png", text: "" },
+              { image: "/gallery/5.png", text: "" },
+              { image: "/gallery/6.png", text: "" },
+              { image: "/gallery/7.png", text: "" },
             ]}
             bend={galleryBend}
             textColor="#ffffff"
@@ -266,7 +266,7 @@ export default function AboutPage() {
             className="relative rounded-2xl overflow-hidden aspect-[4/3]"
           >
             <Image
-              src="/mission.png"
+              src="/mv/mission.png"
               alt="PUP ASCII members"
               fill
               className="object-cover"
@@ -345,7 +345,7 @@ export default function AboutPage() {
           {/* Added 'lg:order-last' to send the picture over to the right side on wide screens */}
           <div className="relative rounded-2xl overflow-hidden aspect-[4/3] order-first lg:order-last">
             <Image
-              src="/vision.png"
+              src="/mv/vision.png"
               alt="PUP ASCII members"
               fill
               className="object-cover"
@@ -390,7 +390,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
               
             {/*Main Hopper Image*/}
-            <div className="w-md mx-auto lg:mx-0 relative">
+            <div className="w-full max-w-sm sm:max-w-md mx-auto lg:mx-0 relative">
                <CometCard className="w-full">
                  <div className="relative w-full aspect-[592/639] rounded-[20px] border-[5px] border-white overflow-hidden bg-white shadow-xl">
                     <Image
