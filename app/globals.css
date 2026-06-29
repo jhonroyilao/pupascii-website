@@ -3,9 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-* {
-  cursor: none !important;
-}
+
 @media (hover: hover) and (pointer: fine) {
   html,
   body,
@@ -18,7 +16,7 @@
   textarea,
   select,
   [role="button"] {
-    cursor: none !important;
+    cursor: auto;
   }
 }
 @theme inline {
