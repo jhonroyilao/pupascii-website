@@ -5,6 +5,7 @@ import RotatingText from "@/components/ui/rotating-text"
 import SafariMarquee from "@/components/ui/safari-marquee"
 import Text3DFlip from "@/components/ui/text-3d-flip"
 import { MorphingText } from "@/components/ui/morphing-text"
+import Grainient from "@/components/Grainient" 
 
 export default function Hero() {
   return (
@@ -21,19 +22,45 @@ export default function Hero() {
 
       {/* BLUE SECTION */}
       <div
-        className="relative overflow-hidden"
-        style={{ background: "linear-gradient(180deg, #3DCBFF 0%, #0062E4 50%, #063A80 100%)" }}
+        className="relative overflow-hidden "
+        style={{ borderBottomLeftRadius: "3rem",
+    borderBottomRightRadius: "3rem", }}
       >
+
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+    <Grainient
+      color1="#3B82F6"
+      color2="#0062E4"
+      color3="#3DCBFF"
+      timeSpeed={0.35}
+      colorBalance={0}
+      warpStrength={2.75}
+      warpFrequency={9.3}
+      warpSpeed={5.5}
+      warpAmplitude={50}
+      blendAngle={0}
+      blendSoftness={0.34}
+      rotationAmount={740}
+      noiseScale={0}
+      grainAmount={0}
+      grainScale={0.2}
+      grainAnimated={false}
+      contrast={1.5}
+      gamma={1}
+      saturation={1}
+      centerX={0}
+      centerY={0}
+      zoom={0.9}
+    />
+  </div>
         {/* Text content */}
         <div
           className="relative pt-30 pb-2 max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-5"
           style={{ zIndex: 20 }}
         >
           <span
-  className="inline-flex items-center justify-center gap-0 font-bold tracking-tighter text-white text-8xl md:text-8xl"
-  style={{ fontFamily: "Inter, sans-serif" }}
+  className="inline-flex items-center justify-center gap-0 font-bold tracking-tighter text-white text-6xl md:text-8xl"
 >
-
   <span className="inline-flex items-center justify-center min-w-[5ch]">
     <MorphingText className="font-bricolage" texts={["Built to Lead", "Built to Inspire", "Built to Exalt"]} />
   </span>
@@ -56,8 +83,7 @@ export default function Hero() {
           </span>
             */}
           <p
-            className="hero-animate-3 text-white/80 text-[15px] tracking-tight max-w-xl"
-            style={{ fontFamily: "Inter, sans-serif" }}
+            className="hero-animate-3 text-white/80 font-inter text-[18px] tracking-tight max-w-xl"
           >
             Hi there! We are PUP ASCII. The official academic organization of the Department of Computer Science
             at the Polytechnic University of the Philippines.

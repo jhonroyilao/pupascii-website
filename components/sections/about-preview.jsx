@@ -8,6 +8,9 @@ import { DraggableCardBody, DraggableCardContainer } from "@/components/ui/dragg
 import { TextAnimate } from "@/components/ui/text-animate"
 import { Highlighter } from "@/components/ui/highlighter"
 import { Safari } from "@/components/ui/safari"
+import { ShinyButton } from "@/components/ui/shiny-button"
+import { ArrowRight } from "lucide-react"
+import { ShinyImage } from "@/components/ui/shiny-image"
 
 const photos = [
   {
@@ -39,14 +42,16 @@ function HighlightOnScroll({ children, color, action = "highlight" }) {
 
 export default function About() {
   return (
-    <section className="relative bg-white">
+    <section className="relative bg-white overflow-hidden">
 
-      {/* 🔵 FLOATING SAFARI CARD (overlaps Hero + About) 
+      {/*  FLOATING SAFARI CARD (overlaps Hero + About) 
       <div className="absolute -top-[200px] left-1/2 -translate-x-1/2 z-50 w-full max-w-[900px] px-6">
         <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
           <Safari url="pupascii-2526.com" imageSrc="/group-photo.jpg" />
         </div>
       </div> */}
+
+
 
       {/* ── OUR IDENTITY ── */}
       <div className="max-w-7xl mx-auto px-6 pt-[100px] pb-10">
@@ -64,9 +69,9 @@ export default function About() {
             <TextAnimate
               animation="blurInUp"
               by="word"
-              className="font-bold text-black leading-tight"
+              className="font-bold text-black leading-tighter"
               style={{
-                fontFamily: "Instrument Sans, sans-serif",
+                fontFamily: "Bricolage Grotesque, sans-serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
               }}
             >
@@ -74,13 +79,12 @@ export default function About() {
             </TextAnimate>
 
             <p
-              className="text-gray-600 text-[15px] leading-relaxed max-w-md"
-              style={{ fontFamily: "Inter, sans-serif" }}
+              className="text-gray-600 font-inter text-[15px] leading-relaxed max-w-md"
             >
               The PUP Association of Students for Computer Intelligence
               and Integration (PUP-ASCII) is an{" "}
-              <HighlightOnScroll color="#93C5FD" action="highlight">
-                academic organization
+              <HighlightOnScroll color="#328bff" action="highlight">
+                <span className="text-white">academic organization</span>
               </HighlightOnScroll>{" "}
               under the Department of Computer Science at the Polytechnic
               University of the Philippines. It aims to{" "}
@@ -118,52 +122,45 @@ export default function About() {
 
           {/* Left */}
           <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-            <Image
+            <ShinyImage
               src="/group-photo.jpg"
               alt="PUP ASCII members"
               fill
-              className="object-cover"
+              sizes="100vw"
             />
           </div>
 
           {/* Right */}
           <div className="space-y-6">
-            <div
-              className="font-bold leading-tight"
+            <TextAnimate
+              animation="blurInUp"
+              by="word"
+              className="font-bold text-black leading-tighter tracking-tight"
               style={{
-                fontFamily: "Instrument Sans, sans-serif",
+                fontFamily: "Bricolage Grotesque, sans-serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
               }}
             >
-              <TextAnimate animation="blurInUp" by="word" className="inline text-black">
-                driven
-              </TextAnimate>{" "}
-              <TextAnimate animation="blurInUp" by="word" className="inline text-black">
-                by
-              </TextAnimate>{" "}
-              <TextAnimate animation="blurInUp" by="word" className="inline text-[#0062e4]">
-                passion
-              </TextAnimate>
-            </div>
+              driven by passion
+            </TextAnimate>
 
             <p
               className="text-gray-600 text-[15px] leading-relaxed"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               Led by{" "}
-              <HighlightOnScroll color="#93C5FD" action="highlight">
-                student leaders from different year levels
+              <HighlightOnScroll color="#328bff" action="highlight">
+                <span className="text-white"> student leaders from different year levels </span>
               </HighlightOnScroll>
               , PUP ASCII exists to assist students in their academic journey,
               inspire growth, and promote excellence in both technical and creative fields.
             </p>
+            
 
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-[#0062e4] font-medium text-sm hover:underline"
-            >
-              Read More About Us
-            </Link>
+      
+           <ShinyButton href="/about" icon={<ArrowRight size={18} />}>
+            read our story
+          </ShinyButton>
           </div>
         </div>
       </div>
