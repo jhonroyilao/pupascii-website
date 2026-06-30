@@ -19,7 +19,6 @@ import CircularGallery from "@/components/ui/circulargallery"
 import { ShinyButton } from "@/components/ui/shiny-button"
 import { ArrowRight } from "lucide-react"
 import { Ripple } from "@/components/ui/ripple"
-import { SmoothCursor } from "@/components/ui/smooth-cursor"
 import { Cards } from "@/components/ui/cards"; 
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
 import CommunityCTA from "@/components/sections/about-cta.jsx"
@@ -139,7 +138,7 @@ export default function AboutPage() {
     />
   </div>
 
-        <SmoothCursor/>
+
 
      
         <div className="relative z-30 max-w-5xl mx-auto px-6 pt-24 text-center flex flex-col items-center gap-2">
