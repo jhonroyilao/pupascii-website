@@ -371,25 +371,19 @@ export function CommModalButton({ title = "Committee", members = [] }) {
         </div>
       </DialogTrigger>
 
-      <DialogContent className="rounded-[32px] bg-white p-0 text-black shadow-2xl border-none" style={{
-    maxWidth: '1200px', 
-    width: '95vw',      
-  }}>
-        
-          <DialogTitle className="sr-only">{title} Members</DialogTitle>
-    
-
-        <div className="p-8 max-h-[85vh] overflow-y-auto">
-          <h4 className="text-2xl font-bold mb-6 text-black">{title} Members</h4>
-          
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <DialogContent
+        className="w-[98vw] max-w-[1350px] sm:max-w-[1350px] h-auto rounded-[32px] border border-white/10 bg-blue p-0 text-white shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
+      >
+        <div className="rounded-[32px] border border-black/10 bg-white p-6">
+          <h4 className="text-lg font-semibold text-black">Member List</h4>
+          <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
             {members.map((member) => (
               <li
                 key={`${member.name}-${member.role}`}
-                className="rounded-2xl border border-gray-500 bg-gray-50 px-5 py-4 text-sm hover:bg-gray-100 transition-colors"
+                className="rounded-2xl border border-black/10 bg-black/2 px-4 py-3 text-sm text-black"
               >
-                <div className="font-semibold text-gray-900">{member.name}</div>
-                <div className="text-xs text-gray-500 mt-1">{member.role}</div>
+                <div className="font-semibold text-black">{member.name}</div>
+                <div className="text-xs text-black/70">{member.role}</div>
               </li>
             ))}
           </ul>
