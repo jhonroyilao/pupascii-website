@@ -69,10 +69,10 @@ export default function CommunityCTA() {
 
             <div className="pt-2 sm:pt-4 w-full sm:w-auto flex justify-center md:justify-start">
               <ShinyButton
-                href="/"
+                onClick={() => window.open("https://forms.gle/eUk1XarfVf3xuLA78", "_blank", "noopener,noreferrer")}
                 icon={<ArrowRight size={18} />}
               >
-                Join Now
+              Join Now
               </ShinyButton>
             </div>
           </div>

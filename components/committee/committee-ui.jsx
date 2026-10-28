@@ -17,11 +17,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import {
-  AnimatedSpan,
-  Terminal,
-  TypingAnimation,
-} from "@/components/ui/terminal"
+
 
 import { RetroGrid } from "@/components/ui/retro-grid"
 // DRAGGABLE CARD COMPONENTS
@@ -407,16 +403,16 @@ export function CommModalButton({ title = "Committee", members = [] }) {
       <DialogContent
         className="w-[98vw] max-w-[1350px] sm:max-w-[1350px] h-auto rounded-[32px] border border-white/10 bg-blue p-0 text-white shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
       >
-        <div className="rounded-[32px] border border-white/10 bg-white/6 p-6">
-          <h4 className="text-lg font-semibold text-white">Member List</h4>
+        <div className="rounded-[32px] border border-white/10 bg-white p-6">
+          <h4 className="text-lg font-semibold text-black">Member List</h4>
           <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
             {members.map((member) => (
               <li
                 key={`${member.name}-${member.role}`}
-                className="rounded-2xl border border-white/10 bg-white/8 px-4 py-3 text-sm text-white/90"
+                className="rounded-2xl border border-black bg-black/4 px-4 py-3 text-sm text-black/90"
               >
-                <div className="font-semibold text-white">{member.name}</div>
-                <div className="text-xs text-white/70">{member.role}</div>
+                <div className="font-semibold text-black">{member.name}</div>
+                <div className="text-xs text-black/70">{member.role}</div>
               </li>
             ))}
           </ul>

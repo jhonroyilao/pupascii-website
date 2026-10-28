@@ -18,37 +18,37 @@ import {
 import { SirMon } from "../../components/committee/committee-ui";
 
 const execcommMembers = [
-  { role: "EXEC", name: "Cabrera, Chelsea Lauren B.", position: "President", image: "/exec_chelsea.png", links: {email: "chlaurencabrera@gmail.com",facebook: "https://www.facebook.com/chelsea.cabrera.99", github: "https://github.com/aesrch", linkedin: "https://www.linkedin.com/in/chelsealaurencabrera/"}},
-  { role: "EXEC", name: "Reolada, Gavinn M.", position: "Executive Vice President", image: "/exec_gavinn.png", links: {email: "gavinnreolada@gmail.com",facebook: "https://www.facebook.com/gavinn.reolada"}},
-  { role: "EXEC", name: "Biso, Erika P.", position: "Executive Secretary", image: "/exec_erika.png", links: {email: "erikapbiso@gmail.com",facebook: "https://www.facebook.com/erikabiso", github: "https://github.com/erikabiso", linkedin: "https://www.linkedin.com/in/erikabiso"}},
-  { role: "EXEC", name: "Narte, Ma. Victoria C.", position: "Executive Assistant Secretary", image: "/exec_victoria.png", links: {email: "nartevictoria@gmail.com",facebook: "https://www.facebook.com/narte.victoriaa.21", github: "https://github.com/coffeerii", linkedin: "https://www.linkedin.com/in/mavictorianarte"}},
-  { role: "EXEC", name: "Guioguio, Kenneth M.", position: "VP for Finance", image: "exec_kenneth.png", links: {email: "kenneth.guioguio.s06@gmail.com",facebook: "https://www.facebook.com/KennG.Mags", github: "https://github.com/k3nn-g", linkedin: "https://www.linkedin.com/in/kenneth-guioguio-99b054263/"}},
-  { role: "EXEC", name: "Lagat, Joemar R.", position: "VP for Audit", image: "/exec_joemar.png", links: {email: "joemarlagatr@gmail.com",facebook: "https://www.facebook.com/joemar.lagat.2025", github: "https://github.com/JMR-san", linkedin: "https://www.linkedin.com/in/jmrlagat"}},
+  { role: "EXEC", name: "Morales, Timothy Gabriel", position: "President", image: "ccc_tim.png", links: {}},
+  { role: "EXEC", name: "Sarmiento, Nathan B.", position: "Executive Vice President", image: "/hopper_placeholder.png", links: {}},
+  { role: "EXEC", name: "Monterey, Reine Arabelle L.", position: "Executive Secretary", image: "/ccc_reine.png", links: {}},
+  { role: "EXEC", name: "Lorenzana, Ma. Kristel Anne D.", position: "Executive Assistant Secretary", image: "/hopper_placeholder.png", links: {}},
+  { role: "EXEC", name: "Sanchez, Reiu R.", position: "VP for Finance", image: "/hopper_placeholder.png", links: {}},
+  { role: "EXEC", name: "Academia, Elisha Marie M.", position: "VP for Audit", image: "/hopper_placeholder.png", links: {}},
 ];
 
 const cccMembers= [
-  { role: "CCC", name: "Ilao, Jhon Roy", position: "VP for Creative Communications", image: "/ccc_jhon.png", links: {email: "jhonroyilao@gmail.com",facebook: "https://web.facebook.com/jhnroyilao", github: "https://github.com/jhonroyilao", linkedin: "https://www.linkedin.com/in/jhon-roy-ilao-3992b9293/"}},
-  { role: "CCC", name: "Sia, Shaun Asher M.", position: "AVP for Creative Communications", image: "/ccc_shaun.png", links: {email: "siashaun4@gmail.com",facebook: "https://facebook.com/omaiow"}},
+  { role: "CCC", name: "Sia, Shaun Asher M.", position: "VP for Creative Communications", image: "/ccc_shaun.png", links: {}},
+  { role: "CCC", name: "Inocentes, Mariel Sofia B.", position: "AVP for Creative Communications", image: "/ccc_mariel.png", links: {}},
 ];
 
 const docusecMembers = [
-  { role: "DOCS", name: "Duron, Jarren Irvine F.", position: "VP for Documentation & Secretariat", image: "/docs_jarren.png", links: {email: "jarrenirvine.duron320401@gmail.com",facebook: "https://www.facebook.com/JarrenIrvineDuron"}},
-  { role: "DOCS", name: "Diaz, Lei Eizen P.", position: "AVP for Documentation & Secretariat", image: "/docs_lei.png", links: {email: "leidiaz0518@gmail.com",facebook: "https://www.facebook.com/leieizen.diaz.7"}},
+  { role: "DOCS", name: "Aviles, Joan Kathleen E.", position: "VP for Documentation & Secretariat", image: "/docs_joan.png", links: {}},
+  { role: "DOCS", name: "Jimena, Andrea Shane B.", position: "AVP for Documentation & Secretariat", image: "/hopper_placeholder.png", links: {}},
 ];
 
 const marketingMembers = [
-  { role: "MKTG", name: "Gragas, Nethan Edry L.", position: "VP for Marketing", image: "/mktg_nethan.png", links: {email: "nethanedrygragas@gmail.com",facebook: "https://www.facebook.com/nelgragas"}},
-  { role: "MKTG", name: "Valeza, Reinwald Marone", position: "AVP for Marketing", image: "/mktg_reinwald.png", links: {email: "reinwaldmaronevaleza101505@gmail.com",facebook: "https://www.facebook.com/marone.valeza"}},
+  { role: "MKTG", name: "Cruz, Precious Marian V.", position: "VP for Marketing", image: "/mktg_marian.png", links: {}},
+  { role: "MKTG", name: "Rivero, Nathaniel R.", position: "AVP for Marketing", image: "/hopper_placeholder.png", links: {}},
 ];
 
 const programsMembers = [
-  { role: "PROG", name: "Nagera, Kristina Casandra C.", position: "VP for Programs", image: "/prog_kc.png", links: {email: "nageracassie@gmail.com",facebook: "https://www.facebook.com/casandra.nagera.2025"}},
-  { role: "PROG", name: "Federico, John Richard J.", position: "AVP for Programs", image: "/prog_john.png", links: {email: "johnrichard.univ@gmail.com",facebook: "https://www.facebook.com/jjangmooo"}},
+  { role: "PROG", name: "Esguerra, Keith Laurence Y.", position: "VP for Programs", image: "/hopper_placeholder.png", links: {}},
+  { role: "PROG", name: "Mayo, Theresa Gilliam DS.", position: "AVP for Programs", image: "/hopper_placeholder.png", links: {}},
 ];
 
 const rneMembers = [
-  { role: "R&E", name: "Gallaza, Romar M.", position: "VP for Research & Extensions", image: "/rne_romar.png", links: {email: "romargallaza610@gmail.com",facebook: "https://www.facebook.com/romar.gallaza.9", github: "https://github.com/Romar-jpg", linkedin: "https://www.linkedin.com/in/romar-gallaza-729b5a386/"}},
-  { role: "R&E", name: "Castillejo, Paul Daniel C.", position: "AVP for Research & Extensions", image: "/rne_paul.png", links: {email: "pauldaniel0925@gmail.com",facebook: "https://www.facebook.com/pauldaniel.castillejo"}},
+  { role: "R&E", name: "Esquejo, Roxane K-Anne D.", position: "VP for Research & Extensions", image: "/rne_roxane.png", links: {}},
+  { role: "R&E", name: "Sanchez, Louise Jillian A.", position: "AVP for Research & Extensions", image: "/hopper_placeholder.png", links: {}},
 ];
 
 const websiteContributors = [
@@ -88,110 +88,93 @@ const execmembers = [
 
 const cccmembers = [
   // ccc members
-  { role: "Creative Communications", name: "Academia, Elisha Marie M."},
-  { role: "Creative Communications", name: "Aguinaldo, Jose Mari R."},
+  { role: "Creative Communications", name: "Balayanto, Czarina Mae"},
   { role: "Creative Communications", name: "Bornales, Michelle Ann A."},
   { role: "Creative Communications", name: "Cardama, Antonette Joyce V."},
-  { role: "Creative Communications", name: "Chua, Ghian Ashley R."},
-  { role: "Creative Communications", name: "Condenuevo, Cheyenne Louise C."}, 
-  { role: "Creative Communications", name: "Ganosa, Neil Ydan L."}, 
-  { role: "Creative Communications", name: "Inocentes, Mariel Sofia B."}, 
-  { role: "Creative Communications", name: "Maravilla, Ernest Matthew I."}, 
-  { role: "Creative Communications", name: "Monterey, Reine Arabelle L."}, 
-  { role: "Creative Communications", name: "Morales, Timothy Gabriel"}, 
-  { role: "Creative Communications", name: "Ponciano, Jasmine Rhada S."},   
-  { role: "Creative Communications", name: "Porciuncula, Kyle Ethan C."}, 
-  { role: "Creative Communications", name: "Sanchez, Mia Mae N."}, 
-  { role: "Creative Communications", name: "Sanchez, Reiu R."}, 
-  { role: "Creative Communications", name: "Silerio, Aaron Gabriel"}, 
-  { role: "Creative Communications", name: "Tiongzon, Nisha Li A."}, 
-  { role: "Creative Communications", name: "Tubiera, Jasmin P."}, 
-  { role: "Creative Communications", name: "Victohay, Ryoko L."}, 
+  { role: "Creative Communications", name: "Epetia, Yana Gabrielle"},
+  { role: "Creative Communications", name: "Dotollo, Zyrah Mae M."},
+  { role: "Creative Communications", name: "Figares, Mary Vianney D."},
+  { role: "Creative Communications", name: "Ilao, Jhon Roy"},
+  { role: "Creative Communications", name: "Lasco, Reign Allyson T."},
+  { role: "Creative Communications", name: "Lim, Nicolah Marie L."},
+  { role: "Creative Communications", name: "Oliveros, Mariel M."},
+  { role: "Creative Communications", name: "Pacis, Remy Claryce"},
+  { role: "Creative Communications", name: "Porciuncula, Kyle Ethan C."},
+  { role: "Creative Communications", name: "Sanchez, Mia Mae N."},
 ]
 const docusecmembers = [
   // docusec members
-  { role: "Documentation and Secretariat", name: "Aviles, Joan Kathleen E."},
-  { role: "Documentation and Secretariat", name: "Bhasa, Rein Cherztin G."},
-  { role: "Documentation and Secretariat", name: "Buenaventura, Harvey L."},
-  { role: "Documentation and Secretariat", name: "Cagadas, Marielle I."},
-  { role: "Documentation and Secretariat", name: "Cereno, Rjay B."},
-  { role: "Documentation and Secretariat", name: "Dela Paz, Bien Jeric"},
-  { role: "Documentation and Secretariat", name: "Edrosa, Jwin Yael D."},
-  { role: "Documentation and Secretariat", name: "Espiritu, Anthea Lyn Czeisler P."},
-  { role: "Documentation and Secretariat", name: "Jimena, Andrea Shane B."},
-  { role: "Documentation and Secretariat", name: "Liwag, John Eric T."},
-  { role: "Documentation and Secretariat", name: "Lorenzana, Ma. Kristel Anne D."},
-  { role: "Documentation and Secretariat", name: "Matinong, Arwen Therese Emmanuelle C."},
-  { role: "Documentation and Secretariat", name: "Naperi, Hans Ezekiel M."},
+  { role: "Documentation and Secretariat", name: "Apis, Marizza P."},
+  { role: "Documentation and Secretariat", name: "Asuncion, Kevin Jake B."},
+  { role: "Documentation and Secretariat", name: "Estrecho, Sean Gabriel V."},
+  { role: "Documentation and Secretariat", name: "Gallano, Olivia Angeline G."},
+  { role: "Documentation and Secretariat", name: "Lague, Jasmine Rose A."},
+  { role: "Documentation and Secretariat", name: "Marin, Kian Philip T."},
+  { role: "Documentation and Secretariat", name: "Morauda, Gabriel Ivan T."},
   { role: "Documentation and Secretariat", name: "Rapada, Gian Kyle D."},
-  { role: "Documentation and Secretariat", name: "Reboquio, Carl Gian, D."},
   { role: "Documentation and Secretariat", name: "Remolacio, Alexandra Geane M."},
-  { role: "Documentation and Secretariat", name: "Samson, Lander D."},
-  { role: "Documentation and Secretariat", name: "Torio, Sam Althea Nicole S."},
-  { role: "Documentation and Secretariat", name: "Valderama, Gabriel V."},
-  { role: "Documentation and Secretariat", name: "Bhasa, Rein Cherztin G."},
+  { role: "Documentation and Secretariat", name: "Silva, Chelsey Claire, V."},
+  { role: "Documentation and Secretariat", name: "Velasquez, Viena Marie C."},
 ]
 
 // marketing members
 const marketingmembers = [
-  { role: "Marketing", name: "Aldover, Joanne"},
-  { role: "Marketing", name: "Bagay, Russel V."},
-  { role: "Marketing", name: "Bufe, Keziah Nicole L."},
-  { role: "Marketing", name: "Capon, Princess Anne N."},
-  { role: "Marketing", name: "Cruz, Precious Marian V."},
-  { role: "Marketing", name: "Dulla, Justin Lei"},
-  { role: "Marketing", name: "Lasco, Ed Marcel G."},
-  { role: "Marketing", name: "Lugue, Kevin DS."},
-  { role: "Marketing", name: "Melegrito, Anna Mikaela B."},
   { role: "Marketing", name: "Ramos, Neoh Clord A."},
   { role: "Marketing", name: "Resurreccion, Givonne"},
-  { role: "Marketing", name: "Rivero, Nathaniel R."},
   { role: "Marketing", name: "Santiago, Sean Russell S."},
   { role: "Marketing", name: "Alcantara, Rachelle S."},
+
+  { role: "Marketing", name: "Aguyen, Juleight B."},
+  { role: "Marketing", name: "Asinas, Frix Anne R."},
+  { role: "Marketing", name: "Bagay, Russel V."},
+  { role: "Marketing", name: "Bancod, Abbygail S."},
+  { role: "Marketing", name: "Bobis, Mikaella"},
+  { role: "Marketing", name: "Capon, Princess Anne N."},
+  { role: "Marketing", name: "Cruz, Aynna Venice P."},
+  { role: "Marketing", name: "Daza, Carmela P."},
+  { role: "Marketing", name: "Dela Rosa, Mico Von Adriel A."},
+  { role: "Marketing", name: "Dulla, Justin Lei"},
+  { role: "Marketing", name: "Entac, Adelaine E."},
+  { role: "Marketing", name: "Escober, Maritoni Denesse"},
+  { role: "Marketing", name: "Galera, Jennifer Reign A."},
+  { role: "Marketing", name: "Genezle Mariella A. Ambos"},
+  { role: "Marketing", name: "Gragas, Nethan"},
+  { role: "Marketing", name: "Ingreso, Mayvin D."},
+  { role: "Marketing", name: "Loreign Seth Tribaco"},
+  { role: "Marketing", name: "Loverez, Lianne Jeane A. "},
+  { role: "Marketing", name: "Mary Elizabeth Joy F. Nuñal"},
+  { role: "Marketing", name: "Quitoriano, Patrick DC."},
+  { role: "Marketing", name: "Rehana Francine B. Sangil"},
+  { role: "Marketing", name: "Renovales, Joshua A."},
+  { role: "Marketing", name: "Rodriguez, Jan Earl F."},
+  { role: "Marketing", name: "Valeza, Reinwald Morone"},
+  { role: "Marketing", name: "Zaragoza, Marianne Criz P."},
 ]
 
 // programs members
 const programsmembers = [
   { role: "Programs", name: "Angeles, Samantha Nicole D."},
-  { role: "Programs", name: "Berin, Alex L."},
+  { role: "Programs", name: "Ariola, Wiljean Mae G."},
   { role: "Programs", name: "Bombola, Yvan Raphael C."},
-  { role: "Programs", name: "Consolacion, Karizha C."},
-  { role: "Programs", name: "Daguman, Micaella P."},
-  { role: "Programs", name: "Dayang, Kyle V."},
-  { role: "Programs", name: "Elmido, Joash Mae S."},
-  { role: "Programs", name: "Esguerra, Keith Laurence Y."},
-  { role: "Programs", name: "Fernandez, Francis Earl, M."},
-  { role: "Programs", name: "Guardiario, Julianne Alyssa S."},
-  { role: "Programs", name: "Isais, Dominic Christian"},
-  { role: "Programs", name: "Jayoma, Aira S."},
-  { role: "Programs", name: "Lasac, Alliza Leira L."},
-  { role: "Programs", name: "Layesa, John Carlo C."},
+  { role: "Programs", name: "Dianco, John Michael"},
   { role: "Programs", name: "Lozano, Mac Edison S."},
   { role: "Programs", name: "Magtuto, Albert G."},
-  { role: "Programs", name: "Mayo, Theresa Gilliam DS."},
-  { role: "Programs", name: "Nevero, Alexandre Andrei"},
-  { role: "Programs", name: "Orolfo, Aidan Jireh B."},
-  { role: "Programs", name: "Parreño, Anna Lea L."},
-  { role: "Programs", name: "Rio, Christine B."},
-  { role: "Programs", name: "Rodriguez, Neil Xander B."},
-  { role: "Programs", name: "Sarmiento, Nathaniel B."},
-  { role: "Programs", name: "Tindugan, Ruth Naomi S."},
   { role: "Programs", name: "Virrey, Gabriel S."},
 ]
 
 // rne members
 const rnemembers = [
+  { role: "Research and Extensions", name: "Agasid, Joaquin Carlo V."},
   { role: "Research and Extensions", name: "Bantog, Salahadin I."},
-  { role: "Research and Extensions", name: "Bruel, Raj P."},
-  { role: "Research and Extensions", name: "Castillo, Joemarc Jr. D."},
-  { role: "Research and Extensions", name: "Detera, Christian Roi C."},
-  { role: "Research and Extensions", name: "Esquejo, Roxane K-Anne D."},
-  { role: "Research and Extensions", name: "Gabalfin, Marc Arthur E."},
-  { role: "Research and Extensions", name: "Macaraeg, Paul Angelo O."},
-  { role: "Research and Extensions", name: "Navarro, Mary Jean D."},
-  { role: "Research and Extensions", name: "Sanchez, Louise Jillian A."},
-  { role: "Research and Extensions", name: "Sta. Ines, Jhonder S."},
-  { role: "Research and Extensions", name: "Villeza, Sean Russell B."},
+  { role: "Research and Extensions", name: "Bolo, Veneeze A."},
+  { role: "Research and Extensions", name: "Castillejo, Paul Daniel C."},
+  { role: "Research and Extensions", name: "Gallaza, Romar M."},
+  { role: "Research and Extensions", name: "Ledesma, Mariouz Czanrex A."},
+  { role: "Research and Extensions", name: "Soliman, Krishan Jose G."},
+  { role: "Research and Extensions", name: "Sta. Ana, Marijah Georginia L."},
+  { role: "Research and Extensions", name: "Tabafunda, Christian Lloyd B."},
+  { role: "Research and Extensions", name: "Trayfalgar, James Aaron M."},
+  { role: "Research and Extensions", name: "Veriña, Elijah Paul B."},
 ]
 
 export default function CommitteePage() {
@@ -309,10 +292,7 @@ export default function CommitteePage() {
 }
 
 // to do: list
-// 1. sir mon page /done
-//    - picture of sir mon
-//    - description of sir mon (who he is, his role in the org) not yet, need help
-// 2. insert pics in the committee sections /done
-// 3. website contributors section carousel / done * made into a grid
-// 4. see more members button and modal for each committee section /done
-// 5. be part of the community button (medium) ?
+// 1. Change the execs into current execs
+// 2. Add members into the list
+// 3. Change pictures and add placeholders
+// 4. Add links to the officers
