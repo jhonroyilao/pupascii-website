@@ -53,7 +53,7 @@ export default function FAQSection() {
             /faqs
           </p>
 
-                <h4 className="font-bricolage font-bold leading-[0.95] min-w-[500px]">
+                <h4 className="font-bricolage font-bold leading-[0.95] w-full">
                 <div className="text-4xl md:text-6xl lg:text-7xl text-black">
                 <TextAnimate animation="blurInUp" by="word">
                   frequently

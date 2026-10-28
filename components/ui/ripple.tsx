@@ -1,5 +1,4 @@
 import React, { type ComponentPropsWithoutRef, type CSSProperties } from "react"
-
 import { cn } from "@/lib/utils"
 
 interface RippleProps extends ComponentPropsWithoutRef<"div"> {
@@ -10,7 +9,7 @@ interface RippleProps extends ComponentPropsWithoutRef<"div"> {
 
 export const Ripple = React.memo(function Ripple({
   mainCircleSize = 210,
-  mainCircleOpacity = 0.24,
+  mainCircleOpacity = 0.4, // Slightly bumped up opacity for soft blues
   numCircles = 8,
   className,
   ...props
@@ -25,24 +24,26 @@ export const Ripple = React.memo(function Ripple({
     >
       {Array.from({ length: numCircles }, (_, i) => {
         const size = mainCircleSize + i * 70
-        const opacity = mainCircleOpacity - i * 0.03
+        const opacity = mainCircleOpacity - i * 0.04
         const animationDelay = `${i * 0.06}s`
         const borderStyle = "solid"
 
         return (
           <div
             key={i}
-            className={`animate-ripple bg-foreground/25 absolute rounded-full border shadow-xl`}
+            // Changed bg-foreground/25 to bg-blue-500/5 for a subtle blue radial fill
+            className="animate-ripple absolute rounded-full border bg-blue-500/5 shadow-inner"
             style={
               {
                 "--i": i,
                 width: `${size}px`,
                 height: `${size}px`,
-                opacity,
+                opacity: Math.max(opacity, 0), // Prevent negative values
                 animationDelay,
                 borderStyle,
                 borderWidth: "1px",
-                borderColor: `var(--foreground)`,
+                // Set explicitly to a soft blue border
+                borderColor: "rgba(96, 165, 250, 0.3)", 
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%) scale(1)",
